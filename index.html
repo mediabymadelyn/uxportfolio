@@ -11,6 +11,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+  /* force vertical stacking, beat all theme rules */
+  #main section.posts.single-column {
+    display: block !important;
+  }
+  #main section.posts.single-column > article {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 2rem 0 !important;
+    float: none !important;
+  }
+</style>
 	</head>
 	<body class="is-preload">
 
@@ -48,14 +60,15 @@
 						
 
 						<!-- Posts -->
-							<section class="posts">
+							<section class="posts single-column">
 								<article>
 									<header>
 										<span class="date">Fall 2024 - Now</span>
 										<h2><a href="#">DoodleQuest Application<br />
 										</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+								<a href="#" class="image fit thumb"><img src="images/pic02.jpg" alt=""></a>
+
 									<p>Doodlequest is an ongoing application that I conceptualized in the Fall of 2024. It will be my senior project and aims to create an interactive platform for aspiring artists to enhance their intellectual artistic ability and experience.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Read More</a></li>
@@ -67,7 +80,8 @@
 										<h2><a href="#">Oxy Biochemistry Database<br />
 										</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image fit thumb"><img src="images/pic02.jpg" alt=""></a>
+
 									<p>In cooperation with the Occidental College Biochemistry Department, my classmates and I worked to develop a streamlined database for biochemistry research. I was primarily responsible for the frontend development.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Read More</a></li>
@@ -79,15 +93,13 @@
 										<h2><a href="#">Figma Projects<br />
 										</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<a href="#" class="image fit thumb"><img src="images/pic02.jpg" alt=""></a>
+
 									<p>During the last year, I have taken an interest in UX design, and have worked on a few small projects using Figma. Check them out here!</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Read More</a></li>
 									</ul>
 								</article>
-								<article>
-									
-						
 							</section>
 
 
@@ -122,6 +134,46 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+ 
+	<style>
+  /* === Match text width to image width === */
+  :root{ --post-width: 60%; --post-max: 720px; } /* tweak 60% to your liking */
+
+  /* center everything inside each post */
+  #main section.posts.single-column article{
+    display:flex; flex-direction:column; align-items:center;
+  }
+
+  /* image sizing (already shrinking) */
+  #main section.posts.single-column .image.fit.thumb img{
+    width: var(--post-width) !important;
+    max-width: var(--post-max) !important;
+    height:auto !important;
+    display:block; margin:0 auto !important;
+  }
+
+  /* make date, title, paragraph, and button the same width as image */
+  #main section.posts.single-column article > header,
+  #main section.posts.single-column article > p,
+  #main section.posts.single-column article > ul.actions {
+    width: var(--post-width) !important;
+    max-width: var(--post-max) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align:left;
+  }
+
+  /* nicer spacing */
+  #main section.posts.single-column article > header{ margin-bottom: 1rem; }
+  #main section.posts.single-column article > p{ margin-top: 1.25rem; }
+  #main section.posts.single-column article > ul.actions{ margin-top: 1.5rem; }
+
+  /* mobile: use wider text so it doesn't get too narrow */
+  @media (max-width: 768px){
+    :root{ --post-width: 90%; }
+  }
+</style>
 
 	</body>
 </html>
