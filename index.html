@@ -173,6 +173,48 @@
   @media (max-width: 768px){
     :root{ --post-width: 90%; }
   }
+  #main section.posts.single-column article {
+  border-top: 1px solid rgba(210, 210, 210, 0.6); /* soft gray line */
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+/* remove line from the very first post */
+#main section.posts.single-column article:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+  
+}
+/* Add divider line and space before first post without shifting nav */
+#main section.posts.single-column {
+  position: relative;
+  padding-top: 4rem; /* creates visual gap below nav */
+}
+
+#main section.posts.single-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--post-width);
+  max-width: var(--post-max);
+  height: 1px;
+  background: rgba(210, 210, 210, 0.6);
+}
+#main section.posts.single-column .image.fit { 
+  margin-bottom: 0.75rem !important;   /* was ~2rem in theme */
+}
+#main section.posts.single-column .image.fit.thumb { 
+  margin-bottom: 0.5rem !important;   /* ensure the .thumb one matches */
+}
+
+/* also reduce the paragraph’s top margin a bit */
+#main section.posts.single-column article > p {
+  margin-top: 0.75rem !important;      /* try 0.5–1rem to taste */
+}
+
 </style>
 
 	</body>
