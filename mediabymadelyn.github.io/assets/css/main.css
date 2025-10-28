@@ -4273,6 +4273,7 @@ input, select, textarea {
 		#footer p {
 			font-size: 0.8rem;
 		}
+		
 
 		@media screen and (max-width: 980px) {
 
@@ -4359,6 +4360,7 @@ input, select, textarea {
 			}
 
 		}
+		
 
 	#copyright {
 		color: #ffffff;
@@ -4688,4 +4690,34 @@ body #main section.posts > article {
   height: auto;
   margin: 0 auto;
   display: block;
+}
+#footer > section.split.contact > section {
+  justify-content: center;   /* center the row horizontally */
+  align-items: center;       /* center vertically if heights differ */
+  text-align: center;
+  gap: 1rem;                 /* space between "GET IN TOUCH" and icons */
+}
+
+/* Remove template's fixed 6rem that pushes content left */
+#footer > section.split.contact > section > :first-child {
+  width: auto !important;
+}
+
+/* Make the icons line up and center */
+#footer > section.split.contact > section .icons,
+#footer > section.split.contact ul.icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  gap: 1.25rem;              /* even spacing between icons */
+  margin: 0;                 /* kill weird offsets */
+  padding: 0;
+}
+
+/* Keep it tidy on small screens: stack label over icons */
+@media (max-width: 736px) {
+  #footer > section.split.contact > section {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
