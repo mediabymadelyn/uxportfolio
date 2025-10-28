@@ -4670,54 +4670,41 @@ input, select, textarea {
 
 	}
 
-body #main section.posts {
-  display: block !important;
-  flex-wrap: unset !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
+/* tighten gray panel height */
+#footer > section.split.contact > section { 
+  padding: 2rem 0 !important; 
 }
 
-body #main section.posts > article {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 0 3rem 0 !important;
-  float: none !important;
-}
-.posts .image.fit img {
-  max-width: 400px !important;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-#footer > section.split.contact > section {
-  justify-content: center;   /* center the row horizontally */
-  align-items: center;       /* center vertically if heights differ */
-  text-align: center;
-  gap: 1rem;                 /* space between "GET IN TOUCH" and icons */
-}
-
-/* Remove template's fixed 6rem that pushes content left */
-#footer > section.split.contact > section > :first-child {
-  width: auto !important;
-}
-
-/* Make the icons line up and center */
-#footer > section.split.contact > section .icons,
-#footer > section.split.contact ul.icons {
-  display: flex !important;
-  justify-content: center !important;
+/* constrain content and center perfectly */
+#footer .contact-inner{
+  max-width: 520px;      /* keeps it from looking lost in the big box */
+  margin: 0 auto;        /* centers the block inside the wide gray area */
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.25rem;              /* even spacing between icons */
-  margin: 0;                 /* kill weird offsets */
-  padding: 0;
+  gap: .875rem;
+  text-align: center;
 }
 
-/* Keep it tidy on small screens: stack label over icons */
-@media (max-width: 736px) {
-  #footer > section.split.contact > section {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+/* balance the icon row */
+#footer .contact-inner .icons{
+  display:flex;
+  gap: 1.25rem;
+  margin:0;
+  padding:0;
+  justify-content:center;
+  align-items:center;
+}
+
+/* optional polish */
+#footer .contact-inner h3{
+  letter-spacing: .15em;
+  font-weight: 700;
+  margin: 0;
+  opacity: .8;
+}
+
+@media (max-width:736px){
+  #footer > section.split.contact > section { padding: 1.5rem 0 !important; }
+  #footer .contact-inner{ gap: .65rem; }
 }
