@@ -3286,10 +3286,10 @@ input, select, textarea {
 	#intro {
 		color: #ffffff;
 		padding: 8rem 4rem 6rem 4rem ;
-		-moz-align-items: center;
-		-webkit-align-items: center;
-		-ms-align-items: center;
-		align-items: center;
+		-moz-align-items: flex-start;
+		-webkit-align-items: flex-satart;
+		-ms-align-items: flex-start;
+		align-items: flex-start;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3308,9 +3308,10 @@ input, select, textarea {
 		transition: opacity 1s ease, transform 1s ease;
 		position: relative;
 		cursor: default;
-		text-align: center;
+		text-align: left;
 		z-index: 1;
 		min-height: 100vh;
+		margin-top:100rem;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3326,7 +3327,30 @@ input, select, textarea {
 				border-bottom-color: transparent;
 				color: #18bfef !important;
 			}
+#intro {
+    padding: 1rem 4rem 6rem 4rem;        /* vertical spacing / top distance */
+    display: -moz-flex;                 /* makes children layout via flexbox */
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;             /* stacks h1, p vertically */
+    align-items: flex-start;            /* horizontal alignment inside intro */
+    justify-content: flex-end;          /* vertical alignment inside intro */
+    text-align: left;
+    min-height: 100vh;                  /* makes intro fill viewport height */
+    position: relative;
+    /* ...other properties... */
+}
 
+body.is-preload #intro {
+    transform: translateY(2rem);        /* moves intro down during preload */
+    opacity: 0;
+}
+
+/* pushes header upward relative to intro */
+#intro + #header {
+    margin-top: -20rem;
+}
 		#intro strong, #intro b {
 			color: #ffffff;
 		}
@@ -3388,13 +3412,16 @@ input, select, textarea {
 		#intro h1 {
 			font-size: 5rem;
 			line-height: 1;
+			text-align: left !important;
+			  align-self: flex-start !important;
 		}
 
 		#intro p {
 			font-size: 1.25rem;
 			font-style: italic;
 			margin-top: -0.25rem;
-			text-align: center;
+			text-align: left !important;
+			  align-self: flex-start !important;
 		}
 
 		#intro + #header {
@@ -3477,11 +3504,13 @@ input, select, textarea {
 					font-size: 3.25rem;
 					line-height: 1.1;
 					margin-bottom: 1rem;
+					text-align: left;
 				}
 
 				#intro p {
 					font-size: 1rem;
 					margin-top: 0rem;
+					text-align: left !important;
 				}
 
 				#intro .actions {
@@ -4708,3 +4737,4 @@ input, select, textarea {
   #footer > section.split.contact > section { padding: 1.5rem 0 !important; }
   #footer .contact-inner{ gap: .65rem; }
 }
+
