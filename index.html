@@ -1,261 +1,283 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Madelyn Smith's Digital Portfolio </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-  /* force vertical stacking, beat all theme rules */
-  #main section.posts.single-column {
-    display: block !important;
-  }
-  #main section.posts.single-column > article {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 2rem 0 !important;
-    float: none !important;
-  }
-</style>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Madelyn Smith's Digital Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- Layout overrides -->
+    <style>
+      /* force vertical stacking, beat all theme rules */
+      #main section.posts.single-column {
+        display: block !important;
+      }
+      #main section.posts.single-column > article {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 2rem 0 !important;
+        float: none !important;
+      }
+    </style>
 
-				<!-- Intro (LEFT-ALIGNED + PHOTO SLOT) -->
-<div id="intro"
-     style="color:#fff; padding:8rem 4rem 6rem 4rem; display:flex; flex-direction:column; justify-content:flex-end; text-align:left!important; align-items:stretch; min-height:100vh;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:2.25rem; flex-wrap:wrap;">
+    <!-- Intro polish: hover + responsive -->
+    <style>
+      #intro [data-hero-photo] {
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+      #intro [data-hero-photo]:hover {
+        transform: scale(1.04);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+      }
+      #intro .button.icon:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+      }
+
+      /* Tighten large-title spacing a bit on wider screens */
+      @media (min-width: 981px) {
+        #hero-title {
+          margin-bottom: 0.15rem !important;
+        }
+      }
+
+      /* Mobile/tablet: stack photo under text & scale type down slightly */
+      @media (max-width: 820px) {
+        #intro .intro-row {
+          flex-wrap: wrap !important;
+        }
+        #intro .intro-photo {
+          margin-top: 1rem !important;
+          width: 100%;
+          justify-content: flex-start !important;
+        }
+        #hero-title {
+          font-size: 2.75rem !important;
+        }
+        #intro h2 {
+          font-size: 1.125rem !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+      <!-- Intro -->
+  <div id="intro"
+     style="color:#fff; padding:6rem 4rem 4rem 4rem; display:flex; flex-direction:column; justify-content:flex-end; text-align:left!important; align-items:stretch; min-height:100vh;">
+  <div class="intro-row" style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2.25rem; flex-wrap:wrap;">
     
     <!-- Text column -->
     <div style="flex:1 1 640px; min-width:320px;">
-      <h1 style="font-size:5rem; line-height:1; margin:0 0 .75rem 0; text-align:left!important;">
+      <h1 id="hero-title"
+          style="font-size:4.5rem; line-height:1; margin:0 0 .25rem 0; letter-spacing:.05em; font-weight:800; text-align:left!important;">
         Hi, I'm Maddi!
       </h1>
 
-      <p style="font-size:1.25rem; font-style:italic; margin:.25rem 0 0 0; text-align:left!important;">
-        I'm an undergraduate student with interests in UX/UI design, human–computer interaction, and technology policy.
+      <!-- Tagline -->
+      <h2 style="font-weight:400; font-size:1.5rem; color:rgba(255,255,255,.88); margin:.25rem 0 1rem 0;">
+        UX/UI Design · Research · Technology Policy
+      </h2>
+
+      <p style="font-size:1.125rem; font-style:italic; margin:0; text-align:left!important; color:rgba(255,255,255,.85); max-width:650px;">
+        I'm an undergraduate student at Occidental College with interests in UX/UI design, human–computer interaction, and technology policy.
         I’m especially drawn to projects that combine design thinking with social impact. This site showcases selected
         work in design, research, and creative problem solving.
       </p>
 
-      <ul class="actions" style="margin-top:1.75rem; display:flex; justify-content:flex-start!important;">
+      <ul class="actions" style="margin-top:1.5rem; display:flex; justify-content:flex-start!important;">
         <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
       </ul>
     </div>
 
-    <!-- Photo column (drop in your image path) -->
-    <div style="flex:0 0 200px; min-width:160px; display:flex; justify-content:flex-end;">
- <img src="mediabymadelyn.github.io/images/profilepic.jpg"
-     alt="Maddi profile photo"
-     style="width:200px; height:200px; border-radius:50%; object-fit:cover;
-            border:2px solid rgba(255,255,255,.35); box-shadow:0 10px 24px rgba(0,0,0,.25);" />
+    <!-- Photo column -->
+    <div class="intro-photo"
+         style="flex:0 0 auto; min-width:260px; display:flex; justify-content:flex-end;">
+      <div style="padding:0px; border-radius:50%;
+                  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+                  box-shadow: 0 6px 18px rgba(0,0,0,0.25); transform: translateY(-10px);">
+        <img src="mediabymadelyn.github.io/images/profilepic.jpg" alt="Maddi profile photo" data-hero-photo
+             style="width:300px; height:300px; border-radius:50%; object-fit:cover; display:block;" />
+      </div>
     </div>
 
   </div>
 </div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Media By Madelyn</a>
-					</header>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Media By Madelyn</a>
+      </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							<li><a href="generic.html">About</a></li>
-							<li><a href="elements.html">Resume</a></li>
-						</ul>
-						
-					</nav>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="index.html">Projects</a></li>
+          <li><a href="generic.html">About</a></li>
+          <li><a href="elements.html">Resume</a></li>
+        </ul>
+      </nav>
 
-				<!-- Main -->
-					<div id="main">
+      <!-- Main -->
+      <div id="main">
 
-						
+        <!-- Posts -->
+        <section class="posts single-column">
+          <article>
+            <header>
+              <span class="date">Fall 2024 - Now</span>
+              <h2><a href="#">DoodleQuest Application<br /></a></h2>
+            </header>
+            <a href="#" class="image fit thumb"><img src="images/pic02.jpg" alt=""></a>
+            <p>Doodlequest is an ongoing application that I conceptualized in the Fall of 2024. It will be my senior project and aims to create an interactive platform for aspiring artists to enhance their intellectual artistic ability and experience.</p>
+            <ul class="actions special">
+              <li><a href="#" class="button">Read More</a></li>
+            </ul>
+          </article>
 
-						<!-- Posts -->
-							<section class="posts single-column">
-								<article>
-									<header>
-										<span class="date">Fall 2024 - Now</span>
-										<h2><a href="#">DoodleQuest Application<br />
-										</a></h2>
-									</header>
-								<a href="#" class="image fit thumb"><img src="images/pic02.jpg" alt=""></a>
+          <article>
+            <header>
+              <span class="date">Spring 2025</span>
+              <h2><a href="#">Oxy Biochemistry Database<br /></a></h2>
+            </header>
+            <a href="#" class="image fit thumb">
+              <img src="mediabymadelyn.github.io/images/biochemdatabase.png" alt="Oxy Biochemistry Database">
+            </a>
+            <p>In cooperation with the Occidental College Biochemistry Department, my classmates and I worked to develop a streamlined database for biochemistry research. I was primarily responsible for the frontend development.</p>
+            <ul class="actions special">
+              <li><a href="#" class="button">Read More</a></li>
+            </ul>
+          </article>
 
-									<p>Doodlequest is an ongoing application that I conceptualized in the Fall of 2024. It will be my senior project and aims to create an interactive platform for aspiring artists to enhance their intellectual artistic ability and experience.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Read More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">Spring 2025</span>
-										<h2><a href="#">Oxy Biochemistry Database<br />
-										</a></h2>
-									</header>
-								<a href="#" class="image fit thumb">
-  <img src="mediabymadelyn.github.io/images/biochemdatabase.png"
-       alt="Oxy Biochemistry Database">
-</a>
-									<p>In cooperation with the Occidental College Biochemistry Department, my classmates and I worked to develop a streamlined database for biochemistry research. I was primarily responsible for the frontend development.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Read More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">Spring 2025 - Now</span>
-										<h2><a href="#">Figma Projects<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit thumb">
-  <img src="mediabymadelyn.github.io/images/figmapic.png"
-       alt="Oxy Biochemistry Database">
-</a>
-				
+          <article>
+            <header>
+              <span class="date">Spring 2025 - Now</span>
+              <h2><a href="#">Figma Projects<br /></a></h2>
+            </header>
+            <a href="#" class="image fit thumb">
+              <img src="mediabymadelyn.github.io/images/figmapic.png" alt="Oxy Biochemistry Database">
+            </a>
+            <p>During the last year, I have taken an interest in UX design, and have worked on a few small projects using Figma. Check them out here!</p>
+            <ul class="actions special">
+              <li><a href="#" class="button">Read More</a></li>
+            </ul>
+          </article>
+        </section>
+      </div>
 
-									<p>During the last year, I have taken an interest in UX design, and have worked on a few small projects using Figma. Check them out here!</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Read More</a></li>
-									</ul>
-								</article>
-							</section>
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact" style="padding:0 !important; margin:0;">
+          <section style="padding:0.5rem 0 !important; margin:0;">
+            <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.85rem;text-align:center;">
+              <h3 style="margin:0;letter-spacing:.15em;opacity:.9;">GET IN TOUCH</h3>
+              <ul class="icons" style="display:flex;gap:1.2rem;justify-content:center;align-items:center;margin:0;padding:0;list-style:none;">
+                <li><a href="https://github.com/mediabymadelyn" class="icon brands fa-github" style="font-size:1.6rem;"></a></li>
+                <li><a href="https://www.linkedin.com/in/yourprofile" class="icon brands fa-linkedin" style="font-size:1.6rem;"></a></li>
+                <li><a href="mailto:you@domain.com" class="icon solid fa-envelope" style="font-size:1.6rem;"></a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </footer>
 
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul><li>&copy; Madelyn Smith</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+      </div>
 
-
-				<!-- Footer -->
-					<footer id="footer">
-	<section class="split contact" style="padding:0 !important; margin:0;">
-  <section style="padding:0.5rem 0 !important; margin:0;">
-    <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.85rem;text-align:center;">
-      <h3 style="margin:0;letter-spacing:.15em;opacity:.9;">GET IN TOUCH</h3>
-      <ul class="icons" style="display:flex;gap:1.2rem;justify-content:center;align-items:center;margin:;padding:0;list-style:none;">
-        <li><a href="https://github.com/mediabymadelyn" class="icon brands fa-github" style="font-size:1.6rem;"></a></li>
-        <li><a href="https://www.linkedin.com/in/yourprofile" class="icon brands fa-linkedin" style="font-size:1.6rem;"></a></li>
-        <li><a href="mailto:you@domain.com" class="icon solid fa-envelope" style="font-size:1.6rem;"></a></li>
-      </ul>
     </div>
-  </section>
-</section>
-</section>
-					</footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-			</div>
+    <style>
+      /* === Match text width to image width === */
+      :root { --post-width: 60%; --post-max: 720px; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
- 
-	<style>
-  /* === Match text width to image width === */
-  :root{ --post-width: 60%; --post-max: 720px; } /* tweak 60% to your liking */
+      #main section.posts.single-column article {
+        display: flex; flex-direction: column; align-items: center;
+      }
 
-  /* center everything inside each post */
-  #main section.posts.single-column article{
-    display:flex; flex-direction:column; align-items:center;
-  }
+      #main section.posts.single-column .image.fit.thumb img {
+        width: var(--post-width) !important;
+        max-width: var(--post-max) !important;
+        height: auto !important;
+        display: block; margin: 0 auto !important;
+      }
 
-  /* image sizing (already shrinking) */
-  #main section.posts.single-column .image.fit.thumb img{
-    width: var(--post-width) !important;
-    max-width: var(--post-max) !important;
-    height:auto !important;
-    display:block; margin:0 auto !important;
-  }
+      #main section.posts.single-column article > header,
+      #main section.posts.single-column article > p,
+      #main section.posts.single-column article > ul.actions {
+        width: var(--post-width) !important;
+        max-width: var(--post-max) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: left;
+      }
 
-  /* make date, title, paragraph, and button the same width as image */
-  #main section.posts.single-column article > header,
-  #main section.posts.single-column article > p,
-  #main section.posts.single-column article > ul.actions {
-    width: var(--post-width) !important;
-    max-width: var(--post-max) !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    text-align:left;
-  }
+      #main section.posts.single-column article > header { margin-bottom: 1rem; }
+      #main section.posts.single-column article > p { margin-top: 1.25rem; }
+      #main section.posts.single-column article > ul.actions { margin-top: 1.5rem; }
 
-  /* nicer spacing */
-  #main section.posts.single-column article > header{ margin-bottom: 1rem; }
-  #main section.posts.single-column article > p{ margin-top: 1.25rem; }
-  #main section.posts.single-column article > ul.actions{ margin-top: 1.5rem; }
+      @media (max-width: 768px) {
+        :root { --post-width: 90%; }
+      }
 
-  /* mobile: use wider text so it doesn't get too narrow */
-  @media (max-width: 768px){
-    :root{ --post-width: 90%; }
-  }
-  #main section.posts.single-column article {
-  border-top: 1px solid rgba(210, 210, 210, 0.6); /* soft gray line */
-  padding-top: 4rem;
-  margin-top: 4rem;
-}
+      #main section.posts.single-column article {
+        border-top: 1px solid rgba(210, 210, 210, 0.6);
+        padding-top: 4rem;
+        margin-top: 4rem;
+      }
 
-/* remove line from the very first post */
-#main section.posts.single-column article:first-of-type {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-  
-}
-/* Add divider line and space before first post without shifting nav */
-#main section.posts.single-column {
-  position: relative;
-  padding-top: 4rem; /* creates visual gap below nav */
-}
+      #main section.posts.single-column article:first-of-type {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+      }
 
-#main section.posts.single-column::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: var(--post-width);
-  max-width: var(--post-max);
-  height: 1px;
-  background: rgba(210, 210, 210, 0.6);
-}
-#main section.posts.single-column .image.fit { 
-  margin-bottom: 0.75rem !important;   /* was ~2rem in theme */
-}
-#main section.posts.single-column .image.fit.thumb { 
-  margin-bottom: 0.5rem !important;   /* ensure the .thumb one matches */
-}
+      #main section.posts.single-column {
+        position: relative;
+        padding-top: 4rem;
+      }
 
-/* also reduce the paragraph’s top margin a bit */
-#main section.posts.single-column article > p {
-  margin-top: 0.75rem !important;      /* try 0.5–1rem to taste */
-}
-#main section.posts.single-column .image.fit,
-#main section.posts.single-column .image.fit.thumb {
-  margin: 1rem 0 !important;  /* reduce top/bottom margin from 2.5rem */
-}
+      #main section.posts.single-column::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--post-width);
+        max-width: var(--post-max);
+        height: 1px;
+        background: rgba(210, 210, 210, 0.6);
+      }
 
-/* Tighten text after image */
-#main section.posts.single-column article > p {
-  margin-top: 0.5rem !important;
-}
+      #main section.posts.single-column .image.fit,
+      #main section.posts.single-column .image.fit.thumb {
+        margin: 1rem 0 !important;
+      }
 
-</style>
+      #main section.posts.single-column article > p {
+        margin-top: 0.5rem !important;
+      }
+    </style>
 
-	</body>
+  </body>
 </html>
