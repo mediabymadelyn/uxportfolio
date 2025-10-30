@@ -165,6 +165,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
+		color: #7c5df5;
 		}
 
 	strong, b {
@@ -298,7 +299,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #18bfef !important;
+			color: #7c5df5 !important;
 		}
 
 	strong, b {
@@ -2215,8 +2216,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px #18bfef;
-			color: #18bfef !important;
+			box-shadow: inset 0 0 0 2px #7c5df5;
+			color: #7c5df5 !important;
 		}
 
 		input[type="submit"].primary,
@@ -2234,7 +2235,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #18bfef;
+				background-color: #7c5df5;
 			}
 
 /* Form */
@@ -2491,7 +2492,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #18bfef;
+			border-color:#5e3ec9;
 		}
 
 	select {
@@ -2526,7 +2527,7 @@ input, select, textarea {
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #18bfef;
+		border-color: #5e3ec9;
 	}
 
 	::-webkit-input-placeholder {
@@ -2890,7 +2891,7 @@ input, select, textarea {
 	}
 
 	ul.icons li a.icon:hover:before {
-		color: #18bfef;
+		color: #7c5df5;
 	}
 
 	ul.icons.alt li .icon:before {
@@ -2898,7 +2899,7 @@ input, select, textarea {
 	}
 
 	ul.icons.alt li a.icon:hover:before {
-		box-shadow: inset 0 0 0 2px #18bfef;
+		box-shadow: inset 0 0 0 2px #7c5df5
 	}
 
 /* Section/Article */
@@ -3197,14 +3198,14 @@ input, select, textarea {
 	}
 
 		.pagination a:hover {
-			color: #18bfef !important;
-			border-color: #18bfef;
+			color: #7c5df5 !important;
+			border-color: #7c5df5;
 			z-index: 1;
 		}
 
 			.pagination a:hover + a,
 			.pagination a:hover + span {
-				border-left-color: #18bfef;
+				border-left-color: #7c5df5;
 			}
 
 		.pagination a.active {
@@ -3325,7 +3326,7 @@ input, select, textarea {
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #7c5df5 !important;
 			}
 #intro {
     padding: 1rem 4rem 6rem 4rem;        /* vertical spacing / top distance */
@@ -3387,8 +3388,8 @@ body.is-preload #intro {
 			#intro input[type="button"]:hover,
 			#intro button:hover,
 			#intro .button:hover {
-				box-shadow: inset 0 0 0 2px #18bfef;
-				color: #18bfef !important;
+				box-shadow: inset 0 0 0 2px #7c5df5;
+				color: #7c5df5 !important;
 			}
 
 			#intro input[type="submit"].primary,
@@ -3406,8 +3407,31 @@ body.is-preload #intro {
 				#intro input[type="button"].primary:hover,
 				#intro button.primary:hover,
 				#intro .button.primary:hover {
-					background-color: #18bfef;
+					background-color: #7c5df5;
 				}
+				.button {
+  background-color: #fff !important;
+  color: #5e3ec9 !important;
+  border: 2px solid #5e3ec9 !important;
+  transition: all 0.3s ease;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.button:hover {
+  background-color: #5e3ec9 !important;
+  color: #fff !important;
+  border-color: #5e3ec9 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* remove that blue glow when button is clicked or focused */
+.button:focus,
+.button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 		#intro h1 {
 			font-size: 5rem;
@@ -3562,7 +3586,7 @@ body.is-preload #intro {
 
 			#header a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #7c5df5 !important;
 			}
 
 		#header strong, #header b {
@@ -3606,8 +3630,8 @@ body.is-preload #intro {
 		}
 
 			#header .logo:hover {
-				border-color: #18bfef !important;
-				color: #18bfef !important;
+				border-color: #7c5df5 !important;
+				color: #7c5df5 !important;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -3661,7 +3685,7 @@ body.is-preload #intro {
 		}
 
 		#nav ul.icons li a.icon:hover:before {
-			color: #18bfef;
+			color: #7c5df5;
 		}
 
 		#nav ul.icons.alt li .icon:before {
@@ -3669,7 +3693,7 @@ body.is-preload #intro {
 		}
 
 		#nav ul.icons.alt li a.icon:hover:before {
-			box-shadow: inset 0 0 0 2px #18bfef;
+			box-shadow: inset 0 0 0 2px #7c5df5;
 		}
 
 		#nav input, #nav select, #nav textarea {
@@ -3683,7 +3707,7 @@ body.is-preload #intro {
 
 			#nav a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #7c5df5 !important;
 			}
 
 		#nav strong, #nav b {
@@ -3759,7 +3783,7 @@ body.is-preload #intro {
 					}
 
 						#nav ul.links li.active a:hover {
-							color: #18bfef !important;
+							color: #7c5df5 !important;
 						}
 
 		#nav ul.icons {
@@ -3981,7 +4005,7 @@ body.is-preload #intro {
 
 			#footer a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #7c5df5 !important;
 			}
 
 		#footer strong, #footer b {
@@ -4024,8 +4048,8 @@ body.is-preload #intro {
 			#footer input[type="button"]:hover,
 			#footer button:hover,
 			#footer .button:hover {
-				box-shadow: inset 0 0 0 2px #18bfef;
-				color: #18bfef !important;
+				box-shadow: inset 0 0 0 2px #7c5df5;
+				color: #7c5df5 !important;
 			}
 
 			#footer input[type="submit"].primary,
@@ -4043,7 +4067,7 @@ body.is-preload #intro {
 				#footer input[type="button"].primary:hover,
 				#footer button.primary:hover,
 				#footer .button.primary:hover {
-					background-color: #18bfef;
+					background-color: #7c5df5;
 				}
 
 		#footer label {
@@ -4063,7 +4087,7 @@ body.is-preload #intro {
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
-				border-color: #18bfef;
+				border-color: #5e3ec9;
 			}
 
 		#footer select {
@@ -4098,7 +4122,7 @@ body.is-preload #intro {
 
 		#footer input[type="checkbox"]:focus + label:before,
 		#footer input[type="radio"]:focus + label:before {
-			border-color: #18bfef;
+			border-color: #5e3ec9;
 		}
 
 		#footer ::-webkit-input-placeholder {
@@ -4126,7 +4150,7 @@ body.is-preload #intro {
 		}
 
 		#footer ul.icons li a.icon:hover:before {
-			color: #18bfef;
+			color: #7c5df5;
 		}
 
 		#footer ul.icons.alt li .icon:before {
@@ -4134,7 +4158,7 @@ body.is-preload #intro {
 		}
 
 		#footer ul.icons.alt li a.icon:hover:before {
-			box-shadow: inset 0 0 0 2px #18bfef;
+			box-shadow: inset 0 0 0 2px #7c5df5;
 		}
 
 		#footer header.major .date:before, #footer header.major .date:after {
@@ -4174,14 +4198,14 @@ body.is-preload #intro {
 		}
 
 			#footer .pagination a:hover {
-				color: #18bfef !important;
-				border-color: #18bfef;
+				color: #7c5df5 !important;
+				border-color: #7c5df5;
 				z-index: 1;
 			}
 
 				#footer .pagination a:hover + a,
 				#footer .pagination a:hover + span {
-					border-left-color: #18bfef;
+					border-left-color: #7c5df5;
 				}
 
 			#footer .pagination a.active {
@@ -4420,7 +4444,7 @@ body.is-preload #intro {
 
 			#copyright a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #7c5df5 !important;
 			}
 
 		#copyright strong, #copyright b {
