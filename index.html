@@ -79,11 +79,10 @@
     
     <!-- Text column -->
     <div style="flex:1 1 640px; min-width:320px;">
-      <h1 id="hero-title"
-          style="font-size:4.5rem; line-height:1; margin:0 0 .25rem 0; letter-spacing:.05em; font-weight:800; text-align:left!important;">
-        Hi, I'm Maddi!
-      </h1>
-
+    <h1 id="hero-title"
+    style="font-size:4.5rem; line-height:1; margin:0 0 .25rem 0; letter-spacing:.05em; font-weight:800; text-align:left!important;">
+  <span id="typed-text"></span>
+</h1>
       <!-- Tagline -->
       <h2 style="font-weight:400; font-size:1.5rem; color:rgba(255,255,255,.88); margin:.25rem 0 1rem 0;">
         UX/UI Design · Research · Technology Policy
@@ -278,6 +277,39 @@
         margin-top: 0.5rem !important;
       }
     </style>
+     <style>
+      /* Stop cursor blink after a few times */
+      .typed-cursor {
+        color: #fff;
+        opacity: 0.75;
+        animation: blink 0.8s ease-in-out 5 forwards; /* blink 5 times, then stop */
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 0.75; }
+        50% { opacity: 0; }
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#typed-text", {
+          strings: [
+            "Hi, I'm Madelyn", 
+            "Hi, I'm Maddi!"
+          ],
+          typeSpeed: 40,        // typing speed
+          backSpeed: 70,        // backspacing speed
+          startDelay: 500,      // delay before typing starts
+          backDelay: 1000,      // pause before backspacing
+          smartBackspace: true, // only backspace what’s different
+          loop: false,          
+          showCursor: true,
+          cursorChar: "|"
+        });
+      });
+    </script>
 
   </body>
 </html>
