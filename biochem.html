@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Oxy Biochemistry Database – Madelyn Smith</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- copy your existing CSS includes from index.html here -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+      <!-- You can copy your existing header/nav from index.html -->
+      <header id="header">
+        <a href="index.html" class="logo">Media by Madelyn</a>
+      </header>
+
+      <!-- Nav (if you have one) -->
+      <!-- copy your <nav> from index.html here -->
+
+      <!-- Main -->
+      <div id="main">
+        <article class="post">
+          <header class="major">
+            <span class="date">Spring 2025</span>
+            <h1>Oxy Biochemistry Database</h1>
+            <p>A full-stack lab management platform for organizing and tracking biological samples.</p>
+          </header>
+
+          <!-- Hero image -->
+          <div class="image main">
+            <img src="mediabymadelyn.github.io/images/biochemdatabase.png" alt="Oxy Biochemistry Database" />
+          </div>
+
+          <!-- Content -->
+          <section>
+            <h2>Overview</h2>
+            <p>
+              I worked with Professor Vikram in Occidental College’s Biochemistry Department to design and build a centralized system for tracking laboratory strains. The department previously relied on inconsistent, handwritten labeling and scattered spreadsheets, making it difficult for faculty to locate, share, or catalog samples.
+              I contributed to the UI/UX design, frontend structure, and project documentation, collaborating with teammates who developed the backend and database schema.
+            </p>
+          </section>
+
+          <section>
+            <h2>Problem</h2>
+            <ul>
+              <li>No centralized inventory system for strains</li>
+              <li>Tubes stored across multiple labs with inconsistent labeling</li>
+              <li>No way to quickly locate a sample’s room, freezer, shelf, rack, or box</li>
+              <li>No barcode or ID system for fast retrieval</li>
+              <li>Professors used different organizational methods, causing confusion</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>My Role</h2>
+            <ul>
+              <li>Designed core wireframes in Figma for search, detail, and add/edit flows</li>
+              <li>Chose typography, color palette, and layout based on Oxy’s design system</li>
+              <li>Implemented key parts of the React frontend</li>
+              <li>Collaborated with backend teammates on API structure and data flow</li>
+              <li>Wrote documentation summarizing system architecture and user flows</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Design & User Flow</h2>
+            <h3>Search</h3>
+            <ul>
+              <li>General search across all fields</li>
+              <li>Location-based search mirroring Room → Freezer → Shelf → Rack → Box → Tube</li>
+              <li>Filter search by professor, marker, date, etc.</li>
+              <li>“View All” option for full inventory visibility</li>
+            </ul>
+
+            <h3>Sample Detail Page</h3>
+            <ul>
+              <li>Shows tube label, sample name, professor, markers, organism type, and notes</li>
+              <li>Buttons to edit, delete, and generate a barcode</li>
+            </ul>
+
+            <h3>Add & Edit Samples</h3>
+            <ul>
+              <li>Structured inputs to reduce errors and enforce the storage hierarchy</li>
+              <li>Checks for conflicts when a tube location is already occupied</li>
+            </ul>
+
+            <h3>Admin Dashboard</h3>
+            <ul>
+              <li>Allows professors to add rooms, freezers, shelves, racks, and boxes</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Technical Overview</h2>
+            <h3>Frontend</h3>
+            <ul>
+              <li>React.js UI with multi-field search and detail views</li>
+              <li>Responsive layout for lab use on different devices</li>
+            </ul>
+
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js + Express.js REST API</li>
+              <li>Validation, error handling, and CORS for frontend integration</li>
+              <li>Environment variables for secure database configuration</li>
+            </ul>
+
+            <h3>Database</h3>
+            <ul>
+              <li>MySQL hosted on AWS RDS</li>
+              <li>Hierarchical schema: Room → Freezer → Shelf → Rack → Box → Tube</li>
+              <li>Centralized unique ID system used for barcode generation</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Reflection</h2>
+            <p>
+              This project taught me how to design for a highly technical scientific audience and collaborate across a frontend/backend split. It pushed me to think about real-world constraints like mobile usability, data integrity, and user error prevention. If I continued the project, I’d focus on improving mobile layouts, expanding user personalization, and integrating batch barcode scanning for faster inventory management.
+            </p>
+          </section>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <!-- copy your existing footer from index.html -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- copy your script tags from index.html here -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
