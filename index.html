@@ -64,6 +64,13 @@
           font-size: 1.125rem !important;
         }
       }
+
+      /* Hide View My Projects button on desktop, show only on mobile */
+      @media (min-width: 981px) {
+        #intro .button.scrolly {
+          display: none !important;
+        }
+      }
     </style>
     
   </head>
@@ -98,7 +105,7 @@
       </p>
 
       <ul class="actions" style="margin-top:1.5rem; display:flex; justify-content:flex-start!important;">
-        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">View My Projects</a></li>
+        <li><a href="#header" class="button scrolly">View My Projects</a></li>
       </ul>
     </div>
 
