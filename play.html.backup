@@ -30,34 +30,30 @@
       <!-- Main -->
       <div id="main">
         <article class="post">
-          <header class="major" style="margin-bottom: 2rem;">
-            <h1>Art & Play</h1>
-            <p>A collection of my creative work and artistic explorations</p>
-          </header>
+<header class="major" style="margin-bottom: 1.5rem;">
+  <h1>About Me</h1>
+</header>
+
+        <div style="max-width: 360px; margin: 0 auto 1.5rem auto;">
+  <img src="images/aboutpic.jpg" style="width: 100%; border-radius: 10px;" />
+</div>
+
+
 
           <section>
-            <p style="text-align: center; font-style: italic; color: rgba(255,255,255,0.7); padding: 3rem 0;">
-              Coming soon – this space will showcase my artwork and creative projects.
+            <p>
+              Hi, I’m <strong>Madelyn Smith (Maddi)</strong>. I’m a designer and creative technologist 
+              who works with both art and computer science. I’m interested in how people use digital 
+              tools, how AI affects creative decision-making, and how design can make technology feel 
+              more intuitive and personal.
             </p>
-            
-            <!-- Grid layout ready for artwork -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; padding: 2rem 0;">
-              <!-- Add artwork items here when ready:
-              <div style="border-radius: 8px; overflow: hidden; background: rgba(0,0,0,0.1);">
-                <img src="images/yourart.jpg" alt="Artwork" style="width: 100%; height: auto; display: block;" />
-                <div style="padding: 1rem; text-align: center;">
-                  <h3 style="margin: 0 0 0.5rem 0;">Piece Title</h3>
-                  <p style="margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.7);">Medium/Description</p>
-                </div>
-              </div>
-              -->
-            </div>
+
           </section>
 
         </article>
       </div>
 
-      <!-- Footer -->
+      <!-- Footer (copied from index.html so the layout/background feel the same) -->
       <footer id="footer">
         <section class="split contact" style="padding:0 !important; margin:0;">
           <section style="padding:0.5rem 0 !important; margin:0;">
@@ -80,7 +76,7 @@
 
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts (match index.html so animations / fade / background behave the same) -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
