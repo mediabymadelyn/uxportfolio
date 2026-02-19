@@ -3619,13 +3619,15 @@ input, select, textarea {
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
 		line-height: 4rem;
-		margin: -4rem auto 0 auto;
+		margin: 0;
 		overflow: hidden;
 		padding: 0 2rem 0 0;
-		position: relative;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
-		z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		max-width: none;
+		z-index: 1000;
 		justify-content: center;
 		align-items: center;
 	}
@@ -3719,11 +3721,11 @@ input, select, textarea {
 					}
 
 				#nav ul.links li.active {
-					background-color: #ffffff;
+					border-bottom: 3px solid #ffffff;
 				}
 
 					#nav ul.links li.active a {
-						color: #1e252d;
+						color: #ffffff;
 					}
 
 						#nav ul.links li.active a:hover {
