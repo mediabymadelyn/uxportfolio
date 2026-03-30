@@ -1,381 +1,231 @@
-<!DOCTYPE HTML>
-<!--
-  Massively by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Madelyn Smith's Digital Portfolio</title>
+    <title>Madelyn Smith | Product Designer + Creative Technologist</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <!-- Layout overrides -->
-    <style>
-      /* force vertical stacking, beat all theme rules */
-      #main section.posts.single-column {
-        display: block !important;
-      }
-      #main section.posts.single-column > article {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 0 2rem 0 !important;
-        float: none !important;
-      }
-    </style>
-
-    <!-- Intro polish: hover + responsive -->
-    <style>
-      #intro [data-hero-photo] {
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-      }
-      #intro [data-hero-photo]:hover {
-        transform: scale(1.04);
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
-      }
-      #intro .button.icon:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #fff;
-      }
-
-      /* Tighten large-title spacing a bit on wider screens */
-      @media (min-width: 981px) {
-        #hero-title {
-          margin-bottom: 0.15rem !important;
-        }
-      }
-
-      /* Mobile/tablet: stack photo under text & scale type down slightly */
-      @media (max-width: 820px) {
-        #intro .intro-row {
-          flex-wrap: wrap !important;
-        }
-        #intro .intro-photo {
-          margin-top: 1rem !important;
-          width: 100%;
-          justify-content: flex-start !important;
-        }
-        #hero-title {
-          font-size: 2.75rem !important;
-        }
-        #intro h2 {
-          font-size: 1.125rem !important;
-        }
-      }
-
-      /* Hide View My Projects button on desktop, show only on mobile */
-      @media (min-width: 981px) {
-        #intro .button.scrolly {
-          display: none !important;
-        }
-      }
-    </style>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio of Madelyn Smith, a product designer and creative technologist blending UX, HCI, studio art, and frontend development."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
   </head>
-  
-  
-
-  <body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-
-      <!-- Intro -->
-  <div id="intro"
-     style="color:#fff; padding:3rem 4rem 3rem 4rem; display:flex; flex-direction:column; justify-content:center; text-align:left!important; align-items:stretch; min-height:90vh;">
-  <div class="intro-row" style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2.25rem; flex-wrap:wrap;">
-    
-    <!-- Text column -->
-    <div style="flex:1 1 640px; min-width:320px;">
-    <h1 id="hero-title"
-    style="font-size:4.5rem; line-height:1; margin:0 0 .25rem 0; letter-spacing:.05em; font-weight:800; text-align:left!important;">
-  <span id="typed-text"></span>
-</h1>
-      <!-- Tagline -->
-      <h2 style="font-weight:400; font-size:1.5rem; color:rgba(255,255,255,.88); margin:.25rem 0 1rem 0;">
-        Product Designer & Creative Technologist
-      </h2>
-
-      <p style="font-size:1.125rem; margin:0; text-align:left!important; color:rgba(255,255,255,.85); max-width:650px;">
-        I design thoughtful digital tools that bridge creativity, research, and technology. I'm especially drawn to work that improves how people learn, create, and interact.
-      </p>
-
-      <ul class="actions" style="margin-top:1.5rem; display:flex; justify-content:flex-start!important;">
-        <li><a href="#header" class="button scrolly">View My Projects</a></li>
-      </ul>
-    </div>
-
-    <!-- Photo column -->
-    <div class="intro-photo"
-         style="flex:0 0 auto; min-width:260px; display:flex; justify-content:flex-end;">
-      <div style="padding:0px; border-radius:28px;
-                  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
-                  box-shadow: 0 6px 18px rgba(0,0,0,0.25); transform: translateY(-10px);">
-        <img src="mediabymadelyn.github.io/images/profilepic.jpg" alt="Maddi profile photo" data-hero-photo
-             style="width:380px; height:380px; border-radius:28px; object-fit:cover; display:block;" />
+  <body>
+    <!-- New global header and navigation to replace template shell. -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="index.html" class="brand">Media by Madelyn</a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+          Menu
+        </button>
+        <nav id="primary-nav" class="site-nav" data-nav-menu>
+          <a class="site-nav__link" href="#work">Work</a>
+          <a class="site-nav__link" href="#practices">Practices</a>
+          <a class="site-nav__link" href="about.html">About</a>
+          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="art.html">Art</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
-  </div>
-</div>
-
-      <!-- Header -->
-      <header id="header">
-        <a href="index.html" class="logo">Media By Madelyn</a>
-      </header>
-
-      <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li class="active"><a href="index.html">Projects</a></li>
-          <li><a href="generic.html">About</a></li>
-          <li><a href="elements.html">Resume</a></li>
-          <li><a href="play.html">Art</a></li>
-        </ul>
-      </nav>
-
-      <!-- Main -->
-      <div id="main">
-
-        <!-- Posts -->
-        <section class="posts single-column">
-         <article>
-  <header>
-    <span class="date">Fall 2024 - Now</span>
-    <h2><a href="doodlequest.html">DoodleQuest Application<br /></a></h2>
-  </header>
-
-  <a href="doodlequest.html" class="image fit thumb">
-    <img src="images/pic02.jpg" alt="DoodleQuest">
-  </a>
-
-  <p>
-    Doodlequest is an ongoing application that I conceptualized in the Fall of 2024. 
-    It will be my senior project and aims to create an interactive platform for aspiring 
-    artists to enhance their intellectual artistic ability and experience.
-  </p>
-
-  <ul class="actions special">
-    <li><a href="doodlequest.html" class="button">Read More</a></li>
-  </ul>
-</article>
-        <article>
-  <header>
-    <span class="date">Spring 2025</span>
-    <h2><a href="biochem.html">Oxy Biochemistry Database<br /></a></h2>
-  </header>
-
-  <a href="biochem.html" class="image fit thumb">
-    <img src="mediabymadelyn.github.io/images/biochemdatabase.png" alt="Oxy Biochemistry Database">
-  </a>
-
-  <p>
-    In cooperation with the Occidental College Biochemistry Department, my classmates and I worked to develop a streamlined database for biochemistry research. I was primarily responsible for the frontend development.
-  </p>
-
-  <ul class="actions special">
-    <li><a href="biochem.html" class="button">Read More</a></li>
-  </ul>
-</article>
-
-      <article>
-  <header>
-    <span class="date">Spring 2025 - Now</span>
-    <h2><a href="figmaprojects.html">Figma Projects<br /></a></h2>
-  </header>
-
-  <a href="figmaprojects.html" class="image fit thumb">
-    <img src="mediabymadelyn.github.io/images/figmapic.png" alt="Oxy Biochemistry Database">
-  </a>
-
-  <p>During the last year, I have taken an interest in UX design, and have worked on a few small projects using Figma. Check them out here!</p>
-
-  <ul class="actions special">
-    <li><a href="figmaprojects.html" class="button">Read More</a></li>
-  </ul>
-</article>
-        </section>
-      </div>
-
-
-      
-
-
-      <!-- Footer -->
-      <footer id="footer">
-        <section class="split contact" style="padding:0 !important; margin:0;">
-          <section style="padding:0.5rem 0 !important; margin:0;">
-            <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.85rem;text-align:center;">
-              <h3 style="margin:0;letter-spacing:.15em;opacity:.9;">GET IN TOUCH</h3>
-              <ul class="icons" style="display:flex;gap:1.2rem;justify-content:center;align-items:center;margin:0;padding:0;list-style:none;">
-                <li><a href="https://github.com/mediabymadelyn" class="icon brands fa-github" style="font-size:1.6rem;"></a></li>
-                <li><a href="https://www.linkedin.com/in/madelync-smith/" class="icon brands fa-linkedin" style="font-size:1.6rem;"></a></li>
-                <li><a href="mailto:mediabymadelyns@gmail.com" class="icon solid fa-envelope" style="font-size:1.6rem;"></a></li>
-              </ul>
+    <main>
+      <!-- Editorial hero with stronger, design-forward positioning copy. -->
+      <section class="hero">
+        <div class="container hero__layout">
+          <div class="reveal">
+            <p class="kicker">Product Designer + Creative Technologist</p>
+            <h1 class="hero__headline">I design digital products where art direction, interaction, and code move together.</h1>
+            <p class="hero__subline">
+              I am Madelyn Smith, and I design + build experiences for
+              <span
+                class="hero__typed"
+                data-typed
+                data-typed-items="learning systems|creative tools|research interfaces"
+              >learning tools</span>
+              that need product rigor and experimental thinking.
+            </p>
+            <p class="hero__summary">
+              My background blends computer science, studio art, HCI, and UX/UI. I take ideas from concept to
+              prototype to polished interface, balancing craft, technical execution, and real user outcomes.
+            </p>
+            <ul class="hero__chips" aria-label="Core specialties">
+              <li class="hero__chip">Interaction Design</li>
+              <li class="hero__chip">Creative Prototyping</li>
+              <li class="hero__chip">Frontend Craft</li>
+              <li class="hero__chip">Research-Informed UX</li>
+            </ul>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#work">Explore Work</a>
+              <a class="button button--secondary" href="resume.html">View Resume</a>
             </div>
-          </section>
-        </section>
-      </footer>
+          </div>
 
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul><li>&copy; Madelyn Smith</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-      </div>
+          <aside class="hero__panel reveal">
+            <div class="hero__image-wrap">
+              <img class="hero__image" src="images/profilepic.jpg" alt="Portrait of Madelyn Smith" />
+            </div>
+            <p class="hero__panel-meta">Currently building</p>
+            <h2 class="hero__panel-title">DoodleQuest Senior Project</h2>
+            <p class="hero__panel-copy">
+              A product-focused creative learning platform where playful prompts, progress systems, and interaction
+              design support long-term artistic growth.
+            </p>
+          </aside>
+        </div>
+      </section>
 
-    </div>
+      <!-- Featured case study section to establish credibility quickly. -->
+      <section id="work" class="section section--tight">
+        <div class="container reveal">
+          <p class="kicker">Featured Work</p>
+          <h2 class="section-title">One deep case study, then selected projects across product + UX.</h2>
+          <p class="section-intro">
+            This section highlights both strategic problem-solving and interface execution, from product direction through
+            implementation details.
+          </p>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+          <article class="featured-project" style="margin-top: 2rem;">
+            <a class="featured-project__visual" href="doodlequest-case-study.html">
+              <img src="images/pic02.jpg" alt="DoodleQuest application preview" />
+            </a>
+            <div class="featured-project__content">
+              <p class="meta-row">
+                <span>Fall 2024 - Present</span>
+                <span>Product Design + Creative Tech</span>
+              </p>
+              <h3>DoodleQuest Application</h3>
+              <p>
+                DoodleQuest is my ongoing senior project: an interactive platform that helps aspiring artists strengthen
+                creative confidence through guided prompts, feedback loops, and a more engaging learning flow.
+              </p>
+              <a class="button button--primary" href="doodlequest-case-study.html" style="margin-top: 1.5rem;">View Case Study</a>
+            </div>
+          </article>
 
-    <style>
-      /* === Match text width to image width === */
-      :root { --post-width: 60%; --post-max: 720px; }
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <a href="biochemistry-case-study.html">
+                <img class="project-card__image" src="images/biochemdatabase.png" alt="Oxy Biochemistry Database preview" />
+              </a>
+              <div class="project-card__body">
+                <p class="meta-row">
+                  <span>Spring 2025</span>
+                  <span>Product Design</span>
+                </p>
+                <h3>Oxy Biochemistry Database</h3>
+                <p>
+                  In collaboration with the Occidental College Biochemistry Department, our team designed a clearer
+                  research workflow. I led frontend implementation and interaction design decisions.
+                </p>
+                <a class="button button--secondary" href="biochemistry-case-study.html">View Case Study</a>
+              </div>
+            </article>
 
-      #main section.posts.single-column article {
-        display: flex; flex-direction: column; align-items: center;
-      }
+            <article class="project-card reveal">
+              <a href="figma-projects.html">
+                <img class="project-card__image" src="images/figmapic.png" alt="Figma UX project previews" />
+              </a>
+              <div class="project-card__body">
+                <p class="meta-row">
+                  <span>Spring 2025 - Present</span>
+                  <span>UX/UI + Prototyping</span>
+                </p>
+                <h3>Figma Projects</h3>
+                <p>
+                  A set of focused UX concepts where I explore interface systems, interaction flows, and visual direction
+                  before translation into production-ready experiences.
+                </p>
+                <a class="button button--secondary" href="figma-projects.html">Explore Projects</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-      #main section.posts.single-column .image.fit.thumb img {
-        width: var(--post-width) !important;
-        max-width: var(--post-max) !important;
-        height: auto !important;
-        display: block; margin: 0 auto !important;
-      }
+      <!-- Practice-area section for clear distinction between disciplines. -->
+      <section id="practices" class="section">
+        <div class="container reveal">
+          <p class="kicker">Practice Areas</p>
+          <h2 class="section-title">Three lanes, one integrated design practice.</h2>
+          <p class="section-intro">
+            I separate how I think and build across disciplines, while keeping one consistent goal: creating experiences
+            that are useful, intentional, and expressive.
+          </p>
 
-      #main section.posts.single-column article > header,
-      #main section.posts.single-column article > p,
-      #main section.posts.single-column article > ul.actions {
-        width: var(--post-width) !important;
-        max-width: var(--post-max) !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: left;
-      }
+          <div class="practice-grid">
+            <article class="practice-card">
+              <p class="practice-card__label">Product Design</p>
+              <h3>From problem framing to clear user outcomes.</h3>
+              <p>
+                I map user needs, define flows, and craft interfaces that improve usability while staying grounded in
+                product constraints.
+              </p>
+            </article>
 
-      #main section.posts.single-column article > header { margin-bottom: 1rem; }
-      #main section.posts.single-column article > p { margin-top: 1.25rem; }
-      #main section.posts.single-column article > ul.actions { margin-top: 1.5rem; }
+            <article class="practice-card">
+              <p class="practice-card__label">Creative Technology</p>
+              <h3>Prototypes that test interaction ideas in real behavior.</h3>
+              <p>
+                I use frontend code and rapid prototyping to translate concepts into tangible systems and interaction
+                moments.
+              </p>
+            </article>
 
-      @media (max-width: 768px) {
-        :root { --post-width: 90%; }
-      }
+            <article class="practice-card">
+              <p class="practice-card__label">Studio Art</p>
+              <h3>Visual exploration that sharpens design instincts.</h3>
+              <p>
+                My art practice strengthens composition, tone, and storytelling, and directly informs how I shape digital
+                experiences.
+              </p>
+            </article>
+          </div>
 
-      #main section.posts.single-column article {
-        border-top: 1px solid rgba(210, 210, 210, 0.6);
-        padding-top: 4rem;
-        margin-top: 4rem;
-      }
+          <div class="art-rail" aria-label="Studio work preview">
+            <img src="images/art/IMG_0647.jpg" alt="Studio artwork detail 1" />
+            <img src="images/art/IMG_0654.jpg" alt="Studio artwork detail 2" />
+            <img src="images/art/IMG_0662.jpg" alt="Studio artwork detail 3" />
+          </div>
+        </div>
+      </section>
 
-      #main section.posts.single-column article:first-of-type {
-        border-top: none;
-        padding-top: 0;
-        margin-top: 0;
-      }
+      <section class="footer-cta">
+        <div class="container footer-cta__block reveal">
+          <div>
+            <p class="kicker">Open to opportunities</p>
+            <h2>Seeking internships, research roles, and design-forward creative tech teams.</h2>
+            <p>
+              If you are building thoughtful products at the intersection of design, learning, and interaction systems,
+              I would love to connect.
+            </p>
+            <div style="margin-top: 1.4rem;">
+              <a class="button button--primary" href="mailto:mediabymadelyns@gmail.com">Contact Me</a>
+            </div>
+            <p class="footer-meta">&copy; Madelyn Smith</p>
+          </div>
 
-      #main section.posts.single-column {
-        position: relative;
-        padding-top: 4rem;
-      }
+          <ul class="footer-cta__links" aria-label="Social links">
+            <li>
+              <a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="icon brands fa-github" aria-hidden="true"></span></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="icon brands fa-linkedin" aria-hidden="true"></span></a>
+            </li>
+            <li>
+              <a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="icon solid fa-envelope" aria-hidden="true"></span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
-      #main section.posts.single-column::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: var(--post-width);
-        max-width: var(--post-max);
-        height: 1px;
-        background: rgba(210, 210, 210, 0.6);
-      }
-
-      #main section.posts.single-column .image.fit,
-      #main section.posts.single-column .image.fit.thumb {
-        margin: 1rem 0 !important;
-      }
-
-      #main section.posts.single-column article > p {
-        margin-top: 0.5rem !important;
-      }
-    </style>
-     <style>
-      /* Stop cursor blink after a few times */
-      .typed-cursor {
-        color: #fff;
-        opacity: 0.75;
-        animation: blink 0.8s ease-in-out 5 forwards; /* blink 5 times, then stop */
-      }
-
-      @keyframes blink {
-        0%, 100% { opacity: 0.75; }
-        50% { opacity: 0; }
-      }
-    </style>
-    <style>
-  /* Pull the main content closer to the footer */
-  #main {
-    padding-bottom: 1rem !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Tighten footer spacing even more */
-  #footer {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-  }
-
-  #footer .split.contact {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  #footer .split.contact > section {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* Reduce extra vertical padding under the icons/copyright */
-  #copyright {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.75rem !important;
-  }
-</style>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Typed("#typed-text", {
-          strings: [
-            "Hi, I'm Madelyn", 
-            "Hi, I'm Maddi!"
-          ],
-          typeSpeed: 100,        // typing speed
-          backSpeed: 70,        // backspacing speed
-          startDelay: 500,      // delay before typing starts
-          backDelay: 1000,      // pause before backspacing
-          smartBackspace: true, // only backspace what’s different
-          loop: false,          
-          showCursor: true,
-          cursorChar: "|",
-          onComplete: function() {
-            // Hide the cursor after the typing is complete
-            const cursor = document.querySelector('.typed-cursor');
-            if (cursor) {
-              cursor.style.display = 'none';
-            }
-          }
-        });
-      });
-    </script>
-
+    <script src="assets/js/home.js"></script>
   </body>
 </html>

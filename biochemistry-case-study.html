@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Oxy Biochemistry Database | Madelyn Smith</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study for the Oxy Biochemistry Database, a full-stack lab inventory and sample management platform."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/subpages.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="index.html" class="brand">Media by Madelyn</a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+          Menu
+        </button>
+        <nav id="primary-nav" class="site-nav" data-nav-menu>
+          <a class="site-nav__link" href="index.html" aria-current="page">Work</a>
+          <a class="site-nav__link" href="about.html">About</a>
+          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="art.html">Art</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="page-hero">
+        <div class="container page-hero__content reveal">
+          <p class="kicker">Case Study · Spring 2025</p>
+          <h1 class="page-title">Oxy Biochemistry Database</h1>
+          <p class="page-intro">
+            A full-stack lab inventory platform that made biological sample tracking faster, clearer, and more reliable
+            for the Occidental College Biochemistry Department.
+          </p>
+          <div class="page-actions">
+            <a class="button button--primary" href="index.html#work">Back to Work</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container reveal">
+          <article class="content-shell">
+            <div class="media-frame">
+              <img src="images/biochemdatabase.png" alt="Oxy Biochemistry Database interface" />
+            </div>
+
+            <h2>Overview</h2>
+            <p>
+              I collaborated with Professor Vikram and the Occidental College Biochemistry Department to design and build
+              a centralized system for tracking laboratory strains. The previous process relied on handwritten labels and
+              scattered spreadsheets, making retrieval and coordination difficult.
+            </p>
+            <p>
+              I focused on UI/UX design, frontend implementation, and documentation while collaborating with teammates on
+              backend API and database architecture.
+            </p>
+          </article>
+
+          <article class="content-shell">
+            <h2>Problem</h2>
+            <ul>
+              <li>No centralized inventory system for strains.</li>
+              <li>Samples spread across multiple labs with inconsistent labeling.</li>
+              <li>No quick way to trace room, freezer, shelf, rack, box, and tube location.</li>
+              <li>No barcode-backed ID flow for fast lookup.</li>
+              <li>Different organizational methods across faculty created friction and confusion.</li>
+            </ul>
+          </article>
+
+          <article class="content-shell">
+            <h2>My Role</h2>
+            <ul>
+              <li>Designed core wireframes for search, sample detail, and add/edit workflows.</li>
+              <li>Defined typography, color, and layout system aligned with Oxy visual conventions.</li>
+              <li>Implemented key React frontend components.</li>
+              <li>Worked with backend teammates to align API responses with UI flow needs.</li>
+              <li>Documented architecture and user-flow decisions for team handoff and iteration.</li>
+            </ul>
+          </article>
+
+          <article class="content-shell">
+            <h2>Design & User Flow</h2>
+            <h3>Search</h3>
+            <ul>
+              <li>General search across all sample fields.</li>
+              <li>Location search matching Room → Freezer → Shelf → Rack → Box → Tube hierarchy.</li>
+              <li>Filter-based queries by professor, marker, date, and additional metadata.</li>
+              <li>View All mode for full inventory scanning.</li>
+            </ul>
+
+            <h3>Sample Detail</h3>
+            <ul>
+              <li>Displays label, sample name, professor, markers, organism type, and notes.</li>
+              <li>Includes edit, delete, and barcode generation actions.</li>
+            </ul>
+
+            <h3>Add/Edit Workflow</h3>
+            <ul>
+              <li>Structured fields reduce user error and enforce storage hierarchy consistency.</li>
+              <li>Validation checks prevent tube-location conflicts.</li>
+            </ul>
+
+            <h3>Admin Dashboard</h3>
+            <ul>
+              <li>Supports adding and managing locations from room level down to box level.</li>
+            </ul>
+          </article>
+
+          <article class="content-shell">
+            <h2>Technical Overview</h2>
+            <div class="split-grid">
+              <section class="surface-card">
+                <h3>Frontend</h3>
+                <ul>
+                  <li>React.js UI with dynamic search and sample-detail views.</li>
+                  <li>Responsive layouts designed for real lab environments.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Backend</h3>
+                <ul>
+                  <li>Node.js + Express REST API.</li>
+                  <li>Validation, error handling, and CORS integration.</li>
+                  <li>Environment-variable based configuration.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Database</h3>
+                <ul>
+                  <li>MySQL hosted on AWS RDS.</li>
+                  <li>Hierarchical storage schema from room to tube level.</li>
+                  <li>Centralized unique IDs used for barcode generation.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-shell">
+            <h2>Reflection</h2>
+            <p>
+              This project strengthened how I design for a technical scientific audience while balancing usability and
+              data integrity. If I continued this work, I would focus on stronger mobile optimization, expanded user
+              personalization, and batch barcode scanning to speed up inventory workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="footer-cta">
+        <div class="container footer-cta__block reveal">
+          <div>
+            <p class="kicker">Next Case Study</p>
+            <h2>Explore DoodleQuest and my broader creative technology work.</h2>
+            <p>See how research, visual craft, and technical implementation come together in an AI-assisted design project.</p>
+            <div class="page-actions">
+              <a class="button button--primary" href="doodlequest-case-study.html">View DoodleQuest</a>
+              <a class="button button--secondary" href="index.html">Back to Homepage</a>
+            </div>
+            <p class="footer-meta">&copy; Madelyn Smith</p>
+          </div>
+          <ul class="footer-cta__links" aria-label="Social links">
+            <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="icon brands fa-github" aria-hidden="true"></span></a></li>
+            <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="icon brands fa-linkedin" aria-hidden="true"></span></a></li>
+            <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="icon solid fa-envelope" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/home.js"></script>
+  </body>
+</html>
