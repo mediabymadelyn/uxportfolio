@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ItEra Studio case study: an AI-driven prompting system designed for inclusive, personalized artistic growth."
+      content="ItEra Studio case study: a personalized AI-powered reference search system that connects artists to real, credited sources."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,8 +40,8 @@
           <p class="kicker">Case Study · Fall 2024 - Ongoing</p>
           <h1 class="page-title">ItEra Studio</h1>
           <p class="page-intro">
-            An AI-assisted creative prompting system designed to help artists build skills, overcome creative blocks,
-            and explore identity through personalized, ethical guidance.
+            AI-powered reference search for artists. It understands creative intent and returns relevant real-world
+            sources instead of generated imagery.
           </p>
           <div class="page-actions">
             <a class="button button--primary" href="index.html#work">Back to Work</a>
@@ -58,111 +58,121 @@
 
             <h2>Overview</h2>
             <p>
-              ItEra Studio is an AI-assisted creative coaching concept for beginner and intermediate artists. The goal is
-              to support growth through prompts that are adaptive, inclusive, and open-ended rather than rigid or
-              prescriptive.
+              ItEra Studio is an intent-aware reference search engine for artists. It interprets creative intent,
+              searches real art and image databases, and returns credited references with source links and license-aware
+              filtering.
             </p>
             <p>
-              The project started as a basic Java prompt generator and evolved into an interdisciplinary research and
-              design initiative connected to my independent study and CS + Studio Art track.
+              The project began as early prompt experiments, then shifted to a clearer direction: AI for search,
+              understanding, and discovery, not generation.
             </p>
           </article>
 
           <article class="content-shell">
             <h2>Problem</h2>
             <ul>
-              <li>Generic prompts do not adapt to goals, skill levels, or personal context.</li>
-              <li>Many AI prompts default to Eurocentric references and narrow visual norms.</li>
-              <li>Literal prompts can flatten creativity and feel assignment-like.</li>
-              <li>Most systems treat each prompt as one-off, with no long-term memory.</li>
-              <li>Identity, emotion, and cultural nuance are often ignored in prompt generation.</li>
+              <li>Artists often know the visual direction they want but struggle to convert it into effective queries.</li>
+              <li>Keyword-only search is blunt and imprecise for mood, composition, style, and medium.</li>
+              <li>Reference discovery is fragmented across disconnected platforms, each with different metadata quality.</li>
+              <li>Many AI tools generate images instead of helping artists study real references and source material.</li>
+              <li>Most discovery tools are not personalized to an artist's intent, preferences, or workflow context.</li>
             </ul>
           </article>
 
           <article class="content-shell">
             <h2>My Role</h2>
             <ul>
-              <li>Conducted autoethnographic independent-study research over one semester.</li>
-              <li>Created traditional and digital artworks to evaluate prompt quality and outcomes.</li>
-              <li>Developed a prompt evaluation rubric: clarity, inclusivity, creativity, flexibility, and engagement.</li>
-              <li>Identified model limitations around bias, memory, and cultural assumptions.</li>
-              <li>Defined user needs and interaction priorities for future product development.</li>
+              <li>Defined the end-to-end search flow: user input -> query interpretation -> multi-API retrieval -> ranked results.</li>
+              <li>Designed ranking and filtering logic around relevance, image validity, attribution quality, and licensing.</li>
+              <li>Mapped API routing strategies by intent and medium (for example, museum collections vs. photography sources).</li>
+              <li>Designed the discovery UX so artists can scan, compare, and save references with clear source context.</li>
+              <li>Shaped product direction through iterative research, prototyping, and content testing.</li>
             </ul>
           </article>
 
           <article class="content-shell">
             <h2>Research Foundations</h2>
-            <h3>AI Reinforces Dominant Norms</h3>
-            <p>
-              Prompt tests frequently surfaced Western symbolism and narrow aesthetic assumptions, which can reduce
-              cultural relevance and expressive range.
-            </p>
-
-            <h3>Prompt Quality Is Contextual</h3>
-            <p>
-              Strong prompts differ by skill level, emotional state, and personal background; there is no universal best
-              prompt structure.
-            </p>
-
-            <h3>Autonomy Improves Creative Outcomes</h3>
-            <p>Open-ended prompts consistently generated more meaningful, personal work than literal instructions.</p>
-
-            <h3>Prompting Is a Learnable Skill</h3>
-            <p>Artists benefit when they can guide AI intentionally instead of accepting default suggestions.</p>
-
-            <h3>Long-Term Memory Matters</h3>
-            <p>Growth-oriented creative coaching requires continuity across sessions, not isolated interactions.</p>
+            <ul>
+              <li>Intent-aware search is essential because artists describe ideas conceptually, not with rigid keywords.</li>
+              <li>Personalization improves workflow fit by adapting results to preferred subjects, styles, and mediums.</li>
+              <li>Real references are critical for learning technique, composition, and visual analysis from authentic sources.</li>
+              <li>Generative outputs can bypass observation and source literacy, which weakens long-term artistic development.</li>
+              <li>Strong discovery systems need both relevance and trust: valid images, credit, links, and licensing context.</li>
+            </ul>
           </article>
 
           <article class="content-shell">
             <h2>Design Goals</h2>
             <div class="split-grid">
               <section class="surface-card">
-                <h3>Prompting Modes</h3>
+                <h3>Intent-Aware Search</h3>
                 <ul>
-                  <li><strong>Art Block Mode:</strong> exploratory prompts based on interests and constraints.</li>
-                  <li><strong>Skill-Building Mode:</strong> targeted practice for gesture, composition, shading, and color.</li>
-                  <li><strong>Identity Mode:</strong> prompts grounded in personal, cultural, and emotional themes.</li>
+                  <li>Understand what the user means, not only what they type.</li>
+                  <li>Expand ambiguous input into richer search-ready query sets.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>Memory-Aware Interaction</h3>
+                <h3>Multi-Source Aggregation</h3>
                 <ul>
-                  <li>Tracks skill goals, preferred themes, and prior outputs.</li>
-                  <li>Evolves prompt complexity over time as users improve.</li>
-                  <li>Supports a coaching-style relationship instead of random output.</li>
+                  <li>Pull from verified datasets including Met, AIC, Smithsonian, Unsplash, and Wikimedia.</li>
+                  <li>Route queries to the most relevant sources by content type and intent.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>Ethical & Inclusive UX</h3>
+                <h3>Relevance Ranking + Deduplication</h3>
                 <ul>
-                  <li>Avoids defaulting to narrow cultural assumptions.</li>
-                  <li>Encourages interpretation, experimentation, and personal voice.</li>
-                  <li>Frames AI as a collaborator, not an authority.</li>
+                  <li>Score results by semantic relevance, metadata quality, and image validity.</li>
+                  <li>Remove duplicates across providers to keep results clean and diverse.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Attribution & Ethical Sourcing</h3>
+                <ul>
+                  <li>Return credited references with artist, source, and direct links.</li>
+                  <li>Apply license-aware filtering so results are usable and transparent.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Personalized Discovery</h3>
+                <ul>
+                  <li>Adapt ranking using user preferences, saved references, and search history.</li>
+                  <li>Support creative exploration while maintaining relevance and variety.</li>
                 </ul>
               </section>
             </div>
           </article>
 
           <article class="content-shell">
+            <h2>System Design</h2>
+            <ul>
+              <li><strong>Query interpretation + expansion:</strong> Parse user intent, then expand to related visual terms, movements, materials, and contexts.</li>
+              <li><strong>API routing logic:</strong> Route portrait and fine-art queries to museum datasets, and photography-heavy intents to sources like Unsplash and Wikimedia.</li>
+              <li><strong>Ranking + scoring:</strong> Blend intent match, metadata completeness, source trust, and image quality into a single relevance score.</li>
+              <li><strong>Deduplication:</strong> Merge repeated works across APIs using title, artist, and visual similarity checks to reduce clutter.</li>
+              <li><strong>Metadata requirements:</strong> Each result must include image, artist credit, title (when available), source link, and license details.</li>
+            </ul>
+          </article>
+
+          <article class="content-shell">
             <h2>Future Development</h2>
             <ul>
-              <li>User accounts with personalized creative profiles.</li>
-              <li>A conversational DoodleBot with reflection prompts.</li>
-              <li>Challenge modes and skill-practice modules.</li>
-              <li>Long-term memory and progress tracking.</li>
-              <li>Feedback loops tied to user reflections and artwork uploads.</li>
+              <li>Improve ranking with stronger relevance weighting and feedback-driven tuning.</li>
+              <li>Expand user preference modeling for better personalization over time.</li>
+              <li>Advance semantic matching to capture nuanced artistic intent.</li>
+              <li>Add more datasets, with emphasis on diverse and non-Western collections.</li>
             </ul>
           </article>
 
           <article class="content-shell">
             <h2>Reflection</h2>
             <p>
-              ItEra Studio reinforced that AI creativity tools should behave like thoughtful collaborators. Prompt design
-              is not neutral, and strong systems must support autonomy, cultural nuance, and long-term growth, not just
-              quick output generation.
+              ItEra Studio clarified the role I want AI to play in creative tools: not generating finished work, but
+              improving discovery. By helping artists find real, credited references faster, AI can augment learning,
+              strengthen visual research, and support creativity without replacing it.
             </p>
           </article>
         </div>
