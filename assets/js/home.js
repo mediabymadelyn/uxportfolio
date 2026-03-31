@@ -1,60 +1,24 @@
 (() => {
-  const typedTarget = document.querySelector("[data-typed]");
+  const typedElement = document.querySelector(".hero__typed");
 
-  if (typedTarget) {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const typedItems = (typedTarget.dataset.typedItems || "")
-      .split("|")
-      .map((item) => item.trim())
-      .filter(Boolean);
+  if (typedElement && typedElement.dataset.typedInitialized !== "true") {
+    typedElement.dataset.typedInitialized = "true";
 
-    if (typedItems.length) {
-      if (reducedMotion) {
-        typedTarget.textContent = typedItems[0];
-      } else {
-        const typingSpeed = 60;
-        const deletingSpeed = 34;
-        const holdDelay = 1700;
-        const startDelay = 720;
-        const betweenDelay = 280;
+    const items = typedElement.dataset.typedItems
+      .split(",")
+      .map(item => item.trim());
 
-        let itemIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
-
-        const step = () => {
-          const current = typedItems[itemIndex];
-
-          if (!deleting) {
-            charIndex = Math.min(charIndex + 1, current.length);
-            typedTarget.textContent = current.slice(0, charIndex);
-
-            if (charIndex === current.length) {
-              deleting = true;
-              window.setTimeout(step, holdDelay);
-              return;
-            }
-
-            window.setTimeout(step, typingSpeed);
-            return;
-          }
-
-          charIndex = Math.max(charIndex - 1, 0);
-          typedTarget.textContent = current.slice(0, charIndex);
-
-          if (charIndex === 0) {
-            deleting = false;
-            itemIndex = (itemIndex + 1) % typedItems.length;
-            window.setTimeout(step, betweenDelay);
-            return;
-          }
-
-          window.setTimeout(step, deletingSpeed);
-        };
-
-        window.setTimeout(step, startDelay);
-      }
-    }
+    new Typed(".hero__typed", {
+      strings: items,
+      typeSpeed: 44,
+      backSpeed: 24,
+      backDelay: 1900,
+      startDelay: 150,
+      smartBackspace: false,
+      loop: true,
+      showCursor: false,
+      fadeOut: false
+    });
   }
 
   const navToggle = document.querySelector("[data-nav-toggle]");

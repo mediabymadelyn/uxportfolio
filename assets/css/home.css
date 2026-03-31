@@ -218,23 +218,6 @@ img {
   position: relative;
 }
 
-.hero__typed::after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 0.95em;
-  margin-left: 0.28rem;
-  background: rgba(45, 31, 88, 0.5);
-  vertical-align: -0.1em;
-  animation: hero-caret 0.9s steps(1, end) infinite;
-}
-
-@keyframes hero-caret {
-  50% {
-    opacity: 0;
-  }
-}
-
 .hero__summary {
   margin-top: var(--space-5);
   max-width: 39rem;
