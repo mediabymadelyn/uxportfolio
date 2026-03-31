@@ -206,6 +206,45 @@ img {
   z-index: 1;
 }
 
+.hero__ambient-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(1.2rem, 2vw, 2.1rem);
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%);
+}
+
+.hero__ambient-track {
+  display: flex;
+  width: max-content;
+  gap: 2.8rem;
+  will-change: transform;
+  animation: heroAmbientScroll 58s linear infinite;
+}
+
+.hero__ambient-track span {
+  white-space: nowrap;
+  font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(45, 31, 88, 0.18);
+  filter: blur(0.3px);
+}
+
+@keyframes heroAmbientScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 1.4rem));
+  }
+}
+
 .hero__headline {
   margin: 0;
   max-width: 17ch;
@@ -655,6 +694,11 @@ img {
   .art-rail img:focus-visible {
     transform: none;
   }
+
+  .hero__ambient-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 @media (max-width: 62rem) {
@@ -692,6 +736,15 @@ img {
 
   .hero__typed {
     min-width: 11ch;
+  }
+
+  .hero__ambient-rail {
+    bottom: 1rem;
+  }
+
+  .hero__ambient-track span {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
   }
 
   .site-nav.is-open {
