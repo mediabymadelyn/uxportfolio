@@ -264,3 +264,168 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── About page redesign ─────────────────────────────────────────────────── */
+
+.about-page {
+  background: linear-gradient(180deg, #ede9f8 0%, #ddd6f3 100%);
+  overflow-x: hidden;
+}
+
+.about-page .subpage-main {
+  padding-bottom: 0;
+}
+
+.about-hero {
+  padding: 3rem 0;
+  min-height: 500px;
+}
+
+.about-hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: var(--space-7);
+  align-items: stretch;
+}
+
+.about-hero__text {
+  padding-top: 0;
+}
+
+.about-hero__sub {
+  margin: var(--space-5) 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 36rem;
+}
+
+.about-hero__headline {
+  margin: var(--space-3) 0 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.about-hero__photo-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.about-hero__photo {
+  width: 100%;
+  max-height: 520px;
+  margin-top: 1.5rem;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 16px;
+  display: block;
+}
+
+.about-hero__stars {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 0;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: pre;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-section {
+  padding: 0 0 4rem;
+  margin-top: 1.5rem;
+  background: transparent;
+}
+
+.about-section--cards {
+  padding-top: 0;
+}
+
+.about-section__heading {
+  margin: var(--space-3) 0 0;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.about-body {
+  max-width: 780px;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  font-size: 18px;
+  margin: var(--space-4) 0 0;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e0d9f7 0%, #c9bfee 100%);
+  padding: 2rem;
+}
+
+.about-card__stars {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.1;
+  color: rgba(45, 31, 88, 0.58);
+  white-space: pre;
+  pointer-events: none;
+}
+
+.about-card__label {
+  margin: 0 0 var(--space-3);
+  font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.about-card__body {
+  margin: 0;
+  color: var(--ink-muted);
+  line-height: 1.68;
+}
+
+.about-page .page-actions .button {
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.75rem 2rem;
+  font-size: 0.9rem;
+}
+
+.about-page .footer-cta h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Hide JS-generated floating characters on the about CTA to prevent stray glyphs */
+.about-page .cta-particle,
+.about-page .cta-star {
+  display: none;
+}
+
+@media (max-width: 62rem) {
+  .about-hero__layout,
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
