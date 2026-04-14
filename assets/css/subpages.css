@@ -382,10 +382,15 @@
   padding: 0 0 4rem;
   margin-top: 1.5rem;
   background: transparent;
+  padding-top: 3rem;
 }
 
 .about-section--cards {
   padding-top: 0;
+}
+
+.about-page .about-section:not(.about-section--cards) {
+  background: linear-gradient(180deg, #ddd6f3 0%, #c4b8e8 58%, #b0a0e0 100%);
 }
 
 .about-section__heading {
@@ -413,7 +418,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: linear-gradient(135deg, #e0d9f7 0%, #c9bfee 100%);
+  background: linear-gradient(135deg, #d3c6f2 0%, #ad98df 100%);
   padding: 2rem;
 }
 
@@ -451,6 +456,22 @@
   letter-spacing: 0.15em;
   padding: 0.75rem 2rem;
   font-size: 0.9rem;
+}
+
+.about-page .footer-cta {
+  background:
+    radial-gradient(ellipse at 100% 100%, rgba(120, 88, 211, 0.5) 0%, transparent 60%),
+    linear-gradient(180deg, #b8a7e3 0%, #9c88d4 100%);
+}
+
+.about-page .section-divider {
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 0;
+  background: rgba(152, 158, 176, 0.72);
+  opacity: 1;
 }
 
 .about-page .footer-cta h2 {
