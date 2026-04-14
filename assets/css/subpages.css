@@ -323,6 +323,23 @@
   padding-bottom: var(--space-6);
 }
 
+.mise-en-lens-page .page-hero__content,
+.mise-en-lens-page .footer-cta__block {
+  max-width: none;
+}
+
+.mise-en-lens-page .page-actions .button {
+  border-radius: 0;
+}
+
+.mise-en-lens-page .subpage-main {
+  padding-bottom: 0;
+}
+
+.mise-en-lens-page .mise-en-lens-content-section {
+  padding-bottom: var(--space-6);
+}
+
 @media (max-width: 62rem) {
   .page-hero {
     padding-top: var(--space-7);

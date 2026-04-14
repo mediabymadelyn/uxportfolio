@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mise en Lens | Madelyn Smith</title>
+    <title>Mise-en-Lens | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Case study for Mise en Lens, an AI-powered film analysis tool built with Next.js that helps users explore and interpret cinematic language."
+      content="Mise-en-Lens case study: a Next.js web app that teaches film theory through a user's own taste using LLM-generated personalized analysis."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,15 +37,22 @@
     <main class="subpage-main">
       <section class="page-hero">
         <div class="container page-hero__content reveal">
-          <p class="kicker">Case Study · [PLACEHOLDER — semester/year]</p>
-          <h1 class="page-title">Mise en Lens</h1>
+          <p class="kicker">Case Study · Spring 2026 · AI + Learning Technologies</p>
+          <h1 class="page-title">Mise-en-Lens</h1>
           <p class="page-intro">
-            [PLACEHOLDER — one or two sentences describing the project and what it does: an AI-powered film analysis tool that helps users explore cinematic language, composition, or storytelling.]
+            A Next.js web app that teaches film theory through a user's own taste, using an LLM to generate
+            personalized analysis from four films they already love.
           </p>
           <div class="page-actions">
             <a class="button button--primary" href="index.html#work">Back to Work</a>
-            <!-- Optional: add a live demo or GitHub link -->
-            <!-- <a class="button button--secondary" href="#" target="_blank" rel="noopener noreferrer">View Live Project</a> -->
+            <a
+              class="button button--secondary"
+              href="https://github.com/mediabymadelyn/mise-en-lens"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
           </div>
         </div>
       </section>
@@ -54,137 +61,171 @@
         <div class="container reveal">
 
           <article class="content-shell">
-            <!-- Replace with a screenshot or embedded prototype when available -->
-            <div class="media-frame">
-              <img src="images/[PLACEHOLDER-mise-en-lens-screenshot].png" alt="Mise en Lens interface" />
-            </div>
-
             <h2>Overview</h2>
             <p>
-              [PLACEHOLDER — overview paragraph describing the project: what Mise en Lens is, who it is for, and what gap it fills in how people engage with film and visual storytelling.]
+              Mise-en-Lens is a Next.js web app that teaches film theory through a user's own taste. Instead of
+              starting from abstract concepts, the app starts from four films the user already loves. They input
+              their Letterboxd-style Top 4, and the system uses an LLM to generate personalized analysis connecting
+              their specific films to broader concepts in cinematography, directing, societal context, and genre.
             </p>
             <p>
-              [PLACEHOLDER — second paragraph covering your role and how the project came together: solo project, class project, independent work, etc.]
+              The project was built as my capstone for COMP 395: Artificial Intelligence and Learning Technologies
+              at Occidental College, taught by Prof. Joel Anderson Walsh. The course asks students to design,
+              prototype, and evaluate a novel AI-driven learning technology grounded in educational theory.
+              Mise-en-Lens was my answer to a specific gap: most people consume film passively, and the tools that
+              exist for deeper engagement assume prior knowledge that casual viewers do not have.
             </p>
           </article>
 
           <article class="content-shell">
-            <h2>Problem</h2>
-            <ul>
-              <li>[PLACEHOLDER — problem point 1: e.g. film vocabulary is hard to access without formal training]</li>
-              <li>[PLACEHOLDER — problem point 2: e.g. existing tools focus on reviews, not craft analysis]</li>
-              <li>[PLACEHOLDER — problem point 3]</li>
-              <li>[PLACEHOLDER — problem point 4]</li>
-              <li>[PLACEHOLDER — problem point 5]</li>
-            </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>My Role</h2>
-            <ul>
-              <li>[PLACEHOLDER — role responsibility 1: e.g. product direction and UX design]</li>
-              <li>[PLACEHOLDER — role responsibility 2: e.g. Next.js frontend implementation]</li>
-              <li>[PLACEHOLDER — role responsibility 3: e.g. AI integration and prompt design]</li>
-              <li>[PLACEHOLDER — role responsibility 4]</li>
-              <li>[PLACEHOLDER — role responsibility 5]</li>
-            </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>Key Turning Point</h2>
+            <h2>The Problem</h2>
             <p>
-              [PLACEHOLDER — a paragraph describing a pivotal moment in the project: a research finding, a design direction shift, or a realization about what the tool should and should not do.]
+              Media literacy is declining. A 2024 study from Media Literacy Now found that barely 38% of
+              participants were taught how to analyze media messaging in high school. At the same time, the 2024
+              Edelman Trust Barometer found that 54% of respondents felt technology was evolving too quickly to
+              interact with critically. Film is one of the most accessible entry points into critical media
+              analysis, but most people are never given the tools to engage with it that way.
             </p>
             <p>
-              [PLACEHOLDER — follow-up paragraph or additional context.]
+              My target learner is someone who watches films regularly but has no formal background in film theory
+              or media studies. They are curious but not academic. They are more likely to have a Letterboxd
+              account than to have read Bazin.
             </p>
           </article>
 
           <article class="content-shell">
-            <h2>Design Goals</h2>
+            <h2>Learning Theory</h2>
+            <p>
+              The design is grounded in two principles from educational theory.
+            </p>
             <div class="split-grid">
               <section class="surface-card">
-                <h3>[PLACEHOLDER — Goal 1, e.g. Accessible Film Literacy]</h3>
+                <h3>Transfer</h3>
                 <ul>
-                  <li>[PLACEHOLDER — detail]</li>
-                  <li>[PLACEHOLDER — detail]</li>
+                  <li>Rather than teaching film concepts in the abstract, the app anchors every concept to a film
+                    the user already has an emotional connection to.</li>
+                  <li>If someone lists Parasite in their Top 4, they already understand tension, spatial metaphor,
+                    and class dynamics on a felt level. The app makes that felt understanding explicit and
+                    transferable to films they have not yet seen.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>[PLACEHOLDER — Goal 2, e.g. AI-Assisted Analysis]</h3>
+                <h3>Immediate Feedback</h3>
                 <ul>
-                  <li>[PLACEHOLDER — detail]</li>
-                  <li>[PLACEHOLDER — detail]</li>
-                </ul>
-              </section>
-
-              <section class="surface-card">
-                <h3>[PLACEHOLDER — Goal 3, e.g. Contextual Discovery]</h3>
-                <ul>
-                  <li>[PLACEHOLDER — detail]</li>
-                  <li>[PLACEHOLDER — detail]</li>
-                </ul>
-              </section>
-
-              <section class="surface-card">
-                <h3>[PLACEHOLDER — Goal 4, e.g. Ethical Use of AI]</h3>
-                <ul>
-                  <li>[PLACEHOLDER — detail]</li>
-                  <li>[PLACEHOLDER — detail]</li>
+                  <li>In quiz mode, the app responds to every answer in real time, not just marking it right or
+                    wrong but explaining the concept, connecting it back to the user's specific film, and asking a
+                    follow-up question that scaffolds toward deeper understanding.</li>
+                  <li>If a user responds with "I don't know," the system simplifies rather than repeats.</li>
                 </ul>
               </section>
             </div>
           </article>
 
           <article class="content-shell">
-            <h2>Technical Overview</h2>
+            <h2>How It Works</h2>
+            <p>
+              Users enter a Letterboxd username or paste a profile URL. The app scrapes their Top 4 films and
+              displays them with posters. From there they choose one of two modes.
+            </p>
             <div class="split-grid">
               <section class="surface-card">
-                <h3>Frontend</h3>
+                <h3>Blurb Mode</h3>
                 <ul>
-                  <li>[PLACEHOLDER — e.g. Next.js app with server and client components]</li>
-                  <li>[PLACEHOLDER — e.g. responsive UI designed for focused reading and exploration]</li>
+                  <li>Generates a personalized lesson covering thematic patterns across the four films.</li>
+                  <li>Explains one film concept in plain language and connects it to a specific film in the
+                    user's list.</li>
+                  <li>Provides societal and historical context behind the films.</li>
+                  <li>Offers a recommendation with an explanation of why it fits the user's taste.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>AI Pipeline</h3>
+                <h3>Quiz Mode</h3>
                 <ul>
-                  <li>[PLACEHOLDER — e.g. model or API used for film analysis]</li>
-                  <li>[PLACEHOLDER — e.g. prompt design and output structuring approach]</li>
-                  <li>[PLACEHOLDER — e.g. how results are parsed and displayed]</li>
-                </ul>
-              </section>
-
-              <section class="surface-card">
-                <h3>Data &amp; Routing</h3>
-                <ul>
-                  <li>[PLACEHOLDER — e.g. data sources, APIs, or film databases queried]</li>
-                  <li>[PLACEHOLDER — e.g. Next.js API routes or server actions]</li>
-                  <li>[PLACEHOLDER — e.g. caching, state management, or storage approach]</li>
+                  <li>Generates three questions about the user's specific films. The first is
+                    recognition-based. The second asks for a short guided interpretation. The third is a
+                    transfer question connecting what they just learned to a different film in their Top 4.</li>
+                  <li>Each answer gets real-time feedback. If an answer is partially right, the system
+                    acknowledges what they got and guides them toward the rest.</li>
+                  <li>If a user is stuck, it breaks the question down rather than repeating it.</li>
                 </ul>
               </section>
             </div>
           </article>
 
           <article class="content-shell">
-            <h2>Evaluation</h2>
+            <h2>Technical Decisions</h2>
+            <div class="split-grid">
+              <section class="surface-card">
+                <h3>Stack</h3>
+                <ul>
+                  <li>Built in Next.js with server and client components handling the scrape, generation, and
+                    display pipeline.</li>
+                  <li>Blurb and quiz logic are kept in separate structured prompts to reduce unnecessary token
+                    usage across modes.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>AI Model</h3>
+                <ul>
+                  <li>Uses GPT-4o-mini at roughly $0.15 per million input tokens and $0.60 per million output
+                    tokens.</li>
+                  <li>I chose it over GPT-4o and Claude Sonnet because it offers strong structured output
+                    reliability at a cost that makes sense at this scale. Higher quality models cost 10 to 20
+                    times more without a proportional improvement in the specific outputs this app needs.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Data Pipeline</h3>
+                <ul>
+                  <li>A Beautiful Soup scraper pulls Top 4 data from a user's Letterboxd profile.</li>
+                  <li>Quiz mode returns a lighter payload focused only on question data rather than generating
+                    full lesson sections that go unused.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Prompt Optimization</h3>
+                <ul>
+                  <li>I defined evaluation criteria before writing any prompts: accuracy of film details (0 to
+                    3), pedagogical response to input (0 to 3), clarity and structure (0 to 2), and
+                    personalization (0 to 2), for a total of 10 points per scenario.</li>
+                  <li>I ran 15 test scenarios across both modes, from mainstream Top 4s to obscure
+                    international films to edge cases like incomplete or vague input.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-shell">
+            <h2>User Testing</h2>
+            <!-- TODO: Add interview results from MAC dept when complete -->
             <p>
-              [PLACEHOLDER — paragraph describing how you tested or evaluated the tool: user feedback, small-scale testing, self-evaluation criteria, or qualitative assessment.]
-            </p>
-            <p>
-              [PLACEHOLDER — what you found and how it shaped iteration or future direction.]
+              User testing is planned with professors in the Media Arts and Culture department at Occidental
+              College and with college-aged Letterboxd users. The testing plan focuses on three areas: whether
+              the output feels insightful and responsive to the user's specific films, whether the interface is
+              easy to navigate, and whether the recommendations feel genuinely connected to their taste rather
+              than generic.
             </p>
           </article>
 
           <article class="content-shell">
-            <h2>Reflection</h2>
+            <h2>What I Learned</h2>
             <p>
-              [PLACEHOLDER — reflection paragraph on what you learned from building Mise en Lens, what was harder or more interesting than expected, and what you would do differently or expand on next.]
+              Working within the constraints of a course rubric while building something I actually wanted to
+              exist pushed me to think more carefully about the gap between a technically functional system and a
+              pedagogically sound one. The first version of the quiz was technically correct but pedagogically
+              frustrating. Questions were too open-ended, feedback was too vague, and users could not tell when
+              they had answered well enough to move on.
             </p>
             <p>
-              [PLACEHOLDER — optional second paragraph on broader takeaways about AI in creative or analytical tools.]
+              The pivot toward scaffolded, recognition-first questions came directly from Prof. Walsh's feedback
+              and from watching early testers disengage. The app works better now, but the deeper lesson is that
+              LLM output quality and learning experience quality are not the same thing, and optimizing for one
+              does not automatically improve the other.
             </p>
           </article>
 
@@ -195,8 +236,11 @@
         <div class="container footer-cta__block reveal">
           <div>
             <p class="kicker">Continue Exploring</p>
-            <h2>[PLACEHOLDER — teaser line pointing to another case study or project.]</h2>
-            <p>[PLACEHOLDER — one sentence framing the connection to the next project.]</p>
+            <h2>See more of my research-driven product work.</h2>
+            <p>
+              Compare this project with ItEra Studio and the Oxy Biochemistry Database to see how I approach
+              building tools around a specific user need.
+            </p>
             <div class="page-actions">
               <a class="button button--primary" href="itera-studio-case-study.html">View ItEra Studio</a>
               <a class="button button--secondary" href="biochemistry-case-study.html">View Biochemistry Case</a>
