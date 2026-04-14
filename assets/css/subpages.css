@@ -260,6 +260,29 @@
   letter-spacing: 0.15em;
 }
 
+.itera-page .page-hero__content,
+.itera-page .footer-cta__block {
+  max-width: none;
+}
+
+.itera-page .footer-cta {
+  margin-top: -1px;
+  padding: 2.5rem 0 3rem;
+  min-height: 0;
+}
+
+.itera-page .page-actions .button {
+  border-radius: 0;
+}
+
+.itera-page .subpage-main {
+  padding-bottom: 0;
+}
+
+.itera-page .itera-content-section {
+  padding-bottom: var(--space-6);
+}
+
 @media (max-width: 62rem) {
   .page-hero {
     padding-top: var(--space-7);
