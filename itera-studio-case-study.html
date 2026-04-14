@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ItEra Studio case study: a personalized AI-powered reference search system that connects artists to real, credited sources."
+      content="ItEra Studio case study: a reference discovery system that connects artists to real, credited visual sources by interpreting creative intent."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,10 +37,11 @@
     <main class="subpage-main">
       <section class="page-hero">
         <div class="container page-hero__content reveal">
-          <p class="kicker">Case Study · Fall 2024 - Ongoing</p>
+          <p class="kicker">Case Study · Fall 2024 - Ongoing · Product Design + Creative Technology + Research</p>
           <h1 class="page-title">ItEra Studio</h1>
           <p class="page-intro">
-            A reference search tool for artists that helps users find high-quality visual sources by interpreting creative intent instead of generating imagery.
+            A reference search tool for artists that finds real, credited visual sources by interpreting what you are
+            actually trying to make.
           </p>
           <div class="page-actions">
             <a class="button button--primary" href="index.html#work">Back to Work</a>
@@ -58,6 +59,7 @@
 
       <section class="itera-content-section">
         <div class="container reveal">
+
           <article class="content-shell">
             <div class="media-frame media-frame--prototype">
               <iframe
@@ -70,170 +72,173 @@
             </div>
 
             <h2>Overview</h2>
+            <div class="media-frame media-frame--narrow">
+              <img src="images/iteramain.png" alt="ItEra Studio search interface" />
+            </div>
             <p>
-              ItEra Studio is an evolving reference search system for artists. It is being designed to interpret creative intent,
-              search across real art and image databases, and return credited references with source links and license-aware filtering.
+              ItEra Studio is an evolving reference discovery system for artists. It interprets creative intent, routes
+              queries across real art and image databases, and returns credited references with source links and
+              license-aware filtering. The project started in my freshman year as a Java-based quiz program called
+              DoodleQuest that generated 20 static art prompts. It has gone through several complete transformations
+              since then, each one driven by research rather than assumption.
             </p>
-            <p>
-              The project originally began during my freshman year as a simple Java-based quiz that generated art prompts. Over time,
-              it evolved through multiple iterations, first into AI-assisted prompting, then into critique-based exploration, and
-              ultimately into a system focused on reference discovery.
-            </p>
-            <p>
-              Its future development includes integrating an appropriate LLM to support intent interpretation, query expansion, and
-              more personalized search without replacing the artist’s creative process.
-            </p>
-            <p><strong>Prototype:</strong> Built as an early concept with a live interface direction and a backend plan centered on multi-source retrieval, ranking, and credited results.</p>
           </article>
 
           <article class="content-shell">
-            <h2>Problem</h2>
+            <h2>Where It Started</h2>
+            <p>
+              I built the first version of DoodleQuest in COMP181. It was a Java survey that mapped user responses to a
+              fixed set of 20 prompts. The core idea was right: artists need targeted, growth-oriented challenges rather
+              than generic ones. But the execution was too rigid and the tool was doing all the thinking for the user.
+            </p>
+            <p>
+              Sophomore year I ran an independent study with Professor Sanchez specifically focused on AI prompting and
+              illustration. Over 14 weeks I created six bodies of work responding to AI-generated prompts across gesture
+              drawing, color theory, self-expression, traditional media, narrative, and mixed media. I was not just
+              making art. I was evaluating how AI interacted with creative process, and documenting what worked, what
+              did not, and why.
+            </p>
+            <p>
+              One of the main findings was that AI prompts skew Eurocentric by default. When I asked for gesture drawing
+              prompts, the suggestions leaned toward yoga poses. Color theory suggestions reflected Western associations
+              with "warmth" and "calm" without cultural nuance. These are not neutral failures. They are baked-in
+              biases. I developed a five-criteria rubric for evaluating prompts on creativity, flexibility, clarity,
+              cultural accessibility, and engagement, and used it to assess how AI performed across different creative
+              contexts.
+            </p>
+            <p>
+              The clearest finding: a good prompt does not tell you what to make. It helps you ask better questions.
+            </p>
+            <div class="media-frame media-frame--narrow">
+              <img src="images/promptingai.png" alt="Digital illustration from independent study" />
+            </div>
+          </article>
+
+          <article class="content-shell">
+            <h2>User Research and the Pivot</h2>
+            <p>
+              Before building further, I needed to know whether artists actually wanted AI critique tools. I designed a
+              structured user study and distributed it through personal networks and art-focused subreddits and Discord
+              communities. The study included a Likert scale section where four participants tested existing AI critique
+              tools and evaluated them across multiple dimensions.
+            </p>
+            <p>Key findings from the private survey (n=4):</p>
             <ul>
-              <li>Artists often know the visual direction they want but struggle to translate it into effective queries.</li>
-              <li>Keyword-based search is too rigid for concepts like mood, composition, style, and medium.</li>
-              <li>Reference discovery is fragmented across platforms with inconsistent metadata, attribution, and source quality.</li>
-              <li>Many AI tools prioritize generating images instead of helping artists study real references.</li>
-              <li>There is significant skepticism within the art community toward AI, especially around ethics, authorship, and trust.</li>
+              <li>75% agreed the feedback was helpful for improving their work.</li>
+              <li>75% agreed the feedback felt personalized to their artwork.</li>
+              <li>Only 50% agreed the feedback gave clear, actionable next steps.</li>
+              <li>50% disagreed that AI feedback made them feel more confident.</li>
+              <li>Overall satisfaction averaged 3.75 out of 5 stars.</li>
             </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>My Role</h2>
-            <ul>
-              <li>Led the full evolution of the project from early prompt generation in Java to a research-driven product direction.</li>
-              <li>Designed the end-to-end system: user input to intent interpretation to multi-source retrieval to ranked results.</li>
-              <li>Conducted user research through surveys, community outreach, and small-scale testing.</li>
-              <li>Defined ranking, filtering, and attribution logic to prioritize relevance, trust, and usability.</li>
-              <li>Iterated on product direction based on findings, shifting from critique systems to reference-based discovery.</li>
-            </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>Key Turning Point</h2>
             <p>
-              Early iterations of this project explored AI-generated prompts and critique systems. However, through user surveys
-              and community feedback, I found that many artists were skeptical of AI critique tools due to concerns around
-              accuracy, ethics, and legitimacy.
+              The open-ended responses were more telling. One participant wrote that they could not tell what the AI was
+              referring to when it suggested changes to proportions. Another wanted exercises that fit their specific
+              style, not generic corrections. One said they would take human critique again, but only from someone who
+              understood what they needed and could apply it with confidence in mind.
             </p>
             <p>
-              While some users found value in AI feedback, there was stronger interest in tools that helped them find and study
-              real references. Based on this, I shifted the project toward reference discovery: using AI to interpret intent and
-              surface relevant, credited work rather than generate or evaluate it.
+              The public response from Reddit and Discord was more pointed. Responses were overwhelmingly skeptical of
+              AI critique tools, with concerns around ethics, trust, and the perception that AI cannot genuinely
+              understand visual intention. One artist captured what would become the direction of ItEra:
+            </p>
+            <p>
+              "The only real purpose I can see AI being useful for as a tool is an AI that finds specific real reference
+              images based on a prompt. Every artist struggles to find the perfect reference image at specific
+              perspective angles and often spends hours searching instead of doing art."
+            </p>
+            <p>
+              That response was not an outlier. It was a pattern. Artists did not want AI to evaluate their work. They
+              wanted help finding real work to study.
+            </p>
+            <p>
+              The pivot was direct: away from critique, toward reference discovery. The role of AI shifted from judge
+              to navigator.
             </p>
           </article>
 
           <article class="content-shell">
-            <h2>Design Goals</h2>
+            <h2>What ItEra Does</h2>
+            <p>
+              ItEra is designed around one idea: connect artists to real references from real artists, with attribution
+              intact.
+            </p>
+            <p>
+              A user enters a natural language description of what they are trying to make. The system interprets that
+              intent, expands it into related visual concepts and terms, and routes the query across multiple databases
+              simultaneously. Results come back with artist credit, source link, and license information so the user
+              knows exactly what they are looking at and where it came from.
+            </p>
+            <p>
+              The search interface shows the interpreted query alongside AI-expanded tags so the user can see how their
+              intent was understood and adjust it. Filters for refining and exploring similar results keep the user in
+              control of the direction.
+            </p>
+            <div class="media-frame media-frame--narrow">
+              <img src="images/iterahow.png" alt="ItEra Studio how it works flow" />
+            </div>
             <div class="split-grid">
               <section class="surface-card">
-                <h3>Intent-Aware Search</h3>
+                <h3>Step 1: Interpret Search</h3>
                 <ul>
-                  <li>Interpret conceptual input, not just keywords.</li>
-                  <li>Expand queries into richer, search-ready terms.</li>
+                  <li>The AI analyzes natural language input to understand artistic intent.</li>
+                  <li>Conceptual language, mood, and medium are parsed into structured terms before any query is run.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>Multi-Source Aggregation</h3>
+                <h3>Step 2: Expand Intent</h3>
                 <ul>
-                  <li>Pull from verified datasets such as the Met, AIC, Smithsonian, Unsplash, and Wikimedia.</li>
-                  <li>Route queries based on intent and content type.</li>
+                  <li>The system generates related visual concepts and search terms from the interpreted intent.</li>
+                  <li>The query is widened without overriding the user's direction, surfacing adjacent ideas they may
+                    not have named.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
-                <h3>Relevance Ranking + Deduplication</h3>
+                <h3>Step 3: Surface Results</h3>
                 <ul>
-                  <li>Rank results using relevance, metadata quality, and image validity.</li>
-                  <li>Remove duplicate works across sources to keep results cleaner and more useful.</li>
-                </ul>
-              </section>
-
-              <section class="surface-card">
-                <h3>Attribution & Ethical Sourcing</h3>
-                <ul>
-                  <li>Return artist credit, source, and direct links.</li>
-                  <li>Filter results based on licensing and usability.</li>
-                </ul>
-              </section>
-
-              <section class="surface-card">
-                <h3>Personalized Discovery</h3>
-                <ul>
-                  <li>Adapt results based on preferences and behavior.</li>
-                  <li>Support exploration while maintaining relevance.</li>
+                  <li>References are returned from verified databases with artist credit, source link, and license
+                    information attached.</li>
+                  <li>Duplicates across sources are removed. Results are ranked by relevance, metadata quality, and
+                    source trust.</li>
                 </ul>
               </section>
             </div>
           </article>
 
           <article class="content-shell">
-            <h2>Example Output</h2>
-            <p>
-              A user might search for something like <strong>"dynamic anime fight pose with dramatic lighting"</strong>.
-              The system would then interpret that intent and expand it into related concepts such as pose, motion,
-              foreshortening, composition, and lighting conditions.
-            </p>
-            <ul>
-              <li><strong>User input:</strong> dynamic anime fight pose with dramatic lighting</li>
-              <li><strong>Expanded search direction:</strong> dynamic pose, action composition, foreshortening, strong contrast, cinematic lighting</li>
-              <li><strong>Returned results:</strong> relevant references from curated art and image datasets</li>
-              <li><strong>Metadata shown:</strong> artist, source, direct link, and license information</li>
-            </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>System Design</h2>
-            <ul>
-              <li><strong>Query interpretation + expansion:</strong> The long-term system is designed to parse user intent and translate conceptual language into related visual terms, styles, and contexts.</li>
-              <li><strong>API routing logic:</strong> Queries are routed to appropriate datasets depending on content type, such as fine art, photography, or illustration, so users get more relevant results.</li>
-              <li><strong>Ranking + scoring:</strong> Results are evaluated using intent match, metadata quality, source trust, and image validity to help the most useful references appear first.</li>
-              <li><strong>Deduplication:</strong> Repeated works are removed using title, artist, and similarity checks to reduce clutter.</li>
-              <li><strong>Metadata requirements:</strong> Each result should include an image, artist, title, source link, and license information so the user can evaluate and trust what they are seeing.</li>
-            </ul>
-          </article>
-
-          <article class="content-shell">
-            <h2>Evaluation</h2>
-            <p>
-              I conducted surveys and gathered feedback through online communities, as well as small-scale user testing.
-              Public responses showed strong skepticism toward AI critique tools, while private testing (n = 4) indicated
-              moderate usefulness when feedback was personalized.
-            </p>
-            <p>
-              These findings supported the shift toward reference-based discovery, where users showed greater trust and
-              willingness to engage.
-            </p>
-          </article>
-
-          <article class="content-shell">
             <h2>Future Development</h2>
             <ul>
-              <li>Integrate an appropriate LLM to support stronger intent interpretation and query expansion.</li>
-              <li>Use the model to better translate conceptual artistic language into structured search terms across datasets.</li>
-              <li>Improve ranking through feedback-driven tuning and stronger relevance weighting.</li>
-              <li>Expand personalization using saved references, preferences, and user behavior over time.</li>
-              <li>Refine semantic matching for more nuanced artistic intent.</li>
-              <li>Expand datasets with more diverse and non-Western sources.</li>
+              <li>Integrate an appropriate LLM for stronger intent interpretation and query expansion.</li>
+              <li>Expand datasets with more diverse and non-Western sources to address the Eurocentric bias documented
+                in early research.</li>
+              <li>Build personalization over time using saved references, preferences, and search history.</li>
+              <li>Refine semantic matching for more nuanced artistic language, particularly around mood, medium, and
+                composition.</li>
+              <li>Develop feedback-driven ranking so results improve based on what users engage with.</li>
             </ul>
           </article>
 
           <article class="content-shell">
             <h2>Reflection</h2>
             <p>
-              This project reflects a longer evolution in how I think about AI in creative tools, from early prompt generation
-              to more intentional, research-driven design decisions.
+              This project has changed direction more than once because the research kept finding problems with the
+              previous direction. I am glad I ran the user study when I did. The Reddit response in particular was
+              direct enough to make the pivot obvious rather than uncertain.
             </p>
             <p>
-              I found that the most effective role for AI is not generating outcomes, but supporting discovery and learning.
-              Designing ItEra Studio reinforced the importance of trust, ethics, and alignment with user workflows, especially
-              in creative domains.
+              The most important thing I learned is that AI in creative tools works best as a way to expand what
+              someone is already doing, not as a replacement for their judgment. Every version of ItEra that tried to
+              evaluate or instruct the user felt wrong. Every version that helped them find and study real work felt
+              right.
             </p>
             <p>
-              More broadly, this project demonstrates how AI can support creative workflows without replacing them, focusing on
-              trust, usability, and real artistic learning.
+              I also documented the Eurocentric bias in AI prompt generation earlier than I expected to. That finding
+              shaped the research rubric and, eventually, shaped the sourcing priorities for ItEra. Expanding to
+              non-Western datasets is not an afterthought. It is a founding concern of the project.
             </p>
           </article>
+
         </div>
       </section>
 

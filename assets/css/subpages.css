@@ -98,6 +98,12 @@
   aspect-ratio: 16 / 10;
 }
 
+.media-frame--narrow {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .media-frame__link {
   width: 100%;
   height: 100%;
