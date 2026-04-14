@@ -277,15 +277,31 @@
 }
 
 .about-hero {
+  position: relative;
   padding: 3rem 0;
   min-height: 500px;
+  overflow: visible;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(85rem 46rem at 92% -16%, rgba(107, 77, 255, 0.2), transparent 56%),
+    radial-gradient(70rem 40rem at -6% 12%, rgba(164, 124, 255, 0.16), transparent 58%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-hero__layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 0.6fr;
   gap: var(--space-7);
   align-items: stretch;
+  overflow: visible;
 }
 
 .about-hero__text {
@@ -312,6 +328,28 @@
 .about-hero__photo-wrap {
   position: relative;
   height: 100%;
+  overflow: visible;
+}
+
+.about-hero__photo-wrap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(16rem, 60vw, 40rem);
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle at center,
+    rgba(147, 112, 219, 0.55) 0%,
+    rgba(133, 95, 255, 0.38) 25%,
+    rgba(113, 80, 255, 0.22) 50%,
+    rgba(113, 80, 255, 0.08) 75%,
+    transparent 90%
+  );
+  filter: blur(2.5rem);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-hero__photo {
@@ -322,6 +360,8 @@
   object-position: center 40%;
   border-radius: 16px;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .about-hero__stars {
@@ -417,9 +457,13 @@
   font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-/* Hide JS-generated floating characters on the about CTA to prevent stray glyphs */
-.about-page .cta-particle,
-.about-page .cta-star {
+/* Hide JS-generated floating particles on the about CTA */
+.about-page .cta-particle {
+  display: none;
+}
+
+/* Hide the pre-formatted footer stars on about page */
+.about-page .footer-cta__stars {
   display: none;
 }
 
