@@ -1,4 +1,6 @@
 (() => {
+  document.documentElement.classList.add("js");
+
   const typedElement = document.querySelector("[data-rotate]");
 
   if (typedElement && typedElement.dataset.rotateInitialized !== "true") {
