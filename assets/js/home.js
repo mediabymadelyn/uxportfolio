@@ -1,23 +1,49 @@
 (() => {
-  const typedElement = document.querySelector(".hero__typed");
+  const typedElement = document.querySelector("[data-rotate]");
 
-  if (typedElement && typedElement.dataset.typedInitialized !== "true") {
-    typedElement.dataset.typedInitialized = "true";
+  if (typedElement && typedElement.dataset.rotateInitialized !== "true") {
+    typedElement.dataset.rotateInitialized = "true";
 
-    const items = typedElement.dataset.typedItems
+    const items = (typedElement.dataset.rotateItems || "")
       .split(",")
-      .map(item => item.trim());
+      .map(item => item.trim())
+      .filter(Boolean);
 
-    new Typed(".hero__typed", {
-      strings: items,
-      typeSpeed: 44,
-      backSpeed: 24,
-      backDelay: 1900,
-      startDelay: 150,
-      smartBackspace: false,
-      loop: true,
-      showCursor: false,
-      fadeOut: false
+    if (items.length > 1) {
+      let index = 0;
+
+      window.setInterval(() => {
+        typedElement.classList.add("is-changing");
+
+        window.setTimeout(() => {
+          index = (index + 1) % items.length;
+          typedElement.textContent = items[index];
+          typedElement.classList.remove("is-changing");
+        }, 260);
+      }, 1800);
+    }
+  }
+
+  const asciiCard = document.querySelector(".hero__ascii-card");
+
+  if (asciiCard && asciiCard.dataset.animated !== "true") {
+    asciiCard.dataset.animated = "true";
+
+    const lines = (asciiCard.textContent || "").replace(/\r/g, "").split("\n");
+
+    while (lines.length && !lines[0].trim()) {
+      lines.shift();
+    }
+    const lineDelayMs = 40;
+
+    asciiCard.textContent = "";
+
+    lines.forEach((line, index) => {
+      const span = document.createElement("span");
+      span.className = "hero__ascii-line";
+      span.style.animationDelay = `${index * lineDelayMs}ms`;
+      span.textContent = line.length ? line : " ";
+      asciiCard.appendChild(span);
     });
   }
 
