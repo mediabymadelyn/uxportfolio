@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/home.css" />
     <link rel="stylesheet" href="assets/css/subpages.css" />
   </head>
-  <body>
+  <body class="resume-page">
     <header class="site-header">
       <div class="container site-header__inner">
         <a href="index.html" class="brand">Media by Madelyn</a>
@@ -32,21 +32,35 @@
     </header>
 
     <main class="subpage-main">
-      <section class="page-hero">
-        <div class="container page-hero__content reveal">
-          <p class="kicker">Resume</p>
-          <h1 class="page-title">Product design, technical implementation, and education-centered collaboration.</h1>
-          <p class="page-intro">
-            Los Angeles-based designer and creative technologist with experience in UX, technical support, and
-            interdisciplinary problem-solving.
-          </p>
-          <div class="page-actions">
-            <a class="button button--primary" href="Resume_2026.pdf" target="_blank" rel="noopener noreferrer">Download Resume PDF</a>
+      <section class="page-hero resume-hero">
+        <div class="container resume-hero__layout reveal">
+          <div class="page-hero__content resume-hero__content">
+            <p class="kicker">Resume</p>
+            <h1 class="page-title">Product design, technical implementation, and education-centered collaboration.</h1>
+            <p class="page-intro">
+              Los Angeles-based designer and creative technologist with experience in UX, technical support, and
+              interdisciplinary problem-solving.
+            </p>
+            <div class="page-actions">
+              <a class="button button--primary" href="Resume_2026.pdf" target="_blank" rel="noopener noreferrer">Download Resume PDF</a>
+            </div>
           </div>
+
+          <aside class="resume-hero__aside" aria-hidden="true">
+            <div class="resume-hero__meta-card">
+              <p class="resume-hero__meta-kicker">Quick Snapshot</p>
+              <p class="resume-hero__meta-line">Los Angeles, CA</p>
+              <p class="resume-hero__meta-line">CS + Studio Art @ Occidental</p>
+              <p class="resume-hero__meta-line">UX, Product, Creative Tech</p>
+            </div>
+            <pre class="resume-hero__stars"><span class="hero__twinkle" style="animation-delay:0s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.4s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.8s;">*</span>
+<span class="hero__twinkle" style="animation-delay:1.1s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.6s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.2s;">.</span>
+  <span class="hero__twinkle" style="animation-delay:1.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.9s;">.</span></pre>
+          </aside>
         </div>
       </section>
 
-      <section>
+      <section class="resume-content">
         <div class="container reveal">
           <article class="content-shell">
             <h2>Education</h2>
