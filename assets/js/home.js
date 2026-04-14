@@ -70,6 +70,19 @@
   const revealItems = document.querySelectorAll(".reveal");
 
   if (revealItems.length) {
+    const showAllRevealItems = () => {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    };
+
+    // Subpages do not need staged reveal animations; show content immediately.
+    if (!document.querySelector(".hero")) {
+      showAllRevealItems();
+    } else
+
+    // Fallback for environments where IntersectionObserver is unavailable.
+    if (!("IntersectionObserver" in window)) {
+      showAllRevealItems();
+    } else {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -82,7 +95,21 @@
       { rootMargin: "0px 0px -8% 0px", threshold: 0.14 }
     );
 
-    revealItems.forEach((item) => observer.observe(item));
+      revealItems.forEach((item) => observer.observe(item));
+
+      // Safety pass: reveal items that are already in viewport on first paint.
+      window.requestAnimationFrame(() => {
+        revealItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            item.classList.add("is-visible");
+          }
+        });
+      });
+
+      // Final fallback in case observer callbacks are suppressed.
+      window.setTimeout(showAllRevealItems, 1400);
+    }
   }
 
   const ctaSection = document.querySelector(".footer-cta");
