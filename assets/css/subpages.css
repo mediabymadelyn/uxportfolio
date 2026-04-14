@@ -296,6 +296,10 @@
   padding-bottom: 0;
 }
 
+.figma-page .figma-content-section {
+  padding-bottom: var(--space-6);
+}
+
 .biochem-page .page-hero__content,
 .biochem-page .footer-cta__block {
   max-width: none;
@@ -307,6 +311,10 @@
 
 .biochem-page .subpage-main {
   padding-bottom: 0;
+}
+
+.biochem-page .biochem-content-section {
+  padding-bottom: var(--space-6);
 }
 
 @media (max-width: 62rem) {
