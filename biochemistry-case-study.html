@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Case study for the Oxy Biochemistry Database, a full-stack lab inventory and sample management platform."
+      content="Case study for the Oxy Biochemistry Database, a full-stack lab strain management platform built for the Occidental College Biochemistry Department."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,8 +40,8 @@
           <p class="kicker">Case Study · Spring 2025</p>
           <h1 class="page-title">Oxy Biochemistry Database</h1>
           <p class="page-intro">
-            A full-stack lab inventory platform that made biological sample tracking faster, clearer, and more reliable
-            for the Occidental College Biochemistry Department.
+            A web-based lab strain management system built for the Occidental College Biochemistry Department — replacing
+            scattered spreadsheets and handwritten labels with a searchable, hierarchical inventory platform.
           </p>
           <div class="page-actions">
             <a class="button button--primary" href="index.html#work">Back to Work</a>
@@ -51,70 +51,180 @@
 
       <section class="biochem-content-section">
         <div class="container reveal">
+
           <article class="content-shell">
             <div class="media-frame">
-              <img src="images/biochemdatabase.png" alt="Oxy Biochemistry Database interface" />
+              <img src="images/biochemdatabase.png" alt="Oxy Biochemistry Database — main search interface" />
             </div>
 
             <h2>Overview</h2>
             <p>
-              I collaborated with Professor Vikram and the Occidental College Biochemistry Department to design and build
-              a centralized system for tracking laboratory strains. The previous process relied on handwritten labels and
-              scattered spreadsheets, making retrieval and coordination difficult.
+              I collaborated with Professor Vikram and a team of four to design and build a centralized database for
+              tracking bacterial strain tubes across Occidental's Biochemistry Department. The existing process had no
+              shared system — each professor stored and labeled samples differently, cross-department retrieval was
+              unreliable, and there was no way to search the physical inventory at scale.
             </p>
             <p>
-              I focused on UI/UX design, frontend implementation, and documentation while collaborating with teammates on
-              backend API and database architecture.
+              I served as frontend and UI lead. I designed all wireframes in Figma, built the visual design system,
+              implemented key React components, and aligned with our backend teammates on API structure. The system was
+              successfully presented to the Oxy Biochemistry Department and is available for departmental adoption.
             </p>
           </article>
 
           <article class="content-shell">
             <h2>Problem</h2>
             <ul>
-              <li>No centralized inventory system for strains.</li>
-              <li>Samples spread across multiple labs with inconsistent labeling.</li>
-              <li>No quick way to trace room, freezer, shelf, rack, box, and tube location.</li>
-              <li>No barcode-backed ID flow for fast lookup.</li>
-              <li>Different organizational methods across faculty created friction and confusion.</li>
+              <li>Professor Vikram had no centralized inventory system for hundreds of bacterial strain tubes.</li>
+              <li>Each faculty member organized samples independently, creating inconsistent labeling and no shared
+                lookup method.</li>
+              <li>Finding a specific tube required knowing which lab, freezer, shelf, rack, box, and position it
+                occupied — with no searchable record of that hierarchy.</li>
+              <li>There was no barcode-backed ID flow for quick physical lookup or verification.</li>
+              <li>No way existed to view the full inventory at once or filter across professors, sample types, or
+                selectable markers.</li>
             </ul>
           </article>
 
           <article class="content-shell">
             <h2>My Role</h2>
             <ul>
-              <li>Designed core wireframes for search, sample detail, and add/edit workflows.</li>
-              <li>Defined typography, color, and layout system aligned with Oxy visual conventions.</li>
-              <li>Implemented key React frontend components.</li>
-              <li>Worked with backend teammates to align API responses with UI flow needs.</li>
-              <li>Documented architecture and user-flow decisions for team handoff and iteration.</li>
+              <li>Designed all wireframes in Figma from scratch — search, sample detail, add/edit, admin, and help
+                flows.</li>
+              <li>Established the full visual design system: dark palette, orange accent, and Montserrat/Inter
+                typography.</li>
+              <li>Researched comparable scientific databases, particularly Addgene.org, for UI conventions relevant to
+                lab inventory contexts.</li>
+              <li>Implemented key React frontend components including search, filters, sample detail, and the add/edit
+                form.</li>
+              <li>Worked with backend teammates to align API response shapes with what the UI needed to render
+                correctly.</li>
+              <li>Documented architecture decisions and user flows for team handoff and future iteration.</li>
             </ul>
           </article>
 
           <article class="content-shell">
-            <h2>Design & User Flow</h2>
+            <h2>Research &amp; Design Process</h2>
+            <p>
+              Before opening Figma, I spent time with Addgene.org — a real biological sample registry used by research
+              institutions — to understand what a functional lab database actually looks like in practice. I paid
+              attention to how they handled search, sample metadata display, and location data. That research shaped
+              the structural decisions more than aesthetic ones: the information hierarchy on each screen came directly
+              from understanding what a researcher actually needs when they look up a strain.
+            </p>
+            <p>
+              From there I built out a full set of wireframes covering every user-facing flow before any backend work
+              began. The wireframes below show the search results list, sample detail view, and add strain form in
+              their early layout stage — concrete enough to communicate intent, loose enough to adjust as the real data
+              structure came into focus.
+            </p>
+            <div class="media-frame">
+              <img
+                src="images/biochem3frame.png"
+                alt="Three wireframe screens side by side: search results list, sample detail view, and add new strain form"
+              />
+            </div>
+          </article>
+
+          <article class="content-shell">
+            <h2>Key Design Decisions</h2>
+            <p>
+              Most of the meaningful decisions happened at the detail level — small choices that reduced friction for
+              someone working in a lab context who does not have time to navigate badly organized UI.
+            </p>
+            <ul>
+              <li>
+                <strong>Consolidated info layout.</strong> Early designs split strain information across two separate
+                info boxes. I collapsed these into a single detail view so users on smaller screens could scan
+                everything in one pass without scrolling between panels.
+              </li>
+              <li>
+                <strong>Shared Add and Edit page structure.</strong> Both flows use the same form layout. A researcher
+                adding a new strain and one editing an existing one follow identical steps — reducing the learning
+                curve for occasional users and making the behavior predictable.
+              </li>
+              <li>
+                <strong>Search card previews.</strong> Result cards in search show location, strain name, professor,
+                and tube label before the user clicks through to the full detail page. This lets researchers confirm
+                they have the right sample at a glance rather than opening each record to check.
+              </li>
+              <li>
+                <strong>Dropdown-based location input.</strong> Rather than free-text fields for room, freezer, shelf,
+                rack, box, and tube, all location fields use dropdowns scoped to what actually exists in the
+                database. This eliminated a whole class of data entry errors and enforced consistency across records.
+              </li>
+              <li>
+                <strong>Dark palette with orange accent.</strong> I chose the color system to feel clinical without
+                being sterile — functional and readable under lab lighting, with the orange accent used specifically
+                for interactive elements and status indicators so they are easy to find at a glance.
+              </li>
+            </ul>
+          </article>
+
+          <article class="content-shell">
+            <h2>Feature Walkthrough</h2>
+            <div class="media-frame">
+              <img
+                src="images/figmafinal3frame.png"
+                alt="Three final product screens: main search page with filter dropdown open, sample detail page, and add new sample form"
+              />
+            </div>
+
             <h3>Search</h3>
             <ul>
-              <li>General search across all sample fields.</li>
-              <li>Location search matching Room → Freezer → Shelf → Rack → Box → Tube hierarchy.</li>
-              <li>Filter-based queries by professor, marker, date, and additional metadata.</li>
-              <li>View All mode for full inventory scanning.</li>
+              <li>General full-text search across all sample fields.</li>
+              <li>Filter search by author, sample name, date added, sample type, and selectable marker.</li>
+              <li>Location-based search that resolves the full Room → Freezer → Shelf → Rack → Box → Tube
+                hierarchy.</li>
+              <li>View All mode for browsing the complete inventory without a query.</li>
             </ul>
 
             <h3>Sample Detail</h3>
             <ul>
-              <li>Displays label, sample name, professor, markers, organism type, and notes.</li>
-              <li>Includes edit, delete, and barcode generation actions.</li>
+              <li>Displays strain name, professor, location, organism type, selectable markers, and notes in a single
+                consolidated view.</li>
+              <li>Includes edit, delete, and barcode generation actions from the same page.</li>
             </ul>
 
-            <h3>Add/Edit Workflow</h3>
+            <h3>Add / Edit Workflow</h3>
             <ul>
-              <li>Structured fields reduce user error and enforce storage hierarchy consistency.</li>
-              <li>Validation checks prevent tube-location conflicts.</li>
+              <li>Add and Edit pages share the same form structure to reduce cognitive load for infrequent users.</li>
+              <li>Dropdown-based location input scoped to existing records prevents tube-location conflicts at entry
+                time.</li>
+              <li>Validation checks block duplicate tube assignments before submission.</li>
             </ul>
 
             <h3>Admin Dashboard</h3>
+            <div class="media-frame">
+              <img
+                src="images/biochemadmin.png"
+                alt="Admin dashboard showing storage hierarchy management forms for rooms, freezers, shelves, racks, and boxes"
+              />
+            </div>
             <ul>
-              <li>Supports adding and managing locations from room level down to box level.</li>
+              <li>Lets administrators add and manage physical locations from room level down to box level.</li>
+              <li>Changes to the location hierarchy propagate immediately to the dropdown menus in the add/edit
+                flow.</li>
+            </ul>
+
+            <h3>Entity Search &amp; Barcode System</h3>
+            <div class="media-frame">
+              <img
+                src="images/biochementitysearch.png"
+                alt="Entity search page showing a room-based query returning a freezer results table"
+              />
+            </div>
+            <ul>
+              <li>Entity search allows lookup by specific physical location — query a room and see all freezers and
+                their contents.</li>
+              <li>Each sample is assigned a unique ID from a centralized <code>unique_ids</code> table, used as the
+                basis for barcode generation.</li>
+              <li>Barcodes allow researchers to scan a tube label for instant retrieval without manual search.</li>
+            </ul>
+
+            <h3>Help Page</h3>
+            <ul>
+              <li>Includes a step-by-step user flow overview covering all major tasks.</li>
+              <li>FAQ section addresses common questions about location input and sample editing.</li>
             </ul>
           </article>
 
@@ -124,17 +234,18 @@
               <section class="surface-card">
                 <h3>Frontend</h3>
                 <ul>
-                  <li>React.js UI with dynamic search and sample-detail views.</li>
-                  <li>Responsive layouts designed for real lab environments.</li>
+                  <li>React.js with dynamic search, filter, and sample-detail views.</li>
+                  <li>Responsive layouts built for real lab environments, including desktop and tablet.</li>
+                  <li>Component structure shared between Add and Edit flows to minimize duplication.</li>
                 </ul>
               </section>
 
               <section class="surface-card">
                 <h3>Backend</h3>
                 <ul>
-                  <li>Node.js + Express REST API.</li>
-                  <li>Validation, error handling, and CORS integration.</li>
-                  <li>Environment-variable based configuration.</li>
+                  <li>Node.js + Express REST API handling all CRUD operations.</li>
+                  <li>Input validation, error handling, and CORS integration.</li>
+                  <li>Environment-variable based configuration for portability across deployments.</li>
                 </ul>
               </section>
 
@@ -142,21 +253,43 @@
                 <h3>Database</h3>
                 <ul>
                   <li>MySQL hosted on AWS RDS.</li>
-                  <li>Hierarchical storage schema from room to tube level.</li>
-                  <li>Centralized unique IDs used for barcode generation.</li>
+                  <li>Six-table hierarchical schema spanning room, freezer, shelf, rack, box, and tube.</li>
+                  <li>Centralized <code>unique_ids</code> table for barcode generation and consistent cross-table
+                    referencing.</li>
                 </ul>
               </section>
+            </div>
+            <div class="media-frame" style="margin-top: 2rem;">
+              <img
+                src="images/biochemschema.png"
+                alt="Database schema diagram showing the six-table hierarchical structure with foreign key relationships from room down to tube"
+              />
             </div>
           </article>
 
           <article class="content-shell">
             <h2>Reflection</h2>
             <p>
-              This project strengthened how I design for a technical scientific audience while balancing usability and
-              data integrity. If I continued this work, I would focus on stronger mobile optimization, expanded user
-              personalization, and batch barcode scanning to speed up inventory workflows.
+              The hardest part of this project was coordination, not design. Because four people were building
+              independently, naming conventions drifted across the codebase — component names, API fields, and UI
+              labels ended up inconsistent in places that required cleanup late in the sprint. If I did this again, I
+              would lock naming conventions at the start before any code was written, not mid-build.
+            </p>
+            <p>
+              Some design decisions also had to be simplified as we better understood the actual dataset. The real
+              schema turned out to be more constrained than what I had wireframed for, which meant a few planned
+              interactions were scoped down. I think this is normal for a team project with shifting backend
+              constraints, but closer early contact with the client would have surfaced those constraints before the
+              wireframe stage, not after.
+            </p>
+            <p>
+              Mobile optimization was not fully completed within the project timeline. The layout holds on tablet, but
+              smaller screens need additional work. If this project continued, that would be my first priority, followed
+              by expanding the barcode scanning workflow to support batch operations directly from a mobile device in
+              the lab.
             </p>
           </article>
+
         </div>
       </section>
 
@@ -164,10 +297,11 @@
         <div class="container footer-cta__block reveal">
           <div>
             <p class="kicker">Next Case Study</p>
-            <h2>Explore ItEra Studio and my broader creative technology work.</h2>
-            <p>See how research, visual craft, and technical implementation come together in an AI-assisted design project.</p>
+            <h2>See how I apply AI to a different kind of analysis problem.</h2>
+            <p>Mise en Lens is a Next.js film analysis tool that uses AI to help users understand and interpret
+              cinematic language.</p>
             <div class="page-actions">
-              <a class="button button--primary" href="itera-studio-case-study.html">View ItEra Studio</a>
+              <a class="button button--primary" href="mise-en-lens-case-study.html">View Mise en Lens</a>
               <a class="button button--secondary" href="index.html">Back to Homepage</a>
             </div>
             <p class="footer-meta">&copy; Madelyn Smith</p>
