@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Mise-en-Lens case study: a Next.js web app that teaches film theory through a user's own taste using LLM-generated personalized analysis."
+      content="Mise-en-Lens case study: a deployed Next.js web app that teaches film theory through a user's own taste using personalized analysis and a guided quiz."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,11 +41,19 @@
           <p class="kicker">Case Study · Spring 2026 · AI + Learning Technologies</p>
           <h1 class="page-title">Mise-en-Lens</h1>
           <p class="page-intro">
-            A Next.js web app that teaches film theory through a user's own taste, using an LLM to generate
-            personalized analysis from four films they already love.
+            A deployed Next.js web app that turns a Letterboxd Top 4 into a personalized lesson on film theory,
+            combining taste-based analysis with a separate guided quiz.
           </p>
           <div class="page-actions">
             <a class="button button--primary" href="index.html#work">Back to Work</a>
+            <a
+              class="button button--secondary"
+              href="https://mise-en-lens.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Live App
+            </a>
             <a
               class="button button--secondary"
               href="https://github.com/mediabymadelyn/mise-en-lens"
@@ -65,9 +73,10 @@
             <h2>Overview</h2>
             <p>
               Mise-en-Lens is a Next.js web app that teaches film theory through a user's own taste. Instead of
-              starting from abstract concepts, the app starts from four films the user already loves. They input
-              their Letterboxd-style Top 4, and the system uses an LLM to generate personalized analysis connecting
-              their specific films to broader concepts in cinematography, directing, societal context, and genre.
+              starting from abstract concepts, the deployed app starts from a Letterboxd Top 4 the user already
+              loves. They input a username or profile URL, and the system pulls posters and titles automatically
+              before generating personalized analysis that connects those specific films to broader concepts in
+              cinematography, directing, social context, and genre.
             </p>
             <p>
               The project was built as my capstone for COMP 395: Artificial Intelligence and Learning Technologies
@@ -76,6 +85,49 @@
               Mise-en-Lens was my answer to a specific gap: most people consume film passively, and the tools that
               exist for deeper engagement assume prior knowledge that casual viewers do not have.
             </p>
+          </article>
+
+          <article class="content-shell">
+            <h2>Live Product Experience</h2>
+            <p>
+              The live landing page frames the project as <strong>Film Literacy Through Taste</strong>. It keeps the
+              interaction lightweight: paste a Letterboxd username or profile URL, pull the Top 4, learn the
+              patterns, and then continue into a separate quiz page built around the same films.
+            </p>
+            <div class="split-grid">
+              <section class="surface-card">
+                <h3>Pull the Top 4</h3>
+                <ul>
+                  <li>Users can paste a username or profile link and let the app fetch posters and titles automatically.</li>
+                  <li>The initial screen is intentionally simple so the experience starts from taste, not setup friction.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Learn the Patterns</h3>
+                <ul>
+                  <li>The lesson surfaces genre, values, artistic form, and social context in beginner-friendly language.</li>
+                  <li>The output stays tied to the user's actual Top 4 instead of a generic film-theory overview.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Practice with Quiz</h3>
+                <ul>
+                  <li>Quiz mode now lives on a separate page, which keeps the lesson layout focused and easier to scan.</li>
+                  <li>Questions are delivered one at a time so the feedback loop feels more conversational and less overwhelming.</li>
+                </ul>
+              </section>
+
+              <section class="surface-card">
+                <h3>Built Around Your Design</h3>
+                <ul>
+                  <li>Personalized analysis is linked to the user's actual Top 4.</li>
+                  <li>Artistic elements, social context, and recommendations all point back to educational redirection.</li>
+                  <li>The empty state invites the user to paste a profile and immediately populate the poster panel.</li>
+                </ul>
+              </section>
+            </div>
           </article>
 
           <article class="content-shell">
@@ -127,8 +179,9 @@
             <h2>How It Works</h2>
             <p>
               Users enter a Letterboxd username or paste a profile URL. The app scrapes their Top 4 films and
-              displays them with posters. From there they choose one of two modes.
+              displays them with posters, then routes them into either the lesson or the quiz flow.
             </p>
+            <p class="inline-meta">The deployed interface is designed to feel more like a guided lesson than a static portfolio demo.</p>
             <div class="media-frame">
               <img src="images/miseenlensblurb.png" alt="Mise-en-Lens blurb mode — personalized film analysis output" />
             </div>
@@ -249,6 +302,7 @@
               building tools around a specific user need.
             </p>
             <div class="page-actions">
+              <a class="button button--primary" href="https://mise-en-lens.vercel.app" target="_blank" rel="noopener noreferrer">Open Live App</a>
               <a class="button button--primary" href="itera-studio-case-study.html">View ItEra Studio</a>
               <a class="button button--secondary" href="biochemistry-case-study.html">View Biochemistry Case</a>
             </div>
