@@ -1131,6 +1131,37 @@ img {
     min-width: 11ch;
   }
 
+  .hero__layout > .reveal {
+    padding-top: var(--space-6);
+  }
+
+  .hero__layout > * {
+    grid-row-start: auto;
+  }
+
+  .hero__panel {
+    grid-column: 1;
+    justify-self: center;
+    width: min(100%, 28rem);
+    margin: 0 auto;
+  }
+
+  .hero__image-wrap {
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero__ascii-card {
+    margin-top: 0;
+    min-height: 24rem;
+    width: 100%;
+    max-width: none;
+    font-size: clamp(4px, 1.6vw, 6px);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
   .hero__ambient-rail {
     bottom: 1rem;
   }

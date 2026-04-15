@@ -897,6 +897,63 @@
   .resume-hero__stars {
     right: 0;
   }
+
+  .about-hero {
+    padding: 2.25rem 0 2.5rem;
+    min-height: 0;
+  }
+
+  .about-hero__layout,
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero__photo-wrap {
+    width: min(100%, 30rem);
+    margin: 0 auto;
+  }
+
+  .about-hero__photo {
+    max-height: none;
+    margin-top: 0;
+  }
+
+  .about-hero__stars {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    margin: var(--space-3) auto 0;
+    text-align: center;
+    color: rgba(45, 31, 88, 0.72);
+  }
+
+  .resume-page .split-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 82vw);
+    gap: var(--space-3);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    scroll-snap-type: x proximity;
+  }
+
+  .resume-page .surface-card {
+    padding: 1.2rem;
+    min-height: 100%;
+    scroll-snap-align: start;
+  }
+
+  .resume-page .surface-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .resume-page .surface-card ul {
+    margin-top: var(--space-2);
+    padding-left: 1rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
 }
 
 /* ─── About page redesign ─────────────────────────────────────────────────── */
