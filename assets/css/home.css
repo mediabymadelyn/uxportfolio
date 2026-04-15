@@ -325,7 +325,7 @@ img {
 }
 
 .hero__actions {
-  margin-top: var(--space-6);
+  margin-top: calc(var(--space-6) - 0.35rem);
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
@@ -1147,4 +1147,105 @@ img {
   .nav-toggle {
     display: inline-flex;
   }
+}
+
+/* ── ItEra intent-expander widget ─────────────────────────── */
+
+.itera-widget {
+  margin: calc(var(--space-6) - 0.35rem) 0 var(--space-5);
+  background: var(--accent-purple-deep);
+  border: 1px solid rgba(107, 77, 255, 0.35);
+  border-radius: var(--radius-card);
+  padding: var(--space-5) var(--space-5);
+  max-width: 540px;
+}
+
+.itera-widget__label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 var(--space-3);
+  text-transform: uppercase;
+}
+
+.itera-widget__row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.itera-widget__input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.itera-widget__input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.itera-widget__input:focus {
+  border-color: rgba(107, 77, 255, 0.7);
+}
+
+.itera-widget__btn {
+  background: #6b4dff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 1rem;
+  transition: background 0.2s, opacity 0.2s;
+  white-space: nowrap;
+}
+
+.itera-widget__btn:hover {
+  background: #5a3ef0;
+}
+
+.itera-widget__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  min-height: 0;
+}
+
+.itera-widget__tag {
+  background: rgba(107, 77, 255, 0.25);
+  border: 1px solid rgba(107, 77, 255, 0.5);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  animation: tag-appear 0.18s ease both;
+}
+
+@keyframes tag-appear {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.itera-widget__footnote {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: var(--space-3) 0 0;
+  letter-spacing: 0.03em;
+}
+
+.itera-widget__footnote[hidden] {
+  display: none;
 }

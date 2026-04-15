@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="icon" href="/favicon.png" type="image/png">
   </head>
   <body>
     <header class="site-header">
@@ -53,6 +54,25 @@
               I'm Madelyn, a student at Occidental College studying CS and studio art in the same breath. I work across
               research, interface design, and frontend code: learning, creating, and experimenting as I go.
             </p>
+
+            <div class="itera-widget" id="itera-widget">
+              <p class="itera-widget__label">Try the ItEra intent expander ↓</p>
+              <div class="itera-widget__row">
+                <input
+                  class="itera-widget__input"
+                  id="itera-input"
+                  type="text"
+                  placeholder="Describe what you're trying to make..."
+                  autocomplete="off"
+                />
+                <button class="itera-widget__btn" id="itera-btn" type="button">Expand</button>
+              </div>
+              <div class="itera-widget__tags" id="itera-tags" aria-live="polite"></div>
+              <p class="itera-widget__footnote" id="itera-footnote" hidden>
+                This is how ItEra Studio interprets creative intent. → Full tool coming Fall 2026.
+              </p>
+            </div>
+
             <div class="hero__actions">
               <a class="button button--primary" href="#work">Explore Work</a>
               <a class="button button--secondary" href="resume.html">View Resume</a>
@@ -454,5 +474,148 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/home.js"></script>
+    <script>
+      (function () {
+        // ── ItEra intent expander ─────────────────────────────────
+        // Vocabulary expansion map: seed terms → related visual tags
+        var EXPANSIONS = {
+          // moods / feelings
+          dark:        ["chiaroscuro", "low-key lighting", "deep shadow", "noir palette", "muted contrast"],
+          light:       ["high-key lighting", "soft diffusion", "overexposed", "airy palette", "luminous"],
+          moody:       ["low-key lighting", "desaturated tones", "atmospheric haze", "grain", "cinematic"],
+          dreamy:      ["soft focus", "pastel palette", "diffused light", "ethereal", "bokeh"],
+          melancholy:  ["cool tones", "empty space", "muted palette", "solitary figure", "overcast light"],
+          warm:        ["golden hour", "amber tones", "soft shadows", "candlelight", "rich saturation"],
+          cold:        ["blue cast", "harsh light", "clinical", "winter palette", "cool shadows"],
+          tense:       ["high contrast", "tight crop", "dutch angle", "hard shadow", "dramatic lighting"],
+          calm:        ["even lighting", "open composition", "minimal", "neutral tones", "wide framing"],
+          vibrant:     ["saturated palette", "complementary contrast", "bold hues", "high chroma", "energetic"],
+          // mediums / materials
+          watercolor:  ["soft edges", "wet-on-wet", "granulation", "bleed", "transparent wash"],
+          oil:         ["impasto", "layered glazing", "rich texture", "blended edges", "varnished surface"],
+          pencil:      ["hatching", "graphite texture", "linework", "sketch", "tonal gradation"],
+          ink:         ["crisp line", "crosshatching", "flat fill", "brush stroke", "black and white"],
+          digital:     ["clean vector", "pixel-perfect", "layer blending", "UI aesthetic", "screen-ready"],
+          gouache:     ["opaque wash", "flat color", "matte surface", "poster quality", "geometric shapes"],
+          charcoal:    ["smudged tones", "high contrast", "textured mark", "powdery shadow", "erasure highlight"],
+          pastel:      ["soft blending", "chalky texture", "light tones", "loose gesture", "layered pigment"],
+          // styles / movements
+          impressionist: ["broken brushwork", "dappled light", "outdoor scene", "color over line", "plein air"],
+          expressionist: ["distorted form", "emotional color", "bold mark", "gestural", "raw line"],
+          surreal:     ["unexpected juxtaposition", "dreamlike scale", "symbolic object", "uncanny", "flat light"],
+          abstract:    ["non-representational", "gesture", "color field", "mark-making", "texture-forward"],
+          realist:     ["accurate proportion", "natural light", "detailed rendering", "observational", "true-to-life"],
+          minimalist:  ["negative space", "limited palette", "single subject", "clean composition", "restrained"],
+          baroque:     ["dramatic light", "rich shadow", "diagonal composition", "grandeur", "chiaroscuro"],
+          anime:       ["cel shading", "high-contrast outline", "expressive eye", "speed line", "flat color fill"],
+          // lighting
+          backlight:   ["rim light", "silhouette", "halo effect", "contre-jour", "glowing edge"],
+          golden:      ["warm cast", "long shadow", "golden hour", "horizontal rays", "rich amber"],
+          studio:      ["controlled shadow", "soft box", "three-point lighting", "clean background", "even exposure"],
+          dappled:     ["broken light", "leaf shadow", "moving pattern", "outdoor ambiance", "soft contrast"],
+          neon:        ["artificial glow", "color cast shadow", "night scene", "saturated accent", "reflective surface"],
+          // composition / framing
+          portrait:    ["close crop", "eye-level", "shallow depth of field", "facial emphasis", "rule of thirds"],
+          landscape:   ["wide framing", "horizon line", "atmospheric perspective", "foreground interest", "depth layers"],
+          closeup:     ["macro", "shallow focus", "texture detail", "compressed depth", "intimate scale"],
+          aerial:      ["bird's-eye view", "flat pattern", "overhead", "compressed plane", "map-like"],
+          symmetrical: ["centered axis", "mirror composition", "formal balance", "architectural framing", "still"],
+          // subjects
+          figure:      ["human form", "gesture drawing", "anatomical study", "foreshortening", "cloth drape"],
+          nature:      ["organic form", "botanical", "environmental texture", "growth pattern", "natural light"],
+          urban:       ["architectural line", "street perspective", "artificial light", "concrete texture", "city density"],
+          portrait:    ["close crop", "facial expression", "skin tone", "eye contact", "shallow focus"],
+          still:       ["object study", "tabletop arrangement", "controlled light", "texture comparison", "domestic scene"],
+          // catch-alls / common words
+          gesture:     ["loose line", "movement implied", "timed sketch", "figure in motion", "contour"],
+          texture:     ["surface quality", "tactile mark", "material study", "micro detail", "layered medium"],
+          color:       ["palette study", "hue relationship", "saturation contrast", "color harmony", "tonal value"],
+          shadow:      ["form shadow", "cast shadow", "light direction", "occlusion", "deep contrast"],
+          line:        ["contour", "hatching", "edge quality", "gestural stroke", "defined border"],
+          space:       ["negative space", "depth", "atmospheric perspective", "foreground-background", "open composition"],
+          story:       ["narrative scene", "implied action", "environmental context", "character placement", "tension"],
+        };
+
+        var STOPWORDS = new Set([
+          "a","an","the","and","or","but","in","on","at","to","for","of","with","by",
+          "from","is","it","i","my","me","that","this","be","are","was","were","do",
+          "not","no","so","as","up","out","if","about","into","what","make","making",
+          "want","try","trying","something","like","feel","create","creating","draw","drawing"
+        ]);
+
+        function expand(input) {
+          var words = input.toLowerCase().replace(/[^a-z\s]/g, "").split(/\s+/);
+          var seen = new Set();
+          var results = [];
+
+          words.forEach(function (w) {
+            if (STOPWORDS.has(w) || w.length < 3) return;
+            if (EXPANSIONS[w]) {
+              EXPANSIONS[w].forEach(function (tag) {
+                if (!seen.has(tag)) { seen.add(tag); results.push(tag); }
+              });
+            }
+          });
+
+          // If no exact matches, fall back to substring matching
+          if (results.length === 0) {
+            words.forEach(function (w) {
+              if (STOPWORDS.has(w) || w.length < 3) return;
+              Object.keys(EXPANSIONS).forEach(function (key) {
+                if (key.includes(w) || w.includes(key)) {
+                  EXPANSIONS[key].forEach(function (tag) {
+                    if (!seen.has(tag)) { seen.add(tag); results.push(tag); }
+                  });
+                }
+              });
+            });
+          }
+
+          // Shuffle and cap at 6
+          for (var i = results.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = results[i]; results[i] = results[j]; results[j] = tmp;
+          }
+          return results.slice(0, 6);
+        }
+
+        function renderTags(tags) {
+          var container = document.getElementById("itera-tags");
+          var footnote  = document.getElementById("itera-footnote");
+          container.innerHTML = "";
+          if (tags.length === 0) {
+            var empty = document.createElement("span");
+            empty.className = "itera-widget__tag";
+            empty.textContent = "try a mood, medium, or style";
+            container.appendChild(empty);
+          } else {
+            tags.forEach(function (t, i) {
+              var el = document.createElement("span");
+              el.className = "itera-widget__tag";
+              el.style.animationDelay = (i * 0.06) + "s";
+              el.textContent = t;
+              container.appendChild(el);
+            });
+          }
+          footnote.hidden = false;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var btn   = document.getElementById("itera-btn");
+          var input = document.getElementById("itera-input");
+          if (!btn || !input) return;
+
+          btn.addEventListener("click", function () {
+            var val = input.value.trim();
+            if (!val) return;
+            renderTags(expand(val));
+          });
+
+          input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") btn.click();
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
