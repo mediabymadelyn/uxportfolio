@@ -166,6 +166,23 @@
         margin-top: 0.3rem;
       }
 
+      /* Demo video frame */
+      .vibe-demo {
+        margin-top: var(--space-3);
+        border: 1px solid var(--line-purple);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background: #000;
+        box-shadow: 0 8px 20px rgba(30, 20, 60, 0.08);
+      }
+
+      .vibe-demo__video {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 9;
+        background: #000;
+      }
+
       @media (max-width: 42rem) {
         .tech-grid {
           grid-template-columns: 1fr;
@@ -258,6 +275,22 @@
                 <li>Real-time feedback loop: "too upbeat," "too generic," "not niche enough," etc.</li>
                 <li>Adaptive scoring adjusts across each session based on your responses.</li>
               </ul>
+            </div>
+          </article>
+
+          <!-- Video Demo -->
+          <article class="content-shell">
+            <h2>Video Demo</h2>
+            <p>
+              Screen recording walkthrough of movie roulette, song discovery modes, and the
+              adaptive feedback loop.
+            </p>
+            <div class="vibe-demo">
+              <video class="vibe-demo__video" controls preload="metadata" playsinline>
+                <source src="videos/vibe-demo.mp4" type="video/mp4" />
+                <source src="videos/vibe-demo.mov" type="video/quicktime" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </article>
 
