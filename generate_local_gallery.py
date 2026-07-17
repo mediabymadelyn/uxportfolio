@@ -14,7 +14,7 @@ def scan_art_folder():
     """Find all image files in the art folder"""
     art_path = Path(ART_FOLDER)
     if not art_path.exists():
-        print(f"❌ Error: {ART_FOLDER} folder not found!")
+        print(f" Error: {ART_FOLDER} folder not found!")
         return []
     
     images = []
@@ -57,7 +57,7 @@ def update_play_html(gallery_html):
         
         start_idx = content.find(start_marker)
         if start_idx == -1:
-            print("❌ Error: Could not find gallery grid in play.html")
+            print(" Error: Could not find gallery grid in play.html")
             return False
         
         # Find position after the start marker
@@ -83,7 +83,7 @@ def update_play_html(gallery_html):
         
         return True
     except Exception as e:
-        print(f"❌ Error updating play.html: {e}")
+        print(f" Error updating play.html: {e}")
         return False
 
 def main():

@@ -1,0 +1,10 @@
+{
+  "name": "mediabymadelyn-site-current",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local runner for current site in workspace root",
+  "scripts": {
+    "dev": "python3 -m http.server 5500",
+    "start": "python3 -m http.server 5500"
+  }
+}

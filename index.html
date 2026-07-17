@@ -41,18 +41,10 @@
           <div class="reveal">
             <p class="kicker">Occidental College · CS + Studio Art</p>
             <h1 class="hero__headline">
-              I make tools for people who
-              <span class="hero__word-slot">
-                <span
-                  class="hero__typed"
-                  data-rotate
-                  data-rotate-items="draw., build., research., teach., create."
-                >draw.</span>
-              </span>
+              I like making things, then poking holes in them.
             </h1>
             <p class="hero__summary">
-              I'm Madelyn, a student at Occidental College studying CS and studio art in the same breath. I work across
-              research, interface design, and frontend code: learning, creating, and experimenting as I go.
+            Hi, I'm Madelyn (but you can call me Maddi). Some of my work is for school, some is just for me. Thanks for stopping by.
             </p>
 
             <div class="itera-widget" id="itera-widget">
@@ -171,114 +163,78 @@
       <section id="work" class="section section--tight">
         <div class="container reveal">
           <p class="kicker">Featured Work</p>
-          <h2 class="section-title">Selected projects</h2>
-          <p class="section-intro">
-            Product, UX, and interface work shaped through research, prototyping, and implementation.
+          <h2 class="section-title" data-work-title>ItEra Studio</h2>
+
+          <div class="work-info__meta-row project-card__meta-row">
+            <span class="project-card__num" data-work-num>01</span>
+            <p class="meta-row" data-work-meta>
+              <span data-work-date>Fall 2024 – Present</span>
+              <span data-work-discipline>Product Design + Creative Technology</span>
+            </p>
+          </div>
+
+          <div class="project-card__tags" data-work-tags>
+            <span class="project-tag">Research</span>
+            <span class="project-tag">Product Design</span>
+            <span class="project-tag">Ethical Sourcing</span>
+          </div>
+
+          <p class="section-intro" data-work-desc>
+            A reference search tool for artists that finds real, credited visual sources by interpreting creative
+            intent.
           </p>
 
-          <article class="project-card reveal" style="--project-bg: url('/images/iterastudio.png');">
-            <div class="project-card__body">
-              <p class="meta-row">
-                <span>Fall 2024 - Present</span>
-                <span>Product Design + Creative Technology</span>
-              </p>
-              <h3>ItEra Studio</h3>
-              <p>
-                A reference search tool for artists that helps users find real, useful visual sources based on what they are trying to make. I shaped the product direction through research and designed the system around trust, intent, and ethical sourcing.
-              </p>
-              <a class="button button--primary" href="itera-studio-case-study.html" style="margin-top: 1.5rem;">View Case Study</a>
+          <a class="button button--primary" data-work-cta href="itera-studio-case-study.html">View Case Study</a>
+
+          <div class="work-deck" data-work-deck tabindex="0" role="group" aria-roledescription="carousel" aria-label="Featured project deck">
+            <div class="work-deck__stage" data-deck-stage>
+              <div class="work-deck__cards">
+                <article class="work-deck__card" data-deck-card data-index="0">
+                  <div class="work-deck__image-wrap">
+                    <img src="/images/iterastudio.png" alt="ItEra Studio project screenshot" draggable="false" />
+                  </div>
+                </article>
+
+                <article class="work-deck__card" data-deck-card data-index="1">
+                  <div class="work-deck__image-wrap">
+                    <img src="/images/biochemdatabase.png" alt="Oxy Biochemistry Database screenshot" draggable="false" />
+                  </div>
+                </article>
+
+                <article class="work-deck__card" data-deck-card data-index="2">
+                  <div class="work-deck__image-wrap">
+                    <img src="/images/miseenlensemain.png" alt="Mise-en-Lens project screenshot" draggable="false" />
+                  </div>
+                </article>
+
+                <article class="work-deck__card" data-deck-card data-index="3">
+                  <div class="work-deck__image-wrap">
+                    <img src="/images/vibescreenshot.png" alt="Vibe.py project screenshot" draggable="false" />
+                  </div>
+                </article>
+              </div>
             </div>
-          </article>
 
-          <div class="project-grid">
-            <article class="project-card reveal" style="--project-bg: url('/images/biochemdatabase.png');">
-              <div class="project-card__body">
-                <p class="meta-row">
-                  <span>Spring 2025</span>
-                  <span>Product Design + Frontend</span>
-                </p>
-                <h3>Oxy Biochemistry Database</h3>
-                <p>
-                  A research database designed for Occidental’s Biochemistry Department. I focused on frontend implementation and interaction design to make lab workflows clearer and more usable.
-                </p>
-                <a class="button button--secondary" href="biochemistry-case-study.html">View Case Study</a>
+            <div class="work-deck__controls">
+              <button type="button" class="work-deck__nav work-deck__nav--prev" data-deck-prev aria-label="Previous project">
+                <span aria-hidden="true">&#8249;</span>
+              </button>
+              <div class="work-deck__dots" data-deck-dots role="tablist" aria-label="Project deck position">
+                <button type="button" class="work-deck__dot" data-deck-dot="0" role="tab" aria-label="Project 1 of 4"></button>
+                <button type="button" class="work-deck__dot" data-deck-dot="1" role="tab" aria-label="Project 2 of 4"></button>
+                <button type="button" class="work-deck__dot" data-deck-dot="2" role="tab" aria-label="Project 3 of 4"></button>
+                <button type="button" class="work-deck__dot" data-deck-dot="3" role="tab" aria-label="Project 4 of 4"></button>
               </div>
-            </article>
-
-            <article class="project-card reveal" style="--project-bg: url('/images/miseenlensemain.png');">
-              <div class="project-card__body">
-                <p class="meta-row">
-                  <span>Spring 2026</span>
-                  <span>AI + Learning Technologies</span>
-                </p>
-                <h3>Mise-en-Lens</h3>
-                <p>
-                  A Next.js web app that teaches film theory through a user’s own taste. Users input their Top 4 films and the system uses an LLM to generate personalized analysis connecting their films to broader concepts in cinematography, directing, societal context, and genre.
-                </p>
-                <a class="button button--secondary" href="mise-en-lens-case-study.html">View Case Study</a>
-              </div>
-            </article>
-
-            <article class="project-card reveal" style="--project-bg: url('/images/vibescreenshot.png');">
-              <div class="project-card__body">
-                <p class="meta-row">
-                  <span>Spring 2026</span>
-                  <span>Python + Systems Design</span>
-                </p>
-                <h3>Vibe.py</h3>
-                <p>
-                  A personal Python terminal app for music discovery and movie roulette. Built from scratch with Spotify OAuth, adaptive audio feature scoring, and a persistent preference profile that evolves with feedback.
-                </p>
-                <a class="button button--secondary" href="vibe.html">View Project</a>
-              </div>
-            </article>
+              <button type="button" class="work-deck__nav work-deck__nav--next" data-deck-next aria-label="Next project">
+                <span aria-hidden="true">&#8250;</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="practices" class="section">
         <div class="container reveal">
-          <p class="kicker">Practice Areas</p>
-          <h2 class="section-title">How I like to work.</h2>
-
-          <div class="practice-grid">
-            <article class="practice-card">
-              <pre class="practice-card__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay: 0s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.4s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.8s;">·</span>
-  <span class="hero__twinkle" style="animation-delay: 1.2s;">*</span>
-<span class="hero__twinkle" style="animation-delay: 1.6s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.2s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.6s;">·</span></pre>
-              <span class="practice-card__symbol" aria-hidden="true">?</span>
-              <p class="practice-card__label">Research</p>
-              <h3>I love collaborating with people.</h3>
-              <p>
-                Forums, interviews, sticky notes. I want to understand what's actually going on before I open Figma or VS Code.
-              </p>
-            </article>
-
-            <article class="practice-card">
-              <pre class="practice-card__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay: 0s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.4s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.8s;">·</span>
-  <span class="hero__twinkle" style="animation-delay: 1.2s;">*</span>
-<span class="hero__twinkle" style="animation-delay: 1.6s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.2s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.6s;">·</span></pre>
-              <span class="practice-card__symbol" aria-hidden="true">*</span>
-              <p class="practice-card__label">Design</p>
-              <h3>I work on things I'm passionate about.</h3>
-              <p>
-                I've been drawing my whole life. Passion is what pushed ItEra from a simple Java quiz to a full research-driven product.
-              </p>
-            </article>
-
-            <article class="practice-card">
-              <pre class="practice-card__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay: 0s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.4s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.8s;">·</span>
-  <span class="hero__twinkle" style="animation-delay: 1.2s;">*</span>
-<span class="hero__twinkle" style="animation-delay: 1.6s;">·</span> <span class="hero__twinkle" style="animation-delay: 0.2s;">*</span> <span class="hero__twinkle" style="animation-delay: 0.6s;">·</span></pre>
-              <span class="practice-card__symbol" aria-hidden="true">&lt;/&gt;</span>
-              <p class="practice-card__label">Build</p>
-              <h3>I like making things that are practical.</h3>
-              <p>
-                Collaborating on the biochemistry database taught me that useful and unglamorous can still be deeply meaningful.
-              </p>
-            </article>
-          </div>
-
           <div class="practice-tools" aria-label="Tools and technologies ticker">
             <p class="kicker practice-tools__kicker">Tools &amp; Technologies</p>
             <div class="practice-tools__rail" aria-hidden="true">
@@ -407,9 +363,26 @@
           </p>
 
           <div class="art-rail" aria-label="Studio work preview">
-            <img src="images/art/IMG_0647.jpg" alt="Studio artwork detail 1" />
-            <img src="images/art/IMG_0661.jpg" alt="Studio artwork detail 2" />
-            <img src="images/art/IMG_0650.jpg" alt="Studio artwork detail 3" />
+            <div class="art-rail__track">
+              <img src="images/art/IMG_0647.jpg" alt="Studio artwork detail 1" />
+              <img src="images/art/IMG_0648.jpg" alt="Studio artwork detail 2" />
+              <img src="images/art/IMG_0649.jpg" alt="Studio artwork detail 3" />
+              <img src="images/art/IMG_0650.jpg" alt="Studio artwork detail 4" />
+              <img src="images/art/IMG_0651.jpg" alt="Studio artwork detail 5" />
+              <img src="images/art/IMG_0652.jpg" alt="Studio artwork detail 6" />
+              <img src="images/art/IMG_0653.jpg" alt="Studio artwork detail 7" />
+              <img src="images/art/IMG_0654.jpg" alt="Studio artwork detail 8" />
+              <img src="images/art/IMG_0655.jpg" alt="Studio artwork detail 9" />
+              <img src="images/art/IMG_0647.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0648.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0649.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0650.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0651.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0652.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0653.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0654.jpg" alt="" aria-hidden="true" />
+              <img src="images/art/IMG_0655.jpg" alt="" aria-hidden="true" />
+            </div>
           </div>
 
           <a class="button button--secondary studio-art__link" href="art.html">View All Work</a>
@@ -447,9 +420,9 @@
   <span class="hero__twinkle" style="animation-delay:1.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.1s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.5s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.7s;">.</span></pre>
       <div class="container footer-cta__block reveal">
         <div>
-          <p class="kicker">OPEN TO OPPORTUNITIES</p>
+          <p class="kicker">GET IN TOUCH</p>
           <h2>Let's work together.</h2>
-          <p class="section-intro">I'm looking for UX, product, and creative technology internships in creative tools, learning, and research.</p>
+          <p class="section-intro">I'm looking for opportunities in tech and law right now, but I'd also love to hear what you're working on.</p>
           <div style="margin-top: 1.4rem;">
             <a class="button button--primary footer-cta__button" href="mailto:mediabymadelyns@gmail.com">
               Contact Me
