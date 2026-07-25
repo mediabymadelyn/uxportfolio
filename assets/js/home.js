@@ -113,7 +113,7 @@
         discipline: "Product Design + Creative Technology",
         tags: ["Research", "Product Design", "Ethical Sourcing"],
         desc: "A reference search tool for artists that finds real, credited visual sources by interpreting creative intent.",
-        ctaLabel: "View Case Study",
+        ctaLabel: "View Project",
         ctaHref: "itera-studio-case-study.html"
       },
       {
@@ -123,7 +123,7 @@
         discipline: "Product Design + Frontend",
         tags: ["UX Design", "Frontend", "Lab Workflows"],
         desc: "A searchable, hierarchical lab inventory system built for Occidental's Biochemistry Department.",
-        ctaLabel: "View Case Study",
+        ctaLabel: "View Project",
         ctaHref: "biochemistry-case-study.html"
       },
       {
@@ -133,7 +133,7 @@
         discipline: "AI + Learning Technologies",
         tags: ["Next.js", "LLM", "Film Theory"],
         desc: "A Next.js app that turns a Letterboxd Top 4 into a personalized lesson on film theory.",
-        ctaLabel: "View Case Study",
+        ctaLabel: "View Project",
         ctaHref: "mise-en-lens-case-study.html"
       },
       {
