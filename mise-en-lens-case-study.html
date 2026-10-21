@@ -4,6 +4,7 @@
     <title>Mise-en-Lens | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <meta
       name="description"
       content="Mise-en-Lens case study: a deployed Next.js web app that teaches film theory through a user's own taste using personalized analysis and a guided quiz."
@@ -15,44 +16,44 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/subpages.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=15" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=15" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="mise-en-lens-page">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a href="index.html" class="brand">Media by Madelyn</a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
           Menu
         </button>
         <nav id="primary-nav" class="site-nav" data-nav-menu>
           <a class="site-nav__link" href="index.html#work" aria-current="page">Work</a>
           <a class="site-nav__link" href="about.html">About</a>
-          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="experience.html">Experience</a>
           <a class="site-nav__link" href="art.html">Art</a>
+          <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"><span class="fas fa-moon" aria-hidden="true"></span></button>
       </div>
     </header>
 
     <main class="subpage-main">
       <section class="page-hero">
         <div class="container page-hero__content reveal">
-          <p class="kicker">Case Study · Spring 2026 · AI + Learning Technologies</p>
-          <h1 class="page-title">Mise-en-Lens</h1>
+          <p class="kicker">Case Study</p>
+          <h1 class="page-title" style="view-transition-name: project-mise">Mise-en-Lens</h1>
           <p class="page-intro">
             A deployed Next.js web app that turns a Letterboxd Top 4 into a personalized lesson on film theory,
             combining taste-based analysis with a separate guided quiz.
           </p>
           <div class="page-actions">
-            <a class="button button--primary" href="index.html#work">Back to Work</a>
             <a
-              class="button button--secondary"
+              class="button button--primary"
               href="https://mise-en-lens.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open Live App
+              Open live app
             </a>
             <a
               class="button button--secondary"
@@ -62,14 +63,21 @@
             >
               View on GitHub
             </a>
+            <a class="button button--secondary button--back" href="index.html#work">Back to work</a>
           </div>
+          <dl class="cs-summary">
+            <div><dt>Timeline</dt><dd>Spring 2026</dd></div>
+            <div><dt>Context</dt><dd>Capstone, COMP 395: AI and Learning Technologies</dd></div>
+            <div><dt>Stack</dt><dd>Next.js, LLM analysis, Letterboxd Top 4</dd></div>
+            <div><dt>Status</dt><dd>Deployed web app</dd></div>
+          </dl>
         </div>
       </section>
 
       <section class="mise-en-lens-content-section">
-        <div class="container reveal">
+        <div class="container reveal" data-case-study>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Overview">
             <h2>Overview</h2>
             <p>
               Mise-en-Lens is a Next.js web app that teaches film theory through a user's own taste. Instead of
@@ -87,7 +95,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Live app">
             <h2>Live Product Experience</h2>
             <p>
               The live landing page frames the project as <strong>Film Literacy Through Taste</strong>. It keeps the
@@ -130,7 +138,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Problem">
             <h2>The Problem</h2>
             <p>
               Media literacy is declining. A 2024 study from Media Literacy Now found that barely 38% of
@@ -146,7 +154,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Learning theory">
             <h2>Learning Theory</h2>
             <p>
               The design is grounded in two principles from educational theory.
@@ -175,7 +183,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="How it works">
             <h2>How It Works</h2>
             <p>
               Users enter a Letterboxd username or paste a profile URL. The app scrapes their Top 4 films and
@@ -214,7 +222,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Tech">
             <h2>Technical Decisions</h2>
             <div class="split-grid">
               <section class="surface-card">
@@ -260,7 +268,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="User testing">
             <h2>User Testing</h2>
             <!-- TODO: Add interview results from MAC dept when complete -->
             <p>
@@ -272,7 +280,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Learnings">
             <h2>What I Learned</h2>
             <p>
               Working within the constraints of a course rubric while building something I actually wanted to
@@ -292,31 +300,23 @@
         </div>
       </section>
 
-      <section class="footer-cta">
+      <section class="footer-cta" id="contact">
         <div class="container footer-cta__block reveal">
-          <div>
-            <p class="kicker">Continue Exploring</p>
             <h2>See more of my research-driven product work.</h2>
-            <p>
-              Compare this project with ItEra Studio and the Oxy Biochemistry Database to see how I approach
-              building tools around a specific user need.
-            </p>
             <div class="page-actions">
-              <a class="button button--primary" href="https://mise-en-lens.vercel.app" target="_blank" rel="noopener noreferrer">Open Live App</a>
-              <a class="button button--primary" href="itera-studio-case-study.html">View ItEra Studio</a>
-              <a class="button button--secondary" href="biochemistry-case-study.html">View Biochemistry Case</a>
+              <a class="button button--primary" href="vibe.html">Next: Vibe.py</a>
+              <a class="button button--secondary" href="itera-studio-case-study.html">View ItEra Studio</a>
             </div>
-            <p class="footer-meta">&copy; Madelyn Smith</p>
-          </div>
           <ul class="footer-cta__links" aria-label="Social links">
             <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a></li>
             <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a></li>
             <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
           </ul>
+          <p class="footer-meta">&copy; Madelyn Smith</p>
         </div>
       </section>
     </main>
 
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/home.js?v=15"></script>
   </body>
 </html>

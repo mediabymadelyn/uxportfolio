@@ -4,6 +4,7 @@
     <title>Art | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <meta name="description" content="Studio artwork and visual explorations by Madelyn Smith." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,24 +13,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/subpages.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=15" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=15" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="art-page">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a href="index.html" class="brand">Media by Madelyn</a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
           Menu
         </button>
         <nav id="primary-nav" class="site-nav" data-nav-menu>
           <a class="site-nav__link" href="index.html#work">Work</a>
-          <a class="site-nav__link" href="index.html#practices">Practices</a>
           <a class="site-nav__link" href="about.html">About</a>
-          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="experience.html">Experience</a>
           <a class="site-nav__link" href="art.html" aria-current="page">Art</a>
+          <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"><span class="fas fa-moon" aria-hidden="true"></span></button>
       </div>
     </header>
 
@@ -42,18 +43,13 @@
             This gallery highlights ongoing artistic practice that informs my interface design instincts around color,
             contrast, storytelling, and visual rhythm.
           </p>
-          <pre class="about-hero__stars art-hero__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay:1.0s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:1.5s;color:#5d3fa3cc;">·</span>
-  <span class="hero__twinkle" style="animation-delay:0.5s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:0.8s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:1.2s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:1.8s;color:#5d3fa3cc;">*</span>
-<span class="hero__twinkle" style="animation-delay:0.2s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:0.6s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:0.9s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:1.4s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:2.0s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:2.3s;color:#5d3fa3cc;">·</span>
-  <span class="hero__twinkle" style="animation-delay:0.3s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:0.7s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:1.1s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:1.6s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:2.1s;color:#5d3fa3cc;">·</span>  <span class="hero__twinkle" style="animation-delay:2.5s;color:#5d3fa3cc;">*</span>  <span class="hero__twinkle" style="animation-delay:2.8s;color:#5d3fa3cc;">·</span></pre>
         </div>
       </section>
 
       <section class="art-gallery-section">
         <div class="container reveal">
           <div class="art-gallery-header">
-            <p class="kicker art-gallery-kicker">Gallery</p>
-            <p class="art-gallery-note">Click an image to pause the motion and open a larger focused view.</p>
+            <p class="art-gallery-note">Click an image to pause the motion and take a closer look.</p>
           </div>
           <div class="art-marquee" data-art-marquee>
             <div class="art-marquee__track" data-art-track>
@@ -79,57 +75,24 @@
         </div>
       </section>
 
-      <section class="footer-cta art-footer">
-        <div class="cta-star-border" aria-hidden="true">
-          <span class="hero__twinkle" style="animation-delay:0s;font-size:10px;opacity:0.5;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:0.5s;font-size:18px;opacity:0.9;">*</span>
-          <span class="hero__twinkle" style="animation-delay:1.1s;font-size:12px;opacity:0.4;">·</span>
-          <span class="hero__twinkle" style="animation-delay:0.2s;font-size:16px;opacity:0.7;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:0.8s;font-size:10px;opacity:0.3;">*</span>
-          <span class="hero__twinkle" style="animation-delay:1.4s;font-size:18px;opacity:0.8;">·</span>
-          <span class="hero__twinkle" style="animation-delay:0.3s;font-size:14px;opacity:0.5;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:0.9s;font-size:11px;opacity:0.9;">*</span>
-          <span class="hero__twinkle" style="animation-delay:1.7s;font-size:17px;opacity:0.3;">·</span>
-          <span class="hero__twinkle" style="animation-delay:0.6s;font-size:13px;opacity:0.7;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:1.2s;font-size:18px;opacity:0.4;">*</span>
-          <span class="hero__twinkle" style="animation-delay:0.1s;font-size:10px;opacity:0.8;">·</span>
-          <span class="hero__twinkle" style="animation-delay:1.5s;font-size:15px;opacity:0.6;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:0.4s;font-size:11px;opacity:0.3;">*</span>
-          <span class="hero__twinkle" style="animation-delay:1.0s;font-size:18px;opacity:0.9;">·</span>
-          <span class="hero__twinkle" style="animation-delay:0.7s;font-size:12px;opacity:0.5;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:1.3s;font-size:16px;opacity:0.7;">*</span>
-          <span class="hero__twinkle" style="animation-delay:1.8s;font-size:10px;opacity:0.4;">·</span>
-          <span class="hero__twinkle" style="animation-delay:0.2s;font-size:18px;opacity:0.8;">✦</span>
-          <span class="hero__twinkle" style="animation-delay:0.6s;font-size:13px;opacity:0.5;">*</span>
-        </div>
-        <pre class="footer-cta__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay:0s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.4s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.8s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.2s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.6s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:0.2s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.6s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.0s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.4s;">*</span>
-<span class="hero__twinkle" style="animation-delay:0.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.7s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.1s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.5s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.9s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:1.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.1s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.5s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.7s;">.</span></pre>
+      <section class="footer-cta art-footer" id="contact">
         <div class="container footer-cta__block reveal">
-          <div>
-            <p class="kicker">Design + Art</p>
-            <h2>This visual practice feeds directly into my product and interaction design work.</h2>
-            <p>
-              Explore my case studies to see how these compositional and storytelling instincts translate into digital
-              products.
-            </p>
+          <h2>This visual practice feeds directly into my product and interaction design work.</h2>
             <div class="page-actions">
-              <a class="button button--primary" href="index.html">Back to Work</a>
-              <a class="button button--secondary" href="about.html">About Me</a>
+              <a class="button button--primary" href="index.html#work">See my work</a>
+              <a class="button button--secondary" href="about.html">About me</a>
             </div>
-            <p class="footer-meta">&copy; Madelyn Smith</p>
-          </div>
           <ul class="footer-cta__links" aria-label="Social links">
             <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a></li>
             <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a></li>
             <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
           </ul>
+          <p class="footer-meta">&copy; Madelyn Smith</p>
         </div>
       </section>
     </main>
 
-    <script src="assets/js/home.js"></script>
-    <script src="assets/js/subpages.js"></script>
+    <script src="assets/js/home.js?v=15"></script>
+    <script src="assets/js/subpages.js?v=15"></script>
   </body>
 </html>

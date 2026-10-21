@@ -4,9 +4,10 @@
     <title>Madelyn Smith | Product Designer + Creative Technologist</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <meta
       name="description"
-      content="Portfolio of Madelyn Smith, a product designer and creative technologist blending UX, HCI, studio art, and frontend development."
+      content="Portfolio of Madelyn Smith, a product designer and creative technologist blending UX, HCI, studio art, and frontend development, with a focus on credit and ownership in creative tools."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,41 +16,42 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=15" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
-  <body>
+  <body class="home">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a href="index.html" class="brand">Media by Madelyn</a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
           Menu
         </button>
         <nav id="primary-nav" class="site-nav" data-nav-menu>
           <a class="site-nav__link" href="#work">Work</a>
-          <a class="site-nav__link" href="#practices">Practices</a>
           <a class="site-nav__link" href="about.html">About</a>
-          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="experience.html">Experience</a>
           <a class="site-nav__link" href="art.html">Art</a>
+          <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"><span class="fas fa-moon" aria-hidden="true"></span></button>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="container hero__layout">
-          <div class="reveal">
+          <div class="hero__intro reveal">
             <p class="kicker">Occidental College · CS + Studio Art</p>
             <h1 class="hero__headline">
-              I like making things, then poking holes in them.
+              Hi, I'm Madelyn!
             </h1>
             <p class="hero__summary">
-            Hi, I'm Madelyn (but you can call me Maddi). Some of my work is for school, some is just for me. Thanks for stopping by!
+            I'm a Computer Science student at Occidental College. Some of my work is for school, some is just for fun. Thanks for stopping by!
             </p>
+            
 
             <div class="hero__actions">
               <a class="button button--primary" href="#work">Explore Work</a>
-              <a class="button button--secondary" href="resume.html">View Resume</a>
+              <a class="button button--secondary" href="experience.html">View Experience</a>
             </div>
           </div>
 
@@ -128,303 +130,143 @@
 ++++*********                 *##*+==++*+++**+====++**##%%##%%%#*++======+*#%%%%%%##            =++-
 +++++++**********             -+*+====+*****####**++++**####+++**++====+*####%%%%##             ++=</pre>
             </div>
+            <ul class="hero__notes" aria-label="Quick facts">
+              <li class="hero__note hero__note--left" style="--top: 14%; --reach: 86%; --i: 0"><span>Creative Technologist</span><i aria-hidden="true"></i></li>
+              <li class="hero__note hero__note--right" style="--top: 30%; --reach: 72%; --i: 1"><i aria-hidden="true"></i>Editorial Illustrator<span></span></li>
+              <li class="hero__note hero__note--left" style="--top: 60%; --reach: 92%; --i: 2"><span>UX Design</span><i aria-hidden="true"></i></li>
+              <li class="hero__note hero__note--right" style="--top: 72%; --reach: 96%; --i: 3"><i aria-hidden="true"></i><span>Currently Based in Los Angeles</span></li>
+            </ul>
           </aside>
         </div>
 
         <div class="hero__ambient-rail" aria-hidden="true">
           <div class="hero__ambient-track">
-            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking</span>
-            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
+            <span>UX Design • Product Thinking • Frontend Prototyping • Research • Systems Thinking •</span>
           </div>
         </div>
       </section>
 
-      <section id="work" class="section section--tight">
+      <section id="work" class="section">
         <div class="container reveal">
-          <p class="kicker">Featured Work</p>
-          <h2 class="section-title" data-work-title>ItEra Studio</h2>
-
-          <div class="work-info__meta-row project-card__meta-row">
-            <span class="project-card__num" data-work-num>01</span>
-            <p class="meta-row" data-work-meta>
-              <span data-work-date>Fall 2024 – Present</span>
-              <span data-work-discipline>Product Design + Creative Technology</span>
-            </p>
+          <div class="section-head">
+            <h2 class="section-title">Selected work</h2>
+            <a class="text-link" href="figma-projects.html">More design work</a>
           </div>
 
-          <div class="project-card__tags" data-work-tags>
-            <span class="project-tag">Research</span>
-            <span class="project-tag">Product Design</span>
-            <span class="project-tag">Ethical Sourcing</span>
-          </div>
+          <a class="project-card project-card--featured" href="itera-studio-case-study.html">
+            <div class="project-card__media">
+              <img src="images/iterastudio.png" alt="ItEra Studio search interface" />
+            </div>
+            <div class="project-card__body">
+              <p class="project-card__meta"><span class="project-card__num">01</span>Fall 2024 – Present</p>
+              <h3 class="project-card__title" style="view-transition-name: project-itera">ItEra Studio</h3>
+              <p class="project-card__desc">A reference search tool for artists that finds real, credited visual sources by interpreting creative intent.</p>
+              <ul class="project-card__tags">
+                <li class="project-tag">Figma</li>
+                <li class="project-tag">Java</li>
+                <li class="project-tag">User research</li>
+              </ul>
+              <span class="project-card__cta">View project</span>
+            </div>
+          </a>
 
-          <p class="section-intro" data-work-desc>
-            A reference search tool for artists that finds real, credited visual sources by interpreting creative
-            intent.
-          </p>
-
-          <a class="button button--primary" data-work-cta href="itera-studio-case-study.html">View Project</a>
-
-          <div class="work-deck" data-work-deck tabindex="0" role="group" aria-roledescription="carousel" aria-label="Featured project deck">
-            <div class="work-deck__stage" data-deck-stage>
-              <div class="work-deck__cards">
-                <article class="work-deck__card" data-deck-card data-index="0">
-                  <div class="work-deck__image-wrap">
-                    <img src="/images/iterastudio.png" alt="ItEra Studio project screenshot" draggable="false" />
-                  </div>
-                </article>
-
-                <article class="work-deck__card" data-deck-card data-index="1">
-                  <div class="work-deck__image-wrap">
-                    <img src="/images/biochemdatabase.png" alt="Oxy Biochemistry Database screenshot" draggable="false" />
-                  </div>
-                </article>
-
-                <article class="work-deck__card" data-deck-card data-index="2">
-                  <div class="work-deck__image-wrap">
-                    <img src="/images/miseenlensemain.png" alt="Mise-en-Lens project screenshot" draggable="false" />
-                  </div>
-                </article>
-
-                <article class="work-deck__card" data-deck-card data-index="3">
-                  <div class="work-deck__image-wrap">
-                    <img src="/images/vibescreenshot.png" alt="Vibe.py project screenshot" draggable="false" />
-                  </div>
-                </article>
+          <div class="project-grid">
+            <a class="project-card" href="biochemistry-case-study.html">
+              <div class="project-card__media">
+                <img src="images/biochemdatabase.png" alt="Oxy Biochemistry Database search screen" />
               </div>
-            </div>
-
-            <div class="work-deck__controls">
-              <button type="button" class="work-deck__nav work-deck__nav--prev" data-deck-prev aria-label="Previous project">
-                <span aria-hidden="true">&#8249;</span>
-              </button>
-              <div class="work-deck__dots" data-deck-dots role="tablist" aria-label="Project deck position">
-                <button type="button" class="work-deck__dot" data-deck-dot="0" role="tab" aria-label="Project 1 of 4"></button>
-                <button type="button" class="work-deck__dot" data-deck-dot="1" role="tab" aria-label="Project 2 of 4"></button>
-                <button type="button" class="work-deck__dot" data-deck-dot="2" role="tab" aria-label="Project 3 of 4"></button>
-                <button type="button" class="work-deck__dot" data-deck-dot="3" role="tab" aria-label="Project 4 of 4"></button>
+              <div class="project-card__body">
+                <p class="project-card__meta"><span class="project-card__num">02</span>Spring 2025</p>
+                <h3 class="project-card__title" style="view-transition-name: project-biochem">Oxy Biochemistry Database</h3>
+                <p class="project-card__desc">A searchable, hierarchical lab inventory system built for Occidental's Biochemistry Department.</p>
+                <ul class="project-card__tags">
+                  <li class="project-tag">Figma</li>
+                  <li class="project-tag">React</li>
+                  <li class="project-tag">Node.js</li>
+                  <li class="project-tag">MySQL</li>
+                </ul>
               </div>
-              <button type="button" class="work-deck__nav work-deck__nav--next" data-deck-next aria-label="Next project">
-                <span aria-hidden="true">&#8250;</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+            </a>
 
-      <section id="practices" class="section">
-        <div class="container reveal">
-          <div class="practice-tools" aria-label="Tools and technologies ticker">
-            <p class="kicker practice-tools__kicker">Tools &amp; Technologies</p>
-            <div class="practice-tools__rail" aria-hidden="true">
-              <div class="practice-tools__track">
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg" alt="" /></div>
-                  <span>Figma</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg" alt="" /></div>
-                  <span>JavaScript</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/html5.svg" alt="" /></div>
-                  <span>HTML5</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg" alt="" /></div>
-                  <span>Node.js</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg" alt="" /></div>
-                  <span>React</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeillustrator.svg" alt="" /></div>
-                  <span>Adobe</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle practice-tools__icon-circle--mono">P</div>
-                  <span>Procreate</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/blender.svg" alt="" /></div>
-                  <span>Blender</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="" /></div>
-                  <span>Python</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" alt="" /></div>
-                  <span>Notion</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg" alt="" /></div>
-                  <span>Git</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="" /></div>
-                  <span>GitHub</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg" alt="" /></div>
-                  <span>CSS</span>
-                </div>
-
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg" alt="" /></div>
-                  <span>Figma</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg" alt="" /></div>
-                  <span>JavaScript</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/html5.svg" alt="" /></div>
-                  <span>HTML5</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg" alt="" /></div>
-                  <span>Node.js</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg" alt="" /></div>
-                  <span>React</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeillustrator.svg" alt="" /></div>
-                  <span>Adobe</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle practice-tools__icon-circle--mono">P</div>
-                  <span>Procreate</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/blender.svg" alt="" /></div>
-                  <span>Blender</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg" alt="" /></div>
-                  <span>Python</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" alt="" /></div>
-                  <span>Notion</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg" alt="" /></div>
-                  <span>Git</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="" /></div>
-                  <span>GitHub</span>
-                </div>
-                <div class="practice-tools__item">
-                  <div class="practice-tools__icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg" alt="" /></div>
-                  <span>CSS</span>
-                </div>
+            <a class="project-card" href="mise-en-lens-case-study.html">
+              <div class="project-card__media">
+                <img src="images/miseenlensemain.png" alt="Mise-en-Lens lesson screen" />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div class="project-card__body">
+                <p class="project-card__meta"><span class="project-card__num">03</span>Spring 2026</p>
+                <h3 class="project-card__title" style="view-transition-name: project-mise">Mise-en-Lens</h3>
+                <p class="project-card__desc">A Next.js app that turns a Letterboxd Top 4 into a personalized lesson on film theory.</p>
+                <ul class="project-card__tags">
+                  <li class="project-tag">Next.js</li>
+                  <li class="project-tag">GPT-4o mini</li>
+                  <li class="project-tag">Beautiful Soup</li>
+                </ul>
+              </div>
+            </a>
 
-      <section id="studio-art" class="section">
-        <pre class="studio-art__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay:0s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.3s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.6s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.9s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.2s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:1.5s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.4s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.8s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.1s;">*</span>
-<span class="hero__twinkle" style="animation-delay:0.2s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.7s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.0s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.5s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.3s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:1.6s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.1s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.4s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.9s;">.</span></pre>
-        <div class="container reveal">
-          <p class="kicker">STUDIO ART</p>
-          <h2 class="section-title">I make art too.</h2>
-          <p class="section-intro">
-            Drawing, mixed media, and illustration shapes how I think about color, composition, and storytelling in my design work.
-          </p>
-
-          <div class="art-rail" aria-label="Studio work preview">
-            <div class="art-rail__track">
-              <img src="images/art/IMG_0647.jpg" alt="Studio artwork detail 1" />
-              <img src="images/art/IMG_0648.jpg" alt="Studio artwork detail 2" />
-              <img src="images/art/IMG_0649.jpg" alt="Studio artwork detail 3" />
-              <img src="images/art/IMG_0650.jpg" alt="Studio artwork detail 4" />
-              <img src="images/art/IMG_0651.jpg" alt="Studio artwork detail 5" />
-              <img src="images/art/IMG_0652.jpg" alt="Studio artwork detail 6" />
-              <img src="images/art/IMG_0653.jpg" alt="Studio artwork detail 7" />
-              <img src="images/art/IMG_0654.jpg" alt="Studio artwork detail 8" />
-              <img src="images/art/IMG_0655.jpg" alt="Studio artwork detail 9" />
-              <img src="images/art/IMG_0647.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0648.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0649.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0650.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0651.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0652.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0653.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0654.jpg" alt="" aria-hidden="true" />
-              <img src="images/art/IMG_0655.jpg" alt="" aria-hidden="true" />
-            </div>
-          </div>
-
-          <a class="button button--secondary studio-art__link" href="art.html">View All Work</a>
-        </div>
-      </section>
-
-      <div class="section-divider" aria-hidden="true"></div>
-
-    <section class="footer-cta">
-      <div class="cta-star-border" aria-hidden="true">
-        <span class="hero__twinkle" style="animation-delay:0s;  font-size:10px;opacity:0.5;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:0.5s;font-size:18px;opacity:0.9;">*</span>
-        <span class="hero__twinkle" style="animation-delay:1.1s;font-size:12px;opacity:0.4;">·</span>
-        <span class="hero__twinkle" style="animation-delay:0.2s;font-size:16px;opacity:0.7;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:0.8s;font-size:10px;opacity:0.3;">*</span>
-        <span class="hero__twinkle" style="animation-delay:1.4s;font-size:18px;opacity:0.8;">·</span>
-        <span class="hero__twinkle" style="animation-delay:0.3s;font-size:14px;opacity:0.5;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:0.9s;font-size:11px;opacity:0.9;">*</span>
-        <span class="hero__twinkle" style="animation-delay:1.7s;font-size:17px;opacity:0.3;">·</span>
-        <span class="hero__twinkle" style="animation-delay:0.6s;font-size:13px;opacity:0.7;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:1.2s;font-size:18px;opacity:0.4;">*</span>
-        <span class="hero__twinkle" style="animation-delay:0.1s;font-size:10px;opacity:0.8;">·</span>
-        <span class="hero__twinkle" style="animation-delay:1.5s;font-size:15px;opacity:0.6;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:0.4s;font-size:11px;opacity:0.3;">*</span>
-        <span class="hero__twinkle" style="animation-delay:1.0s;font-size:18px;opacity:0.9;">·</span>
-        <span class="hero__twinkle" style="animation-delay:0.7s;font-size:12px;opacity:0.5;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:1.3s;font-size:16px;opacity:0.7;">*</span>
-        <span class="hero__twinkle" style="animation-delay:1.8s;font-size:10px;opacity:0.4;">·</span>
-        <span class="hero__twinkle" style="animation-delay:0.2s;font-size:18px;opacity:0.8;">✦</span>
-        <span class="hero__twinkle" style="animation-delay:0.6s;font-size:13px;opacity:0.5;">*</span>
-      </div>
-      <pre class="footer-cta__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay:0s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.4s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.8s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.2s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.6s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:0.2s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.6s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.0s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.4s;">*</span>
-<span class="hero__twinkle" style="animation-delay:0.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.7s;">.</span>  <span class="hero__twinkle" style="animation-delay:1.1s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.5s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.9s;">*</span>
-  <span class="hero__twinkle" style="animation-delay:1.3s;">*</span>  <span class="hero__twinkle" style="animation-delay:0.1s;">.</span>  <span class="hero__twinkle" style="animation-delay:0.5s;">*</span>  <span class="hero__twinkle" style="animation-delay:1.7s;">.</span></pre>
-      <div class="container footer-cta__block reveal">
-        <div>
-          <p class="kicker">GET IN TOUCH</p>
-          <h2>Let's work together.</h2>
-          <p class="section-intro">I'm looking for opportunities in tech and law right now, but I'd also love to hear what you're working on.</p>
-          <div style="margin-top: 1.4rem;">
-            <a class="button button--primary footer-cta__button" href="mailto:mediabymadelyns@gmail.com">
-              Contact Me
+            <a class="project-card" href="vibe.html">
+              <div class="project-card__media">
+                <img src="images/vibescreenshot.png" alt="Vibe.py running in the terminal" />
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__meta"><span class="project-card__num">04</span>Spring 2026</p>
+                <h3 class="project-card__title" style="view-transition-name: project-vibe">Vibe.py</h3>
+                <p class="project-card__desc">A personal terminal app for music discovery and movie roulette, built with Python.</p>
+                <ul class="project-card__tags">
+                  <li class="project-tag">Python</li>
+                  <li class="project-tag">Spotify API</li>
+                  <li class="project-tag">OAuth</li>
+                </ul>
+              </div>
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- Writing section: uncomment and fill in once pieces are ready. Add <a class="site-nav__link" href="index.html#writing">Writing</a> to the nav on each page too.
+      <section id="writing" class="section">
+        <div class="container reveal">
+          <h2 class="section-title">Research and writing</h2>
+          <ul class="writing-list">
+            <li>
+              <a class="text-link" href="writing/piece-one.pdf" target="_blank" rel="noopener noreferrer">Title of piece</a>
+              <p class="section-intro">One-line description of the topic.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      -->
+
+
+      <section class="footer-cta" id="contact">
+        <pre class="footer-cta__stars" aria-hidden="true"><span class="hero__twinkle" style="animation-delay:0s;">*</span>     <span class="hero__twinkle" style="animation-delay:1.2s;">.</span>
+   <span class="hero__twinkle" style="animation-delay:0.6s;">.</span>     <span class="hero__twinkle" style="animation-delay:1.8s;">*</span>
+<span class="hero__twinkle" style="animation-delay:0.9s;">*</span>     <span class="hero__twinkle" style="animation-delay:0.3s;">.</span></pre>
+        <div class="container footer-cta__block reveal">
+          <h2>Let's work together.</h2>
+          <p>I'm looking for work in creative technology and the rules around it: design, research, or policy roles touching creative tools, AI, credit, and ownership. I'd also love to hear what you're working on.</p>
+          <div class="footer-cta__actions">
+            <a class="button button--primary" href="mailto:mediabymadelyns@gmail.com">Contact me</a>
+          </div>
           <ul class="footer-cta__links" aria-label="Social links">
-            <li>
-              <a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a>
-            </li>
-            <li>
-              <a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a>
-            </li>
+            <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a></li>
+            <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a></li>
+            <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
           </ul>
           <p class="footer-meta">&copy; Madelyn Smith</p>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/home.js?v=15"></script>
   </body>
 </html>

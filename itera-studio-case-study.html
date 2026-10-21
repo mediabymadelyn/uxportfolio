@@ -4,6 +4,7 @@
     <title>ItEra Studio | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <meta
       name="description"
       content="ItEra Studio case study: a reference discovery system that connects artists to real, credited visual sources by interpreting creative intent."
@@ -15,53 +16,60 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/subpages.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=15" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=15" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="itera-page">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a href="index.html" class="brand">Media by Madelyn</a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
           Menu
         </button>
         <nav id="primary-nav" class="site-nav" data-nav-menu>
           <a class="site-nav__link" href="index.html#work" aria-current="page">Work</a>
           <a class="site-nav__link" href="about.html">About</a>
-          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="experience.html">Experience</a>
           <a class="site-nav__link" href="art.html">Art</a>
+          <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"><span class="fas fa-moon" aria-hidden="true"></span></button>
       </div>
     </header>
 
     <main class="subpage-main">
       <section class="page-hero">
         <div class="container page-hero__content reveal">
-          <p class="kicker">Case Study · Fall 2024 - Ongoing · Product Design + Creative Technology + Research</p>
-          <h1 class="page-title">ItEra Studio</h1>
+          <p class="kicker">Case Study</p>
+          <h1 class="page-title" style="view-transition-name: project-itera">ItEra Studio</h1>
           <p class="page-intro">
             A reference search tool for artists that finds real, credited visual sources by interpreting what you are
             actually trying to make.
           </p>
           <div class="page-actions">
-            <a class="button button--primary" href="index.html#work">Back to Work</a>
             <a
-              class="button button--secondary"
+              class="button button--primary"
               href="https://www.figma.com/proto/JHydTUvpjKOFYioSu4L9ta/ItEra-V1?node-id=0-1&amp;t=N5kUlGAqxc6NcPBv-1"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open Functional Prototype
+              Open functional prototype
             </a>
+            <a class="button button--secondary button--back" href="index.html#work">Back to work</a>
           </div>
+          <dl class="cs-summary">
+            <div><dt>Timeline</dt><dd>Fall 2024 - Ongoing</dd></div>
+            <div><dt>Focus</dt><dd>Product Design, Creative Technology, Research</dd></div>
+            <div><dt>Research</dt><dd>Independent study, user survey (n=4), Reddit and Discord feedback</dd></div>
+            <div><dt>Status</dt><dd>Functional Figma prototype</dd></div>
+          </dl>
         </div>
       </section>
 
       <section class="itera-content-section">
-        <div class="container reveal">
+        <div class="container reveal" data-case-study>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Overview">
             <div class="media-frame media-frame--prototype">
               <iframe
                 class="media-frame__embed"
@@ -85,7 +93,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Origins" data-when="Freshman year">
             <h2>Where It Started</h2>
             <p>
               I built the first version of DoodleQuest in COMP181. It was a Java survey that mapped user responses to a
@@ -107,15 +115,15 @@
               cultural accessibility, and engagement, and used it to assess how AI performed across different creative
               contexts.
             </p>
-            <p>
-              The clearest finding: a good prompt does not tell you what to make. It helps you ask better questions.
-            </p>
+            <blockquote class="pull-quote">
+              <p>The clearest finding: a good prompt does not tell you what to make. It helps you ask better questions.</p>
+            </blockquote>
             <div class="media-frame media-frame--narrow">
               <img src="images/promptingai.png" alt="Digital illustration from independent study" />
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Research &amp; pivot">
             <h2>User Research and the Pivot</h2>
             <p>
               Before building further, I needed to know whether artists actually wanted AI critique tools. I designed a
@@ -124,29 +132,32 @@
               tools and evaluated them across multiple dimensions.
             </p>
             <p>Key findings from the private survey (n=4):</p>
-            <ul>
-              <li>75% agreed the feedback was helpful for improving their work.</li>
-              <li>75% agreed the feedback felt personalized to their artwork.</li>
-              <li>Only 50% agreed the feedback gave clear, actionable next steps.</li>
-              <li>50% disagreed that AI feedback made them feel more confident.</li>
-              <li>Overall satisfaction averaged 3.75 out of 5 stars.</li>
+            <ul class="cs-stats">
+              <li><span class="cs-stats__num" data-count="75" data-suffix="%">75%</span>agreed the feedback was helpful for improving their work.</li>
+              <li><span class="cs-stats__num" data-count="75" data-suffix="%">75%</span>agreed the feedback felt personalized to their artwork.</li>
+              <li><span class="cs-stats__num" data-count="50" data-suffix="%">50%</span>agreed the feedback gave clear, actionable next steps.</li>
+              <li><span class="cs-stats__num" data-count="50" data-suffix="%">50%</span>disagreed that AI feedback made them feel more confident.</li>
+              <li><span class="cs-stats__num" data-count="3.75" data-decimals="2" data-suffix="/5">3.75/5</span>average overall satisfaction.</li>
             </ul>
-            <p>
-              The open-ended responses were more telling. One participant wrote that they could not tell what the AI was
-              referring to when it suggested changes to proportions. Another wanted exercises that fit their specific
-              style, not generic corrections. One said they would take human critique again, but only from someone who
-              understood what they needed and could apply it with confidence in mind.
-            </p>
+            <details class="more">
+              <summary>What participants wrote</summary>
+              <p>
+                The open-ended responses were more telling. One participant wrote that they could not tell what the AI was
+                referring to when it suggested changes to proportions. Another wanted exercises that fit their specific
+                style, not generic corrections. One said they would take human critique again, but only from someone who
+                understood what they needed and could apply it with confidence in mind.
+              </p>
+            </details>
             <p>
               The public response from Reddit and Discord was more pointed. Responses were overwhelmingly skeptical of
               AI critique tools, with concerns around ethics, trust, and the perception that AI cannot genuinely
               understand visual intention. One artist captured what would become the direction of ItEra:
             </p>
-            <p>
-              "The only real purpose I can see AI being useful for as a tool is an AI that finds specific real reference
+            <blockquote class="pull-quote">
+              <p>"The only real purpose I can see AI being useful for as a tool is an AI that finds specific real reference
               images based on a prompt. Every artist struggles to find the perfect reference image at specific
-              perspective angles and often spends hours searching instead of doing art."
-            </p>
+              perspective angles and often spends hours searching instead of doing art."</p>
+            </blockquote>
             <p>
               That response was not an outlier. It was a pattern. Artists did not want AI to evaluate their work. They
               wanted help finding real work to study.
@@ -157,7 +168,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="The product" data-when="Now">
             <h2>What ItEra Does</h2>
             <p>
               ItEra is designed around one idea: connect artists to real references from real artists, with attribution
@@ -207,7 +218,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="What's next">
             <h2>Future Development</h2>
             <ul>
               <li>Integrate an appropriate LLM for stronger intent interpretation and query expansion.</li>
@@ -220,7 +231,7 @@
             </ul>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Reflection">
             <h2>Reflection</h2>
             <p>
               This project has changed direction more than once because the research kept finding problems with the
@@ -243,30 +254,23 @@
         </div>
       </section>
 
-      <section class="footer-cta">
+      <section class="footer-cta" id="contact">
         <div class="container footer-cta__block reveal">
-          <div>
-            <p class="kicker">Continue Exploring</p>
-            <h2>See how this research-led approach connects to my product and UX work.</h2>
-            <p>
-              You can compare this project with my biochemistry database case study and Figma projects to see the range
-              of my design practice.
-            </p>
-            <div class="page-actions">
-              <a class="button button--primary" href="biochemistry-case-study.html">View Biochemistry Case</a>
-              <a class="button button--secondary" href="mise-en-lens-case-study.html">View Mise-en-Lens</a>
-            </div>
-            <p class="footer-meta">&copy; Madelyn Smith</p>
+          <h2>See how this research-led approach connects to my product and UX work.</h2>
+          <div class="page-actions">
+            <a class="button button--primary" href="biochemistry-case-study.html">Next: Biochemistry Database</a>
+            <a class="button button--secondary" href="mise-en-lens-case-study.html">View Mise-en-Lens</a>
           </div>
           <ul class="footer-cta__links" aria-label="Social links">
             <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a></li>
             <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a></li>
             <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
           </ul>
+          <p class="footer-meta">&copy; Madelyn Smith</p>
         </div>
       </section>
     </main>
 
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/home.js?v=15"></script>
   </body>
 </html>

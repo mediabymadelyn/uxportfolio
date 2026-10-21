@@ -4,6 +4,7 @@
     <title>Oxy Biochemistry Database | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <meta
       name="description"
       content="Case study for the Oxy Biochemistry Database, a full-stack lab strain management platform built for the Occidental College Biochemistry Department."
@@ -15,45 +16,52 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="assets/css/subpages.css" />
+    <link rel="stylesheet" href="assets/css/home.css?v=15" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=15" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="biochem-page">
     <header class="site-header">
       <div class="container site-header__inner">
-        <a href="index.html" class="brand">Media by Madelyn</a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
           Menu
         </button>
         <nav id="primary-nav" class="site-nav" data-nav-menu>
           <a class="site-nav__link" href="index.html#work" aria-current="page">Work</a>
           <a class="site-nav__link" href="about.html">About</a>
-          <a class="site-nav__link" href="resume.html">Resume</a>
+          <a class="site-nav__link" href="experience.html">Experience</a>
           <a class="site-nav__link" href="art.html">Art</a>
+          <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode"><span class="fas fa-moon" aria-hidden="true"></span></button>
       </div>
     </header>
 
     <main class="subpage-main">
       <section class="page-hero">
         <div class="container page-hero__content reveal">
-          <p class="kicker">Case Study · Spring 2025</p>
-          <h1 class="page-title">Oxy Biochemistry Database</h1>
+          <p class="kicker">Case Study</p>
+          <h1 class="page-title" style="view-transition-name: project-biochem">Oxy Biochemistry Database</h1>
           <p class="page-intro">
             A web-based lab strain management system built for the Occidental College Biochemistry Department to replace
             scattered spreadsheets and handwritten labels with a searchable, hierarchical inventory platform.
           </p>
           <div class="page-actions">
-            <a class="button button--primary" href="index.html#work">Back to Work</a>
+            <a class="button button--secondary button--back" href="index.html#work">Back to work</a>
           </div>
+          <dl class="cs-summary">
+            <div><dt>Timeline</dt><dd>Spring 2025</dd></div>
+            <div><dt>Role</dt><dd>Frontend and UI lead</dd></div>
+            <div><dt>Team</dt><dd>Team of four, with Professor Vikram</dd></div>
+            <div><dt>Outcome</dt><dd>Presented to the Oxy Biochemistry Department; available for adoption</dd></div>
+          </dl>
         </div>
       </section>
 
       <section class="biochem-content-section">
-        <div class="container reveal">
+        <div class="container reveal" data-case-study>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Overview">
             <div class="media-frame">
               <img src="images/biochemdatabase.png" alt="Oxy Biochemistry Database, main search interface" />
             </div>
@@ -72,7 +80,7 @@
             </p>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Problem">
             <h2>Problem</h2>
             <ul>
               <li>Professor Vikram had no centralized inventory system for hundreds of bacterial strain tubes.</li>
@@ -86,7 +94,7 @@
             </ul>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="My role">
             <h2>My Role</h2>
             <ul>
               <li>Designed all wireframes in Figma from scratch: search, sample detail, add/edit, admin, and help
@@ -103,7 +111,7 @@
             </ul>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Research">
             <h2>Research &amp; Design Process</h2>
             <p>
               Before opening Figma, I spent time with Addgene.org, a real biological sample registry used by research
@@ -126,7 +134,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Design decisions">
             <h2>Key Design Decisions</h2>
             <p>
               Most of the meaningful decisions happened at the detail level, where small choices reduced friction for
@@ -161,7 +169,7 @@
             </ul>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Features">
             <h2>Feature Walkthrough</h2>
             <div class="media-frame">
               <img
@@ -229,7 +237,7 @@
             </ul>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Tech">
             <h2>Technical Overview</h2>
             <div class="split-grid">
               <section class="surface-card">
@@ -268,7 +276,7 @@
             </div>
           </article>
 
-          <article class="content-shell">
+          <article class="content-shell" data-step="Reflection">
             <h2>Reflection</h2>
             <p>
               The hardest part of this project was coordination, not design. Because four people were building
@@ -294,28 +302,23 @@
         </div>
       </section>
 
-      <section class="footer-cta">
+      <section class="footer-cta" id="contact">
         <div class="container footer-cta__block reveal">
-          <div>
-            <p class="kicker">Next Case Study</p>
             <h2>See how I apply AI to a different kind of analysis problem.</h2>
-            <p>Mise en Lens is a Next.js film analysis tool that uses AI to help users understand and interpret
-              cinematic language.</p>
             <div class="page-actions">
-              <a class="button button--primary" href="mise-en-lens-case-study.html">View Mise en Lens</a>
-              <a class="button button--secondary" href="index.html">Back to Homepage</a>
+              <a class="button button--primary" href="mise-en-lens-case-study.html">Next: Mise-en-Lens</a>
+              <a class="button button--secondary" href="index.html#work">All work</a>
             </div>
-            <p class="footer-meta">&copy; Madelyn Smith</p>
-          </div>
           <ul class="footer-cta__links" aria-label="Social links">
             <li><a href="https://github.com/mediabymadelyn" aria-label="GitHub profile"><span class="fab fa-github" aria-hidden="true"></span></a></li>
             <li><a href="https://www.linkedin.com/in/madelync-smith/" aria-label="LinkedIn profile"><span class="fab fa-linkedin" aria-hidden="true"></span></a></li>
             <li><a href="mailto:mediabymadelyns@gmail.com" aria-label="Send email"><span class="fas fa-envelope" aria-hidden="true"></span></a></li>
           </ul>
+          <p class="footer-meta">&copy; Madelyn Smith</p>
         </div>
       </section>
     </main>
 
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/home.js?v=15"></script>
   </body>
 </html>
