@@ -807,6 +807,11 @@ img {
   transform: translateX(4px);
 }
 
+.work-more {
+  margin: var(--space-7) 0 0;
+  text-align: center;
+}
+
 /* ─── Footer ────────────────────────────────────────────────────────────── */
 
 .footer-cta {
