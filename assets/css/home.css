@@ -32,7 +32,11 @@
   --font-mono: "IBM Plex Mono", "SF Mono", Menlo, monospace;
 
   --radius-card: 14px;
+  /* One easing curve and three durations for every transition on the site. */
   --ease-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --dur-1: 0.18s;
+  --dur-2: 0.3s;
+  --dur-3: 0.6s;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -99,7 +103,7 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
 }
 
 a {
@@ -157,7 +161,7 @@ img {
   text-decoration-color: var(--line);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.35em;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition: color var(--dur-1) var(--ease-out), text-decoration-color var(--dur-1) var(--ease-out);
 }
 
 .text-link:hover,
@@ -176,7 +180,7 @@ img {
   background: var(--header-bg);
   border-bottom: 1px solid var(--line);
   view-transition-name: site-header;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out);
 }
 
 /* Home page: the header sits transparent over the hero gradient and turns
@@ -224,7 +228,7 @@ img {
   position: relative;
   font-size: 0.95rem;
   color: var(--ink-muted);
-  transition: color 0.2s ease;
+  transition: color var(--dur-1) var(--ease-out);
 }
 
 .site-nav__link::after {
@@ -237,7 +241,7 @@ img {
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.25s var(--ease-out);
+  transition: transform var(--dur-2) var(--ease-out);
 }
 
 .site-nav__link:hover,
@@ -252,12 +256,37 @@ img {
   transform: scaleX(1);
 }
 
+.site-nav {
+  position: relative;
+}
+
+.site-nav__indicator {
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--dur-2) var(--ease-out), width var(--dur-2) var(--ease-out), opacity var(--dur-1) var(--ease-out);
+}
+
+.site-nav__indicator.is-visible {
+  opacity: 1;
+}
+
+.site-nav.has-indicator .site-nav__link::after {
+  content: none;
+}
+
 .site-nav__link--cta {
   padding: 0.4rem 0.95rem;
   border: 1px solid var(--ink);
   border-radius: 999px;
   color: var(--ink);
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
 }
 
 .site-nav__link--cta::after {
@@ -292,7 +321,7 @@ img {
   background: var(--surface);
   color: var(--ink);
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.3s var(--ease-out);
+  transition: border-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), transform var(--dur-2) var(--ease-out);
 }
 
 .js .theme-toggle {
@@ -318,7 +347,7 @@ img {
   padding: 0.8rem 1.35rem;
   font: 600 0.95rem/1.1 var(--font-sans);
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out), box-shadow var(--dur-2) var(--ease-out);
 }
 
 .button--primary {
@@ -548,7 +577,7 @@ img {
   transform: translateY(-50%);
   animation: heroNoteIn 0.6s var(--ease-out) both;
   animation-delay: calc(2.3s + var(--i) * 0.15s);
-  transition: color 0.2s ease;
+  transition: color var(--dur-1) var(--ease-out);
 }
 
 .hero__note--left {
@@ -674,7 +703,7 @@ img {
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
   background: var(--surface-2);
-  transition: box-shadow 0.4s ease;
+  transition: box-shadow var(--dur-3) var(--ease-out);
 }
 
 .project-card__media img {
@@ -682,7 +711,7 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: top left;
-  transition: transform 0.6s var(--ease-out);
+  transition: transform var(--dur-3) var(--ease-out);
 }
 
 .project-card:hover .project-card__media,
@@ -716,7 +745,7 @@ img {
   font-weight: 400;
   font-size: clamp(1.35rem, 1.8vw, 1.6rem);
   line-height: 1.1;
-  transition: color 0.2s ease;
+  transition: color var(--dur-1) var(--ease-out);
 }
 
 .project-card--featured .project-card__title {
@@ -767,7 +796,7 @@ img {
 
 .project-card__cta::after {
   content: "→";
-  transition: transform 0.25s var(--ease-out);
+  transition: transform var(--dur-2) var(--ease-out);
 }
 
 .project-card:hover .project-card__cta {
@@ -861,7 +890,7 @@ img {
   display: inline-flex;
   color: var(--ink-muted);
   font-size: 1.35rem;
-  transition: color 0.2s ease, transform 0.25s var(--ease-out);
+  transition: color var(--dur-1) var(--ease-out), transform var(--dur-2) var(--ease-out);
 }
 
 .footer-cta__links a:hover,
@@ -875,6 +904,176 @@ img {
   font-size: 0.85rem;
 }
 
+/* ─── Cursor ────────────────────────────────────────────────────────────
+   Drawn by home.js on mouse devices. The glyph is exactly on the pointer;
+   the ring trails it. */
+
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.has-cursor :is(input, textarea, [contenteditable="true"]) {
+  cursor: text !important;
+}
+
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-out);
+  view-transition-name: cursor;
+}
+
+.cursor.is-hidden {
+  opacity: 0;
+}
+
+.cursor__dot,
+.cursor__ring,
+.cursor__trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  will-change: transform;
+}
+
+.cursor__glyph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 1em;
+  height: 1em;
+  translate: -50% -50%;
+  font: 600 17px/1 var(--font-mono);
+  color: var(--accent);
+  animation: cursorSpin 6s linear infinite;
+  transition: opacity var(--dur-1) var(--ease-out), scale var(--dur-1) var(--ease-out);
+}
+
+/* The I-beam for text, drawn on the exact pointer position. */
+.cursor__dot::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  margin: -10px 0 0 -1px;
+  border-radius: 1px;
+  background: var(--ink);
+  opacity: 0;
+  transition: opacity var(--dur-1) var(--ease-out);
+}
+
+.cursor__shape {
+  --size: 34px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  transition: width var(--dur-2) var(--ease-out), height var(--dur-2) var(--ease-out), margin var(--dur-2) var(--ease-out), background-color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out), opacity var(--dur-2) var(--ease-out), transform var(--dur-1) var(--ease-out);
+}
+
+.cursor__label {
+  font: 600 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  opacity: 0;
+  transition: opacity var(--dur-1) var(--ease-out);
+}
+
+.cursor.is-down .cursor__shape {
+  transform: scale(0.82);
+}
+
+.cursor.is-down .cursor__glyph {
+  scale: 0.85;
+}
+
+/* Links and buttons: the ring grows and glows; the glyph steps aside so it
+   never covers a label. */
+.cursor[data-state="link"] .cursor__shape {
+  --size: 48px;
+  background: var(--glow);
+}
+
+.cursor[data-state="link"] .cursor__glyph {
+  opacity: 0;
+  scale: 0.4;
+}
+
+.cursor[data-state="portrait"] .cursor__glyph {
+  animation: none;
+}
+
+/* Project cards: the ring fills and reads "view"; the glyph steps aside. */
+.cursor[data-state="view"] .cursor__shape {
+  --size: 76px;
+  background: var(--accent);
+}
+
+.cursor[data-state="view"] .cursor__label {
+  opacity: 1;
+}
+
+.cursor[data-state="view"] .cursor__glyph {
+  opacity: 0;
+}
+
+/* ASCII portrait. */
+.cursor[data-state="portrait"] .cursor__shape {
+  --size: 22px;
+}
+
+/* Text: the glyph becomes an I-beam and the ring steps aside. */
+.cursor[data-state="text"] .cursor__dot::before {
+  opacity: 1;
+}
+
+.cursor[data-state="text"] .cursor__glyph,
+.cursor[data-state="text"] .cursor__shape,
+.cursor[data-state="native"] .cursor__dot,
+.cursor[data-state="native"] .cursor__shape {
+  opacity: 0;
+}
+
+.cursor__trail {
+  margin: -0.5em 0 0 -0.25em;
+  font: 700 14px/1 var(--font-mono);
+  color: var(--accent);
+  opacity: 0;
+}
+
+.cursor__trail.is-on {
+  animation: cursorTrail 0.42s var(--ease-out) forwards;
+}
+
+@keyframes cursorSpin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes cursorTrail {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 /* ─── Motion ────────────────────────────────────────────────────────────── */
 
 .reveal {
@@ -885,7 +1084,11 @@ img {
 .js .reveal {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.45s ease, transform 0.45s var(--ease-out);
+  transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+}
+
+.js .reveal[style*="--stagger"] {
+  transition-delay: calc(var(--stagger) * 90ms);
 }
 
 .js .reveal.is-visible {

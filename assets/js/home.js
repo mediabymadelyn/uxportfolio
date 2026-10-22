@@ -336,8 +336,10 @@
     if (!("IntersectionObserver" in window)) {
       showAllRevealItems();
     } else {
+    let observerFired = false;
     const observer = new IntersectionObserver(
       (entries) => {
+        observerFired = true;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
@@ -360,8 +362,10 @@
         });
       });
 
-      // Final fallback in case observer callbacks are suppressed.
-      window.setTimeout(showAllRevealItems, 1400);
+      // Final fallback in case observer callbacks never arrive.
+      window.setTimeout(() => {
+        if (!observerFired) showAllRevealItems();
+      }, 1400);
     }
   }
 
@@ -540,6 +544,195 @@
       window.addEventListener("resize", update);
       update();
     }
+  }
+
+  // Nav indicator: one underline that slides between links on hover and
+  // rests under the current page. Desktop layout only.
+  const navMenuEl = document.querySelector(".site-nav");
+  const wideNav = window.matchMedia("(min-width: 62.01rem)");
+
+  if (navMenuEl) {
+    const indicator = document.createElement("span");
+    indicator.className = "site-nav__indicator";
+    indicator.setAttribute("aria-hidden", "true");
+    navMenuEl.appendChild(indicator);
+    navMenuEl.classList.add("has-indicator");
+
+    const links = Array.from(navMenuEl.querySelectorAll(".site-nav__link:not(.site-nav__link--cta)"));
+    const current = navMenuEl.querySelector('.site-nav__link[aria-current="page"]:not(.site-nav__link--cta)');
+
+    const moveTo = (link, instant) => {
+      if (!link || !wideNav.matches) {
+        indicator.classList.remove("is-visible");
+        return;
+      }
+      if (instant) indicator.style.transition = "none";
+      indicator.style.width = `${link.offsetWidth}px`;
+      indicator.style.transform = `translateX(${link.offsetLeft}px)`;
+      indicator.classList.add("is-visible");
+      if (instant) {
+        void indicator.offsetWidth;
+        indicator.style.transition = "";
+      }
+    };
+
+    links.forEach((link) => {
+      link.addEventListener("pointerenter", () => moveTo(link));
+      link.addEventListener("focus", () => moveTo(link));
+    });
+    navMenuEl.addEventListener("pointerleave", () => moveTo(current));
+    navMenuEl.addEventListener("focusout", (event) => {
+      if (!navMenuEl.contains(event.relatedTarget)) moveTo(current);
+    });
+
+    const settle = () => moveTo(current, true);
+    wideNav.addEventListener("change", settle);
+    window.addEventListener("resize", settle);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+    settle();
+  }
+
+  // Custom cursor: an ASCII glyph that sits exactly on the pointer, plus a
+  // ring that eases after it. The glyph shows what's underneath: * on the
+  // page, # over the portrait. On links the ring grows and glows, on project
+  // cards it fills and reads "view", and over text the glyph becomes an
+  // I-beam. Mouse devices only.
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  if (finePointer.matches) {
+    const cursor = document.createElement("div");
+    cursor.className = "cursor is-hidden";
+    cursor.setAttribute("aria-hidden", "true");
+    cursor.innerHTML =
+      '<span class="cursor__dot"><span class="cursor__glyph">*</span></span><span class="cursor__ring"><span class="cursor__shape"><span class="cursor__label">view</span></span></span>';
+    document.body.appendChild(cursor);
+    document.documentElement.classList.add("has-cursor");
+
+    const dot = cursor.querySelector(".cursor__dot");
+    const ring = cursor.querySelector(".cursor__ring");
+    const glyph = cursor.querySelector(".cursor__glyph");
+
+    const GLYPHS = { default: "*", portrait: "#" };
+    const EASE = reduceMotion ? 1 : 0.2;
+    const TRAIL_POOL = 8;
+
+    let x = -100;
+    let y = -100;
+    let rx = x;
+    let ry = y;
+    let state = "default";
+    let frame = 0;
+    let lastTrail = 0;
+    let trailIndex = 0;
+
+    // Pick up where the previous page left off, so the cursor doesn't
+    // vanish until the mouse moves after a navigation.
+    try {
+      const saved = JSON.parse(sessionStorage.getItem("cursor") || "null");
+      if (saved) {
+        x = rx = saved.x;
+        y = ry = saved.y;
+        cursor.classList.remove("is-hidden");
+      }
+    } catch (error) {
+      // Storage can be blocked; the cursor just appears on first move.
+    }
+
+    const trail = [];
+    if (!reduceMotion) {
+      for (let i = 0; i < TRAIL_POOL; i += 1) {
+        const bit = document.createElement("span");
+        bit.className = "cursor__trail";
+        bit.textContent = "·";
+        cursor.appendChild(bit);
+        trail.push(bit);
+      }
+    }
+
+    const stateFor = (target) => {
+      if (!(target instanceof Element)) return "default";
+      if (target.closest(".hero__ascii-card")) return "portrait";
+      if (target.closest(".project-card")) return "view";
+      if (target.closest("a, button, summary, label, select, [role='button'], [role='tab']")) return "link";
+      if (target.closest("input, textarea, [contenteditable='true']")) return "native";
+      if (target.closest("p, li, h1, h2, h3, h4, blockquote, dd, dt, pre:not(.hero__ascii-card)")) return "text";
+      return "default";
+    };
+
+    const setState = (next) => {
+      if (next === state) return;
+      state = next;
+      cursor.dataset.state = next;
+      if (GLYPHS[next]) glyph.textContent = GLYPHS[next];
+    };
+
+    const place = (el, px, py) => {
+      el.style.transform = `translate3d(${px}px, ${py}px, 0)`;
+    };
+
+    const tick = () => {
+      rx += (x - rx) * EASE;
+      ry += (y - ry) * EASE;
+      place(dot, x, y);
+      place(ring, rx, ry);
+      if (Math.abs(x - rx) + Math.abs(y - ry) > 0.1) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        frame = 0;
+      }
+    };
+
+    const wake = () => {
+      if (!frame) frame = requestAnimationFrame(tick);
+    };
+
+    document.addEventListener(
+      "pointermove",
+      (event) => {
+        if (event.pointerType !== "mouse") return;
+        const speed = Math.hypot(event.clientX - x, event.clientY - y);
+        x = event.clientX;
+        y = event.clientY;
+        cursor.classList.remove("is-hidden");
+        setState(stateFor(event.target));
+
+        // Fast movement leaves a short trail of fading dots.
+        const now = performance.now();
+        if (trail.length && speed > 14 && now - lastTrail > 45 && state !== "text") {
+          lastTrail = now;
+          const bit = trail[trailIndex];
+          trailIndex = (trailIndex + 1) % trail.length;
+          place(bit, rx, ry);
+          bit.classList.remove("is-on");
+          void bit.offsetWidth;
+          bit.classList.add("is-on");
+        }
+        wake();
+      },
+      { passive: true }
+    );
+
+    document.addEventListener("pointerdown", () => cursor.classList.add("is-down"));
+    document.addEventListener("pointerup", () => cursor.classList.remove("is-down"));
+
+    // Hide when the mouse leaves the window or moves into an embed.
+    document.addEventListener("pointerout", (event) => {
+      if (!event.relatedTarget || event.relatedTarget.tagName === "IFRAME") {
+        cursor.classList.add("is-hidden");
+      }
+    });
+
+    window.addEventListener("pagehide", () => {
+      try {
+        sessionStorage.setItem("cursor", JSON.stringify({ x, y }));
+      } catch (error) {
+        // Nothing to restore next time; that's fine.
+      }
+    });
+
+    cursor.dataset.state = state;
+    place(dot, x, y);
+    place(ring, rx, ry);
   }
 
 })();
