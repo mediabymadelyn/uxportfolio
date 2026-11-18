@@ -4,7 +4,7 @@
     <title>Figma Projects | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
       content="Figma case studies and interface design explorations by Madelyn Smith."
@@ -16,8 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=19" />
-    <link rel="stylesheet" href="assets/css/subpages.css?v=19" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=20" />
   </head>
   <body class="figma-page">
     <header class="site-header">
@@ -138,7 +138,7 @@
         <div class="container footer-cta__block reveal">
             <h2>Explore full product case studies behind these interface decisions.</h2>
             <div class="page-actions">
-              <a class="button button--primary" href="itera-studio-case-study.html">View ItEra Studio</a>
+              <a class="button button--primary" href="itera-studio-case-study.html">View Itera Studio</a>
               <a class="button button--secondary" href="biochemistry-case-study.html">View Biochemistry Case</a>
             </div>
           <ul class="footer-cta__links" aria-label="Social links">
@@ -151,6 +151,6 @@
       </section>
     </main>
 
-    <script src="assets/js/home.js?v=19"></script>
+    <script src="assets/js/home.js?v=20"></script>
   </body>
 </html>

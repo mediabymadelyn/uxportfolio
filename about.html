@@ -4,7 +4,7 @@
     <title>About | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
       content="About Madelyn Smith, a product designer and creative technologist blending computer science, studio art, HCI, and UX/UI, with a growing interest in IP and technology law."
@@ -16,8 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=19" />
-    <link rel="stylesheet" href="assets/css/subpages.css?v=19" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=20" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="about-page">
@@ -46,7 +46,7 @@
             <h1 class="about-hero__headline">A little bit about me</h1>
             <p class="about-body about-body--lede">I grew up making things with my mom, a teacher who was always doing creative projects and artwork with her students and me. That turned into a love of drawing, then digital art and animation. Cartoon Network, Adult Swim, and anime were a huge part of how I developed my visual taste. As the internet evolved, I evolved with it, seeing AI reshape the creative landscape and the world in real time. I want to meaningfully contribute to creative equity in the age of Artificial Intelligence.</p>
             <p class="about-body">Computer science came from a different but parallel love of games, technology, and functionality. I never had to choose between the two. Studying both CS and studio art at Occidental gave me the chance to incorporate both into my projects.</p>
-            <p class="about-body">My interest in how creative and technical work gets credited and protected is pulling me toward IP and technology law. Building ItEra Studio meant working through questions about sourcing, credit, and ownership in AI-assisted creative tools. I eventually want to help answer those questions from the legal side, and am planning to apply to law school in the future.</p>
+            <p class="about-body">My interest in how creative and technical work gets credited and protected is pulling me toward IP and technology law. Building Itera Studio meant working through questions about sourcing, credit, and ownership in AI-assisted creative tools. I eventually want to help answer those questions from the legal side, and am planning to apply to law school in the future.</p>
             <p class="about-body">When I'm not designing or coding, I'm probably out running, lifting, reading, watching horror films, going down video essay rabbit holes, or playing The Sims 4. Studying abroad in Japan genuinely changed how I see the world; the attention to craft and detail in the art, architecture, and everyday objects stays with me to this day.</p>
           </div>
           <div class="about-hero__photo-wrap">
@@ -77,6 +77,6 @@
 
     </main>
 
-    <script src="assets/js/home.js?v=19"></script>
+    <script src="assets/js/home.js?v=20"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <title>Madelyn Smith | Product Designer + Creative Technologist</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
       content="Portfolio of Madelyn Smith, a product designer and creative technologist blending UX, HCI, studio art, and frontend development, with a focus on credit and ownership in creative tools."
@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=19" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="home">
@@ -45,7 +45,7 @@
               Hi, I'm Madelyn!
             </h1>
             <p class="hero__summary">
-            I'm a Computer Science student at Occidental College. Some of my work is for school, some is just for fun. Thanks for stopping by!
+            I'm a Computer Science student at Occidental College. Some of my work is for school, some is just for fun. Thanks for stopping by! (ᵔᴥᵔ)
             </p>
             
 
@@ -163,15 +163,15 @@
 
           <a class="project-card project-card--featured reveal" href="itera-studio-case-study.html" style="--stagger: 1">
             <div class="project-card__media">
-              <img src="images/iterastudio.png" alt="ItEra Studio search interface" />
+              <img src="images/iteracover.png" alt="Itera Studio landing page" />
             </div>
             <div class="project-card__body">
               <p class="project-card__meta"><span class="project-card__num">01</span>Fall 2024 – Present</p>
-              <h3 class="project-card__title" style="view-transition-name: project-itera">ItEra Studio</h3>
+              <h3 class="project-card__title" style="view-transition-name: project-itera">Itera Studio</h3>
               <p class="project-card__desc">A reference search tool for artists that finds real, credited visual sources by interpreting creative intent.</p>
               <ul class="project-card__tags">
-                <li class="project-tag">Figma</li>
-                <li class="project-tag">Java</li>
+                <li class="project-tag">Next.js</li>
+                <li class="project-tag">TypeScript</li>
                 <li class="project-tag">User research</li>
               </ul>
               <span class="project-card__cta">View project</span>
@@ -270,6 +270,6 @@
       </section>
     </main>
 
-    <script src="assets/js/home.js?v=19"></script>
+    <script src="assets/js/home.js?v=20"></script>
   </body>
 </html>

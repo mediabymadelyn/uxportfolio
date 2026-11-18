@@ -4,7 +4,7 @@
     <title>Vibe.py | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
       content="Vibe.py: a personal Python terminal app for music discovery and movie roulette."
@@ -16,8 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=19" />
-    <link rel="stylesheet" href="assets/css/subpages.css?v=19" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=20" />
     <link rel="icon" href="images/favicon.png" type="image/png">
 
     <style>
@@ -367,7 +367,7 @@
         <div class="container footer-cta__block reveal">
           <h2>Back to where it all started.</h2>
           <div class="page-actions">
-            <a class="button button--primary" href="itera-studio-case-study.html">Next: ItEra Studio</a>
+            <a class="button button--primary" href="itera-studio-case-study.html">Next: Itera Studio</a>
             <a class="button button--secondary" href="index.html#work">All work</a>
           </div>
           <ul class="footer-cta__links" aria-label="Social links">
@@ -379,6 +379,6 @@
         </div>
       </section>
     </main>
-    <script src="assets/js/home.js?v=19"></script>
+    <script src="assets/js/home.js?v=20"></script>
   </body>
 </html>

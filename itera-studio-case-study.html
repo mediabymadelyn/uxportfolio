@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ItEra Studio | Madelyn Smith</title>
+    <title>Itera Studio | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
-      content="ItEra Studio case study: a reference discovery system that connects artists to real, credited visual sources by interpreting creative intent."
+      content="Itera Studio case study: an AI-assisted reference search that helps artists find real, credited artworks and photographs from open collections."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=19" />
-    <link rel="stylesheet" href="assets/css/subpages.css?v=19" />
+    <link rel="stylesheet" href="assets/css/home.css?v=20" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=20" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="itera-page">
@@ -41,27 +41,28 @@
       <section class="page-hero">
         <div class="container page-hero__content reveal">
           <p class="kicker">Case Study</p>
-          <h1 class="page-title" style="view-transition-name: project-itera">ItEra Studio</h1>
+          <h1 class="page-title" style="view-transition-name: project-itera">Itera Studio</h1>
           <p class="page-intro">
             A reference search tool for artists that finds real, credited visual sources by interpreting what you are
             actually trying to make.
           </p>
           <div class="page-actions">
+            <a class="button button--primary" href="https://itera-studio-two.vercel.app" target="_blank" rel="noopener noreferrer">Open live app</a>
             <a
-              class="button button--primary"
+              class="button button--secondary"
               href="https://www.figma.com/proto/JHydTUvpjKOFYioSu4L9ta/ItEra-V1?node-id=0-1&amp;t=N5kUlGAqxc6NcPBv-1"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open functional prototype
+              View Figma prototype
             </a>
             <a class="button button--secondary button--back" href="index.html#work">Back to work</a>
           </div>
           <dl class="cs-summary">
-            <div><dt>Timeline</dt><dd>Fall 2024 - Ongoing</dd></div>
-            <div><dt>Focus</dt><dd>Product Design, Creative Technology, Research</dd></div>
-            <div><dt>Research</dt><dd>Independent study, user survey (n=4), Reddit and Discord feedback</dd></div>
-            <div><dt>Status</dt><dd>Functional Figma prototype</dd></div>
+            <div><dt>Timeline</dt><dd>March-November 2026</dd></div>
+            <div><dt>Focus</dt><dd>Product Design, Engineering, AI Research</dd></div>
+            <div><dt>Research</dt><dd>Senior comprehensive project; 10 artist participants</dd></div>
+            <div><dt>Status</dt><dd>Live web app and comps presentation</dd></div>
           </dl>
         </div>
       </section>
@@ -73,8 +74,8 @@
             <div class="media-frame media-frame--prototype">
               <iframe
                 class="media-frame__embed"
-                title="ItEra Studio Figma prototype"
-                src="https://embed.figma.com/design/JHydTUvpjKOFYioSu4L9ta/ItEra-V1?node-id=52-272&amp;embed-host=share"
+                title="Itera Studio live app"
+                src="https://itera-studio-two.vercel.app"
                 loading="lazy"
                 allowfullscreen
               ></iframe>
@@ -82,14 +83,14 @@
 
             <h2>Overview</h2>
             <div class="media-frame media-frame--narrow">
-              <img src="images/iteramain.png" alt="ItEra Studio search interface" />
+              <img src="images/iteracover.png" alt="Itera Studio landing page" />
             </div>
             <p>
-              ItEra Studio is an evolving reference discovery system for artists. It interprets creative intent, routes
-              queries across real art and image databases, and returns credited references with source links and
-              license-aware filtering. The project started in my freshman year as a Java-based quiz program called
-              DoodleQuest that generated 20 static art prompts. It has gone through several complete transformations
-              since then, each one driven by research rather than assumption.
+              Itera Studio is an AI-assisted reference search for artists. It returns real, credited artworks and
+              photographs from open collections instead of generating images or training on artist work. My senior
+              comprehensive project at Occidental College began by asking whether AI could help artists find references
+              in a way that feels helpful rather than intrusive. I designed and built the system, conducted the research,
+              ran a 10-person user study, and developed it into a live web app.
             </p>
           </article>
 
@@ -151,7 +152,7 @@
             <p>
               The public response from Reddit and Discord was more pointed. Responses were overwhelmingly skeptical of
               AI critique tools, with concerns around ethics, trust, and the perception that AI cannot genuinely
-              understand visual intention. One artist captured what would become the direction of ItEra:
+              understand visual intention. One artist captured what would become the direction of Itera:
             </p>
             <blockquote class="pull-quote">
               <p>"The only real purpose I can see AI being useful for as a tool is an AI that finds specific real reference
@@ -168,10 +169,10 @@
             </p>
           </article>
 
-          <article class="content-shell" data-step="The product" data-when="Now">
-            <h2>What ItEra Does</h2>
+          <article class="content-shell" data-step="The design">
+            <h2>What Itera Does</h2>
             <p>
-              ItEra is designed around one idea: connect artists to real references from real artists, with attribution
+              Itera is designed around one idea: connect artists to real references from real artists, with attribution
               intact.
             </p>
             <p>
@@ -186,7 +187,7 @@
               control of the direction.
             </p>
             <div class="media-frame media-frame--narrow">
-              <img src="images/iterahow.png" alt="ItEra Studio how it works flow" />
+              <img src="images/iterahow.png" alt="Itera Studio how it works flow" />
             </div>
             <div class="split-grid">
               <section class="surface-card">
@@ -218,36 +219,113 @@
             </div>
           </article>
 
+          <article class="content-shell" data-step="Building" data-when="March-November 2026">
+            <h2>Building Itera</h2>
+            <p>
+              Itera is built with Next.js and TypeScript. It searches the Metropolitan Museum of Art, the Art Institute
+              of Chicago, and Unsplash, normalizing their results into one shared schema. Every card shows the work or
+              photograph, creator, source, license, and an original-source link.
+            </p>
+            <p>
+              Llama 3.3 70B turns natural-language searches into a structured plan, while a rule-based fallback keeps
+              search working if the model fails. <code>sharp</code> contributes pixel-level analysis, Upstash Redis
+              caches results, and museum catalog terms are translated into the language used by each collection. AI does
+              not generate or train on images: it interprets the search and helps rank and describe real candidate works.
+            </p>
+            <p>
+              Museum catalog data rarely records the visual qualities artists search for. A metadata-gap experiment found
+              that composition and mood tags could be described reliably, while lighting was dependable only when the
+              vision model reported confidence. Itera later used Gemini 3.8 Flash to inspect up to 40 candidates per search
+              and return structured match, lighting, color, and label data. Across 40 test images judged twice, relevance
+              improved from 24/32 to 31/32 correct, and flat images incorrectly called dramatic fell from 6/16 to 3/16.
+            </p>
+            <div class="split-grid">
+              <section class="surface-card">
+                <h3>Search quality</h3>
+                <ul>
+                  <li>Best matches contain at most one work per artist and at least three museum works.</li>
+                  <li>Top matches are checked for duplicates and ranked from visible visual qualities.</li>
+                  <li>Each candidate can receive more than one descriptive label.</li>
+                </ul>
+              </section>
+              <section class="surface-card">
+                <h3>Artist tools</h3>
+                <ul>
+                  <li>Values view, mirror, grid overlay, and main-color extraction support reference study.</li>
+                  <li>Collections and notes stay in the browser, alongside filters and export tools.</li>
+                  <li>Users can generate credits exports and printable reference sheets.</li>
+                </ul>
+              </section>
+              <section class="surface-card">
+                <h3>Privacy and ethics</h3>
+                <ul>
+                  <li>Only public-domain or openly licensed works are shown.</li>
+                  <li>Search text is not stored, and cache keys are SHA-256 hashes.</li>
+                  <li>No account is required; saved material remains in the user's browser.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-shell" data-step="User testing" data-when="October 2026">
+            <h2>Testing With Artists</h2>
+            <p>
+              Ten artists completed approximately 30-minute, recorded think-aloud sessions. Each participant completed
+              three set searches, an open-ended illustration task, and the System Usability Scale survey. Eight participants
+              completed SUS, producing a score of 87.5/100, in the “excellent” range and above the industry average of 68.
+            </p>
+            <ul class="cs-stats">
+              <li><span class="cs-stats__num" data-count="87.5" data-decimals="1" data-suffix="/100">87.5/100</span>System Usability Scale score.</li>
+              <li><span class="cs-stats__num" data-count="8" data-suffix="/10">8/10</span>found source filtering useful.</li>
+              <li><span class="cs-stats__num" data-count="7" data-suffix="/10">7/10</span>found the ethical approach clear and acceptable.</li>
+              <li><span class="cs-stats__num" data-count="6" data-suffix="/10">6/10</span>said credits and licenses were visible enough.</li>
+            </ul>
+            <p>
+              The first round also surfaced important failures. Eight participants rejected the top result for a dramatic
+              lighting search. At that stage, Itera ranked candidates from titles and catalog data rather than image
+              analysis, which could place an unrelated work at the top. Participants also asked for more labels, more
+              results and mediums, and noticed gender and cultural skew. A few quotes captured the project's potential:
+              “I would use this instead of Google,” and “A strong alternative for Pinterest.”
+            </p>
+            <details class="more">
+              <summary>What changed after testing</summary>
+              <p>
+                Itera now runs Gemini's vision check across candidate images, returns confidence-based lighting information,
+                and uses a fixed lighting score for more consistent ranking. The redesign also added a public-domain artwork
+                palette, collections, notes, filter backup and restore, a credits export, and printable reference sheets.
+              </p>
+            </details>
+          </article>
+
           <article class="content-shell" data-step="What's next">
-            <h2>Future Development</h2>
+            <h2>What Comes Next</h2>
             <ul>
-              <li>Integrate an appropriate LLM for stronger intent interpretation and query expansion.</li>
-              <li>Expand datasets with more diverse and non-Western sources to address the Eurocentric bias documented
-                in early research.</li>
-              <li>Build personalization over time using saved references, preferences, and search history.</li>
-              <li>Refine semantic matching for more nuanced artistic language, particularly around mood, medium, and
-                composition.</li>
-              <li>Develop feedback-driven ranking so results improve based on what users engage with.</li>
+              <li>Run a second round of artist testing with the vision-based ranking and redesigned interface.</li>
+              <li>Add new sources one at a time, beginning with the Cleveland Museum of Art, then Smithsonian Open Access
+                and the Rijksmuseum.</li>
+              <li>Build “more like this” image search for style and visual qualities across the catalog.</li>
+              <li>Keep expanding evaluation checks for license, provenance, diversity, and ranking quality.</li>
             </ul>
           </article>
 
           <article class="content-shell" data-step="Reflection">
             <h2>Reflection</h2>
             <p>
-              This project has changed direction more than once because the research kept finding problems with the
-              previous direction. I am glad I ran the user study when I did. The Reddit response in particular was
-              direct enough to make the pivot obvious rather than uncertain.
+              Itera taught me that AI can be useful in creative work without taking over the creative process. The model
+              works best on narrow, visible judgments; the surrounding system determines trust, provenance, fallback, and
+              control.
             </p>
             <p>
-              The most important thing I learned is that AI in creative tools works best as a way to expand what
-              someone is already doing, not as a replacement for their judgment. Every version of ItEra that tried to
-              evaluate or instruct the user felt wrong. Every version that helped them find and study real work felt
-              right.
+              The most important result came from testing the system between phases, not from a benchmark alone. When
+              Itera ranked from catalog text, artists rejected the top choices. Adding a visual check fixed a real user
+              problem and made the ethical premise more credible: AI could explain and compare references, but only when
+              it could actually see them.
             </p>
             <p>
-              I also documented the Eurocentric bias in AI prompt generation earlier than I expected to. That finding
-              shaped the research rubric and, eventually, shaped the sourcing priorities for ItEra. Expanding to
-              non-Western datasets is not an afterthought. It is a founding concern of the project.
+              I also learned to separate research findings from product claims. A reliable result in 38 hand-labeled works
+              is not the same as a universal ranking system, and a strong SUS score does not eliminate cultural or gender
+              skew. Itera now documents these limits, preserves user control, and treats new sources and models as things
+              that require separate validation.
             </p>
           </article>
 
@@ -271,6 +349,6 @@
       </section>
     </main>
 
-    <script src="assets/js/home.js?v=19"></script>
+    <script src="assets/js/home.js?v=20"></script>
   </body>
 </html>

@@ -1,7 +1,8 @@
 /* ─── Theme tokens ──────────────────────────────────────────────────────────
    Neutral surfaces with a single purple accent. The home hero gradient is the
-   only colored backdrop on the site. Dark mode follows the system setting
-   unless the visitor picks a theme with the header toggle. */
+   only colored backdrop on the site. Each page's <head> script sets dark mode
+   by default unless the visitor picked light with the header toggle; the
+   system-preference block below only applies when that script can't run. */
 
 :root {
   color-scheme: light;
