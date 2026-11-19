@@ -281,6 +281,31 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* While a stat waits to count up, hide only the visible digits. The real
+   value stays in the page for screen readers (see .visually-hidden). */
+.cs-stats__num.is-count-pending .cs-stats__digits {
+  opacity: 0;
+}
+
+@media print {
+  .cs-stats__num.is-count-pending .cs-stats__digits {
+    opacity: 1;
+  }
+}
+
+/* Text that screen readers announce but sighted users don't see. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Process timeline: a sticky bar under the header. Each stop jumps to that
    part of the case study, and the line fills as the reader moves through it.
    Built by home.js from the page's sections. */
@@ -611,4 +636,111 @@ html:has(.process) {
     font-size: 0.75rem;
   }
 
+}
+
+/* ─── Writing page ──────────────────────────────────────────────────────── */
+
+/* Two artworks side by side, stacked on phones. */
+.writing-art {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.writing-art figure,
+.writing-figure {
+  margin: 0;
+}
+
+.writing-art img,
+.writing-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.writing-art figcaption,
+.writing-figure figcaption {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+/* The comic is shown as one tall image, centered and capped in width. */
+.writing-figure {
+  max-width: 40rem;
+  margin: var(--space-5) auto;
+}
+
+.comic-panels li + li {
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 42rem) {
+  .writing-art {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Writing page: everything is centered. Blocks keep their max-width and
+   use auto side margins so they sit in the middle of the column. */
+.writing-page .page-hero__content,
+.writing-page .content-shell {
+  text-align: center;
+}
+
+.writing-page .page-title,
+.writing-page .page-intro,
+.writing-page .content-shell p,
+.writing-page .content-shell ul,
+.writing-page .content-shell ol,
+.writing-page .more {
+  margin-inline: auto;
+}
+
+.writing-page .page-actions {
+  justify-content: center;
+}
+
+/* Centered lists read better with the bullet or number inside the text. */
+.writing-page .content-shell ul,
+.writing-page .content-shell ol {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+/* Writing page card grid (reuses the homepage project cards). */
+.writing-index {
+  padding-bottom: var(--space-7);
+}
+
+.writing-page .writing-grid {
+  margin-top: 0;
+}
+
+.writing-page .project-card__meta {
+  justify-content: center;
+}
+
+.writing-page .project-card__media img {
+  object-position: top center;
+}
+
+/* On-page PDF reader, opened by "Read here". */
+.pdf-reader {
+  max-width: 56rem;
+  margin: var(--space-5) auto 0;
+}
+
+.pdf-reader iframe {
+  display: block;
+  width: 100%;
+  height: min(85vh, 60rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface-2);
 }

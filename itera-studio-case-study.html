@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Itera Studio | Madelyn Smith</title>
+    <title>Itera Studio: Credited Reference Search for Artists | Madelyn Smith</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.dataset.theme=t||"dark"</script>
     <meta
       name="description"
-      content="Itera Studio case study: an AI-assisted reference search that helps artists find real, credited artworks and photographs from open collections."
+      content="Itera Studio case study: an AI-assisted reference search that helps artists find real, credited artworks and photographs from public-domain and openly licensed collections."
     />
+    <link rel="canonical" href="https://www.mediabymadelyns.com/itera-studio-case-study.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Madelyn Smith" />
+    <meta property="og:title" content="Itera Studio: Credited Reference Search for Artists | Madelyn Smith" />
+    <meta property="og:description" content="Itera Studio case study: an AI-assisted reference search that helps artists find real, credited artworks and photographs from public-domain and openly licensed collections." />
+    <meta property="og:url" content="https://www.mediabymadelyns.com/itera-studio-case-study.html" />
+    <meta property="og:image" content="https://www.mediabymadelyns.com/images/iteracover.png" />
+    <meta property="og:image:alt" content="Itera Studio landing page" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Itera Studio: Credited Reference Search for Artists | Madelyn Smith" />
+    <meta name="twitter:description" content="Itera Studio case study: an AI-assisted reference search that helps artists find real, credited artworks and photographs from public-domain and openly licensed collections." />
+    <meta name="twitter:image" content="https://www.mediabymadelyns.com/images/iteracover.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,8 +28,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/home.css?v=20" />
-    <link rel="stylesheet" href="assets/css/subpages.css?v=20" />
+    <link rel="stylesheet" href="assets/css/home.css?v=21" />
+    <link rel="stylesheet" href="assets/css/subpages.css?v=21" />
     <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body class="itera-page">
@@ -30,6 +42,7 @@
           <a class="site-nav__link" href="index.html#work" aria-current="page">Work</a>
           <a class="site-nav__link" href="about.html">About</a>
           <a class="site-nav__link" href="experience.html">Experience</a>
+          <a class="site-nav__link" href="writing.html">Writing</a>
           <a class="site-nav__link" href="art.html">Art</a>
           <a class="site-nav__link site-nav__link--cta" href="#contact">Contact</a>
         </nav>
@@ -59,8 +72,8 @@
             <a class="button button--secondary button--back" href="index.html#work">Back to work</a>
           </div>
           <dl class="cs-summary">
-            <div><dt>Timeline</dt><dd>March-November 2026</dd></div>
-            <div><dt>Focus</dt><dd>Product Design, Engineering, AI Research</dd></div>
+            <div><dt>Timeline</dt><dd>Fall 2024 – Present (current build: March–November 2026)</dd></div>
+            <div><dt>Focus</dt><dd>AI Research, Attribution &amp; Licensing, Engineering, UX</dd></div>
             <div><dt>Research</dt><dd>Senior comprehensive project; 10 artist participants</dd></div>
             <div><dt>Status</dt><dd>Live web app and comps presentation</dd></div>
           </dl>
@@ -94,17 +107,34 @@
             </p>
           </article>
 
-          <article class="content-shell" data-step="Origins" data-when="Freshman year">
+          <article class="content-shell" data-step="Attribution">
+            <h2>Attribution &amp; Licensing by Design</h2>
+            <p>
+              Credit and licensing are part of how Itera works, not something added on top.
+            </p>
+            <section class="surface-card">
+              <ul>
+                <li>Only public-domain or openly licensed works are shown.</li>
+                <li>Every card shows the creator, source, license, and a link to the original.</li>
+                <li>Users can export credits and print reference sheets.</li>
+                <li>No image generation, and no training on artist work.</li>
+                <li>Search text is not stored, and cache keys are SHA-256 hashes.</li>
+                <li>No account is required.</li>
+              </ul>
+            </section>
+          </article>
+
+          <article class="content-shell" data-step="Origins" data-when="2023–2025">
             <h2>Where It Started</h2>
             <p>
-              I built the first version of DoodleQuest in COMP181. It was a Java survey that mapped user responses to a
-              fixed set of 20 prompts. The core idea was right: artists need targeted, growth-oriented challenges rather
+              Itera's precursor was DoodleQuest, which I built in COMP181 during my freshman year (2023–24). It was a
+              static Java quiz that mapped user responses to a fixed set of 20 prompts. The core idea was right: artists need targeted, growth-oriented challenges rather
               than generic ones. But the execution was too rigid and the tool was doing all the thinking for the user.
             </p>
             <p>
-              Sophomore year I ran an independent study with Professor Sanchez specifically focused on AI prompting and
-              illustration. Over 14 weeks I created six bodies of work responding to AI-generated prompts across gesture
-              drawing, color theory, self-expression, traditional media, narrative, and mixed media. I was not just
+              In Spring 2025 I ran an independent study with Professor Sanchez focused on AI prompting and illustration.
+              Over the semester I created five bodies of work responding to ChatGPT prompts across gesture and
+              composition, color theory, self-expression, digital art, and mixed media. I was not just
               making art. I was evaluating how AI interacted with creative process, and documenting what worked, what
               did not, and why.
             </p>
@@ -112,9 +142,9 @@
               One of the main findings was that AI prompts skew Eurocentric by default. When I asked for gesture drawing
               prompts, the suggestions leaned toward yoga poses. Color theory suggestions reflected Western associations
               with "warmth" and "calm" without cultural nuance. These are not neutral failures. They are baked-in
-              biases. I developed a five-criteria rubric for evaluating prompts on creativity, flexibility, clarity,
-              cultural accessibility, and engagement, and used it to assess how AI performed across different creative
-              contexts.
+              biases. I developed a six-category rubric for evaluating prompts on creativity, flexibility, clarity,
+              accessibility and inclusivity, engagement, and excitement, and used it to assess how AI performed across
+              different creative contexts. The full write-up is on my <a class="text-link" href="writing.html#prompting-with-ai">Writing page</a>.
             </p>
             <blockquote class="pull-quote">
               <p>The clearest finding: a good prompt does not tell you what to make. It helps you ask better questions.</p>
@@ -127,17 +157,19 @@
           <article class="content-shell" data-step="Research &amp; pivot">
             <h2>User Research and the Pivot</h2>
             <p>
-              Before building further, I needed to know whether artists actually wanted AI critique tools. I designed a
-              structured user study and distributed it through personal networks and art-focused subreddits and Discord
-              communities. The study included a Likert scale section where four participants tested existing AI critique
-              tools and evaluated them across multiple dimensions.
+              Before building further, I needed to know whether artists actually wanted AI critique tools, so I ran two
+              separate surveys.
             </p>
-            <p>Key findings from the private survey (n=4):</p>
+            <p>
+              The first was a small UX survey (n=4). Four participants looked at my Figma prototype, tested existing AI
+              critique tools, and rated the AI feedback on a Likert scale. With only four people, these are counts, not
+              trends:
+            </p>
             <ul class="cs-stats">
-              <li><span class="cs-stats__num" data-count="75" data-suffix="%">75%</span>agreed the feedback was helpful for improving their work.</li>
-              <li><span class="cs-stats__num" data-count="75" data-suffix="%">75%</span>agreed the feedback felt personalized to their artwork.</li>
-              <li><span class="cs-stats__num" data-count="50" data-suffix="%">50%</span>agreed the feedback gave clear, actionable next steps.</li>
-              <li><span class="cs-stats__num" data-count="50" data-suffix="%">50%</span>disagreed that AI feedback made them feel more confident.</li>
+              <li><span class="cs-stats__num" data-count="3" data-suffix=" of 4">3 of 4</span>agreed the feedback was helpful for improving their work.</li>
+              <li><span class="cs-stats__num" data-count="3" data-suffix=" of 4">3 of 4</span>agreed the feedback felt personalized to their artwork.</li>
+              <li><span class="cs-stats__num" data-count="2" data-suffix=" of 4">2 of 4</span>agreed the feedback gave clear, actionable next steps.</li>
+              <li><span class="cs-stats__num" data-count="2" data-suffix=" of 4">2 of 4</span>disagreed that AI feedback made them feel more confident.</li>
               <li><span class="cs-stats__num" data-count="3.75" data-decimals="2" data-suffix="/5">3.75/5</span>average overall satisfaction.</li>
             </ul>
             <details class="more">
@@ -150,7 +182,8 @@
               </p>
             </details>
             <p>
-              The public response from Reddit and Discord was more pointed. Responses were overwhelmingly skeptical of
+              The second was a separate, open-ended survey I posted to art communities on Reddit and Discord, which
+              reached a larger group of artists. Those responses were more pointed, and overwhelmingly skeptical of
               AI critique tools, with concerns around ethics, trust, and the perception that AI cannot genuinely
               understand visual intention. One artist captured what would become the direction of Itera:
             </p>
@@ -233,11 +266,17 @@
               not generate or train on images: it interprets the search and helps rank and describe real candidate works.
             </p>
             <p>
-              Museum catalog data rarely records the visual qualities artists search for. A metadata-gap experiment found
-              that composition and mood tags could be described reliably, while lighting was dependable only when the
-              vision model reported confidence. Itera later used Gemini 3.8 Flash to inspect up to 40 candidates per search
-              and return structured match, lighting, color, and label data. Across 40 test images judged twice, relevance
-              improved from 24/32 to 31/32 correct, and flat images incorrectly called dramatic fell from 6/16 to 3/16.
+              Museum catalog data rarely records the visual qualities artists search for. A metadata-gap experiment on 38
+              museum works (21 from the Met and 17 from the Art Institute of Chicago) found that composition and mood
+              tags could be described reliably, while lighting was dependable only when the vision model reported
+              confidence. The labels for those works were created by AI, and I have been checking them iteratively and
+              interviewing people about the output.
+            </p>
+            <p>
+              Itera later used Gemini 3.8 Flash to inspect up to 40 candidates per search and return structured match,
+              lighting, color, and label data. In a model comparison on 40 test images, each judged twice by each model,
+              Gemini scored 31/32 on relevance vs. 24/32 for Gemma, and incorrectly called flat images dramatic 3/16 times
+              vs. 6/16 for Gemma. Relevance and lighting were each scored only on the images labeled for that test.
             </p>
             <div class="split-grid">
               <section class="surface-card">
@@ -322,8 +361,8 @@
               it could actually see them.
             </p>
             <p>
-              I also learned to separate research findings from product claims. A reliable result in 38 hand-labeled works
-              is not the same as a universal ranking system, and a strong SUS score does not eliminate cultural or gender
+              I also learned to separate research findings from product claims. A reliable result across 38 museum works,
+              with labels created by AI that I have been checking iteratively, is not the same as a universal ranking system, and a strong SUS score does not eliminate cultural or gender
               skew. Itera now documents these limits, preserves user control, and treats new sources and models as things
               that require separate validation.
             </p>
@@ -334,7 +373,7 @@
 
       <section class="footer-cta" id="contact">
         <div class="container footer-cta__block reveal">
-          <h2>See how this research-led approach connects to my product and UX work.</h2>
+          <h2>See how this research-led approach carries into my other projects.</h2>
           <div class="page-actions">
             <a class="button button--primary" href="biochemistry-case-study.html">Next: Biochemistry Database</a>
             <a class="button button--secondary" href="mise-en-lens-case-study.html">View Mise-en-Lens</a>
@@ -349,6 +388,6 @@
       </section>
     </main>
 
-    <script src="assets/js/home.js?v=20"></script>
+    <script src="assets/js/home.js?v=21"></script>
   </body>
 </html>

@@ -370,24 +370,51 @@
   }
 
   // Count-up numbers: <span data-count="75" data-suffix="%">75%</span>.
+  // The final value is always written in the HTML, so no-JS views, crawlers,
+  // reader mode, and print all see the real number. The animation is an
+  // extra layer: prepCount splits the number into a visually hidden copy
+  // (what screen readers read) and an aria-hidden copy (what animates).
+  // The visible digits are hidden until the stat scrolls into view so they
+  // don't flash, but the text itself is never set to zero.
+  const canCount = !reduceMotion && "IntersectionObserver" in window;
+
+  const prepCount = (el) => {
+    const finalText = el.textContent.trim();
+    const target = parseFloat(el.dataset.count);
+    if (Number.isNaN(target)) return;
+
+    const spoken = document.createElement("span");
+    spoken.className = "visually-hidden";
+    spoken.textContent = finalText;
+
+    const digits = document.createElement("span");
+    digits.className = "cs-stats__digits";
+    digits.setAttribute("aria-hidden", "true");
+    digits.textContent = finalText;
+
+    el.textContent = "";
+    el.append(spoken, digits);
+    el.classList.add("is-count-pending");
+  };
+
   const runCount = (el) => {
+    const digits = el.querySelector(".cs-stats__digits");
+    if (!digits) return;
+
+    const finalText = digits.textContent;
     const target = parseFloat(el.dataset.count);
     const decimals = parseInt(el.dataset.decimals || "0", 10);
     const suffix = el.dataset.suffix || "";
     const format = (value) => `${value.toFixed(decimals)}${suffix}`;
 
-    if (reduceMotion || Number.isNaN(target)) {
-      el.textContent = format(target);
-      return;
-    }
-
     const duration = 900;
     const start = performance.now();
+    el.classList.remove("is-count-pending");
 
     const tick = (now) => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = format(target * eased);
+      digits.textContent = t < 1 ? format(target * eased) : finalText;
       if (t < 1) requestAnimationFrame(tick);
     };
 
@@ -399,17 +426,17 @@
 
   if (animated.length) {
     if (!("IntersectionObserver" in window)) {
-      animated.forEach((el) => {
-        el.classList.add("is-visible");
-        if (el.dataset.count) runCount(el);
-      });
+      // No observer: show everything as-is. Counters keep their HTML value.
+      animated.forEach((el) => el.classList.add("is-visible"));
     } else {
+      let countObserverFired = false;
       const animateObserver = new IntersectionObserver(
         (entries) => {
+          countObserverFired = true;
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add("is-visible");
-            if (entry.target.dataset.count) runCount(entry.target);
+            if (entry.target.dataset.count && canCount) runCount(entry.target);
             animateObserver.unobserve(entry.target);
           });
         },
@@ -417,14 +444,44 @@
       );
 
       animated.forEach((el) => {
-        // Start counters at zero so they don't flash the final value first.
-        if (el.dataset.count && !reduceMotion) {
-          const decimals = parseInt(el.dataset.decimals || "0", 10);
-          el.textContent = `${(0).toFixed(decimals)}${el.dataset.suffix || ""}`;
-        }
+        if (el.dataset.count && canCount) prepCount(el);
         animateObserver.observe(el);
       });
+
+      // Safety net: if the observer never reports, un-hide the digits.
+      window.setTimeout(() => {
+        if (countObserverFired) return;
+        document.querySelectorAll(".is-count-pending").forEach((el) => el.classList.remove("is-count-pending"));
+      }, 1400);
     }
+  }
+
+  // Writing page: "Read here" opens the PDF in an on-page reader when the
+  // browser can show PDFs inline (navigator.pdfViewerEnabled). Where it
+  // can't (most Android phones) or without JS, the link simply opens the
+  // PDF in a new tab. The PDF only loads the first time a reader opens.
+  const pdfToggles = document.querySelectorAll("[data-pdf-toggle]");
+
+  if (pdfToggles.length && navigator.pdfViewerEnabled) {
+    pdfToggles.forEach((toggle) => {
+      const reader = document.getElementById(toggle.dataset.pdfReader);
+      const frame = reader && reader.querySelector("iframe");
+      if (!frame) return;
+
+      const openLabel = toggle.textContent;
+      toggle.setAttribute("role", "button");
+      toggle.setAttribute("aria-controls", reader.id);
+      toggle.setAttribute("aria-expanded", "false");
+
+      toggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        const opening = reader.hidden;
+        if (opening && !frame.getAttribute("src")) frame.src = frame.dataset.src;
+        reader.hidden = !opening;
+        toggle.setAttribute("aria-expanded", String(opening));
+        toggle.textContent = opening ? "Close reader" : openLabel;
+      });
+    });
   }
 
   // Case studies: a sticky process timeline. Each stop links to a section
